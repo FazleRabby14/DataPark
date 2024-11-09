@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <!-- SITE PAGE TITLE -->
+        <title>Frontend Mentor | Manage landing page</title>
+        <!-- SITE PAGE DESCRIPTION -->
+        <meta name="description" content="Bring everyone together to build better products.">
+        <!-- SITE AUTHORS -->
+        <meta name="author" content="Aman Singh Bhogal & Frontend Mentor">
+        <!-- FAVICON -->
+        <link rel="shortcut icon" href="src/img/favicon-32x32.png" type="image/x-icon" sizes="32x32">
+        <!-- TAILWIND ASSETS (FOR CLIENT DEPLOYMENT) -->
+        <script src="https://cdn.tailwindcss.com"></script>
+        <!-- SWIPER JS STYLESHEET -->
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@8/swiper-bundle.min.css"/>
+        <!-- MAIN STYLESHEET -->
+        <link rel="stylesheet" href="/static/css/output.css">
+        <!-- SWIPER JS SCRIPT -->
+        <script src="https://cdn.jsdelivr.net/npm/swiper/swiper-bundle.min.js" defer></script>
+        <!-- EMAIL VALIDATION SCRIPT -->
+        <script src="/static/js/email-validation.js" defer></script>
+        <!-- MOBILE NAV MENU SCRIPT -->
+        <script src="/static/js/mobile-nav-menu.js" defer></script>
+        <!-- TESTIMONIAL SLIDER SCRIPT -->
+        <script src="/static/js/testimonial-slider.js" defer></script>
+        <!-- TEMPORARILY USING GOOGLE FONTS FROM SERVER -->
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Be+Vietnam+Pro:wght@500&display=swap" rel="stylesheet">
+    </head>
+   
+
+  </head>
+  
+  <section class="bg-teal-900 py-16">
+    <div class="grid grid-cols-2 max-w-7xl mx-auto px-4 ">
+      <!-- Left Side: Images -->
+      <div class="flex justify-center items-center">
+        <div class="relative z-20 flex items-center">
+          <!-- Main Image with Play Button -->
+          <div class="relative rounded-full overflow-hidden border-4 border-purple-500 shadow-lg w-72 h-72">
+            <img src="https://media.licdn.com/dms/image/v2/D5603AQEjXF8SGMmKEw/profile-displayphoto-shrink_800_800/profile-displayphoto-shrink_800_800/0/1673981154956?e=1735171200&v=beta&t=7tCQwhymGZNLw-4Ra0Lm5nsunsImiZSN4vQ8TBjvXwQ" alt="Student 1" class="w-full h-full object-cover">
+            
+          </div>
+          <!-- Secondary Image -->
+          <!-- <div class="rounded-full overflow-hidden border-4 border-white shadow-lg w-32 h-32 ml-4">
+            <img src="https://randomuser.me/api/portraits/women/24.jpg" alt="Student 2" class="w-full h-full object-cover">
+          </div> -->
+        </div>
+      </div>
+  
+      <!-- Right Side: Text -->
+      <div class=" text-center lg:text-left relative">
+        <h3 class="about-us-title text-[#d9ff00] font-bold text-lg mb-2">Expertise</h3>
+        <h1 class="text-4xl font-extrabold mb-6 text-white">
+          With 24 years of proven Oracle database expertise, delivering results 
+        </h1>
+        <p class="text-[#d9ff00] mb-6">
+          I have expertise in Oracle database management, specializing in SQL, PL/SQL programming, performance tuning, and implementing robust data solutions to enhance operational efficiency 
+        </p>
+        <!-- Features with Check Icons -->
+        <div class="flex flex-col lg:flex-row lg:space-x-6 mb-6">
+            <div class="flex items-center mb-4 lg:mb-0">
+              <span class="checkmark-circle">
+                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7" />
+                </svg>
+              </span>
+              <span class="text-[#d9ff00] font-medium ml-2">Flexible Course Plan</span>
+            </div>
+            
+            <div class="flex items-center mb-4 lg:mb-0">
+                <span class="checkmark-circle">
+                  <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7" />
+                  </svg>
+                </span>
+                <span class="text-[#d9ff00] font-medium ml-2">Flexible Course Plan</span>
+              </div>
+
+              <div class="flex items-center mb-4 lg:mb-0">
+                <span class="checkmark-circle">
+                  <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7" />
+                  </svg>
+                </span>
+                <span class="text-[#d9ff00] font-medium ml-2">Flexible Course Plan</span>
+              </div>
+
+              <div class="flex items-center mb-4 lg:mb-0">
+                <span class="checkmark-circle">
+                  <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7" />
+                  </svg>
+                </span>
+                <span class="text-[#d9ff00] font-medium ml-2">Flexible Course Plan</span>
+              </div>
+          </div>
+          
+        
+        <a href="#" class="bg-purple-500 text-white px-6 py-3 rounded-full font-semibold hover:bg-purple-700 transition">
+          Know More
+        </a>
+      </div>
+    </div>
+  </section>
+  <style>
+    /* Style for checkmark inside a circle */
+    .checkmark-circle {
+      border-radius: 50%;
+      border: 2px solid #9be546; /* Indigo border */
+      width: 35px;
+      height: 35px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+    .checkmark-circle svg {
+      stroke: #66ff00;
+      width: 16px;
+      height: 16px;
+    }
+    /* Styling for About Us heading */
+    .about-us-title {
+      display: inline-block;
+      position: relative;
+      padding-bottom: 5px;
+    }
+    .about-us-title::after {
+      content: '';
+      position: absolute;
+      height: 2px;
+      width: 50px;
+      background-color: #d9ff00; /* Blue underline */
+      bottom: 0;
+      left: 0;
+    }
+   
+  
+  </style>
+
+</html>
