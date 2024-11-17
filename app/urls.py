@@ -14,7 +14,9 @@ urlpatterns = [
     path('about/', views.About, name='about'),
     path('contact/', views.Contact, name='contact'),
     path('cv/', views.CV, name='cv'),
-    path('tutorial/', views.Tutorial, name="tutorial")
+    path('tutorial/', views.Tutorial, name="tutorial"),
+    path('tutorialView/', views.TutorialView, name="tutorialView"),
+    path('download-cv/', download_cv, name='download_cv'),
 
 
 ]

@@ -445,20 +445,23 @@
 
                 <!-- Experience Section -->
                 <div class="h-[300px] space-y-6 overflow-auto"> <!-- Reduced height -->
+                    {% for item in works|slice:":3" %}
                     <!-- First Job -->
                     <div class="relative">
                         <div class="absolute top-0 left-0 w-1 h-full bg-teal-400"></div>
                         <div class="ml-8">
                             <div class="flex items-center mb-2">
-                                <h3 class="text-sm md:text-lg font-semibold text-white">Wipro | Bangladesh | Grameen Phone Account</h3>
-                                <span class="ml-auto text-[8px] md:text-sm text-white">January 11, 2024 – Present</span>
+                                <h3 class="text-sm md:text-lg font-semibold text-white">{{item.designation}} | {{item.company_location}}</h3>
+                                <span class="ml-auto text-[8px] md:text-sm text-white">{{item.starting_time}} – {{item.ending_time}}</span>
                             </div>
-                            <h4 class="md:text-[12px] font-semibold text-teal-400">Technical Lead - Database Administrator</h4>
+                            <h4 class="md:text-[12px] font-semibold text-teal-400">{{item.company_name}}</h4>
                         </div>
                     </div>
+                    
+                    {% endfor %}
 
                     <!-- Second Job -->
-                    <div class="relative">
+                    {% comment %} <div class="relative">
                         <div class="absolute top-0 left-0 w-1 h-full bg-teal-400"></div>
                         <div class="ml-8">
                             <div class="flex items-center mb-2">
@@ -467,10 +470,10 @@
                             </div>
                             <h4 class="md:text-[12px] font-semibold text-teal-400">Lead Database Administrator</h4>
                         </div>
-                    </div>
+                    </div> {% endcomment %}
 
                     <!-- Third Job -->
-                    <div class="relative">
+                    {% comment %} <div class="relative">
                         <div class="absolute top-0 left-0 w-1 h-full bg-teal-400"></div>
                         <div class="ml-8">
                             <div class="flex items-center mb-2">
@@ -479,7 +482,8 @@
                             </div>
                             <h4 class="md:text-[12px] font-semibold text-teal-400">Database Consultant of Bangladesh Power Deployment Board</h4>
                         </div>
-                    </div>
+                    </div> {% endcomment %}
+
                 </div>
             </div>
         </div>
@@ -493,19 +497,26 @@
 
     <div class="grid grid-cols-1 md:grid-cols-2 gap-10 max-w-7xl mx-auto"  data-aos="fade-up">
         <div class="flex flex-col h-full">
+           
             <h3 class="text-lg font-semibold mb-4">As Database Trainer</h3>
+            {% for item in trainers|slice:":4" %}
             <div class="space-y-8 flex-grow">
+
+            
                 <div class="relative transform transition-transform duration-300 hover:scale-105 hover:-translate-y-1 fade-in-up">
                     <div class="absolute left-0 top-0 w-1 h-full bg-teal-800 rounded-full"></div>
                     <div class="pl-8 bg-white shadow-md rounded-lg p-4 h-full">
-                        <p class="text-gray-600 mb-1">June 15, 2013 - 2016</p>
-                        <h4 class="text-xl font-semibold text-teal-800">Oracle Audit Vault and Database Firewall (AVDF 20)</h4>
-                        <p class="text-sm text-gray-600">40 Hours & 10 Participants</p>
-                        <p class="text-gray-500 mt-2">For Bangladesh Bureau of Statistics (BBS), Dhaka, Bangladesh</p>
+                        {% comment %} <p class="text-gray-600 mb-1">{{item.starting_time}} - {{item.ending_time}}</p> {% endcomment %}
+                        <h4 class="text-xl font-semibold text-teal-800">{{item.designation}}</h4>
+                        <p class="text-sm text-gray-600">{{item.hours}} & {{item.participants}}</p>
+                        <p class="text-gray-500 mt-2">For {{item.company_name}}, {{item.company_location}}</p>
                     </div>
-                </div>
+                 
 
-                <div class="relative transform transition-transform duration-300 hover:scale-105 hover:-translate-y-1 fade-in-up">
+                </div>
+              
+
+                {% comment %} <div class="relative transform transition-transform duration-300 hover:scale-105 hover:-translate-y-1 fade-in-up">
                     <div class="absolute left-0 top-0 w-1 h-full bg-teal-800 rounded-full"></div>
                     <div class="pl-8 bg-white shadow-md rounded-lg p-4 h-full">
                         <p class="text-gray-600 mb-1">June 12, 2010 - 2013</p>
@@ -513,34 +524,30 @@
                         <p class="text-sm text-gray-600">48 Hours & 10 Participants</p>
                         <p class="text-gray-500 mt-2">For Jamuna Bank PLC, Dhaka, Bangladesh</p>
                     </div>
-                </div>
+                </div> {% endcomment %}
             </div>
+            {% endfor%}
         </div>
 
         <div class="flex flex-col h-full">
             <h3 class="text-lg font-semibold mb-4">As Database Consultant</h3>
+            {% for item in consaltents|slice:":4" %}
             <div class="space-y-8 flex-grow">
                 <div class="relative transform transition-transform duration-300 hover:scale-105 hover:-translate-y-1 fade-in-up">
                     <div class="absolute left-0 top-0 w-1 h-full bg-teal-800 rounded-full"></div>
                     <div class="pl-8 bg-white shadow-md rounded-lg p-4 h-full">
-                        <p class="text-gray-600 mb-1">March 12, 2020</p>
-                        <h4 class="text-xl font-semibold text-teal-800">Advisor | Thakral Information System Limited</h4>
-                        <p class="text-sm text-gray-600">For 1 year</p>
-                        <p class="text-gray-500 mt-2">Design and Implement ORACLE Database 11g R2 with ASM and RAC,AIX 6</p>
-                    </div>
-                </div>
-
-                <div class="relative transform transition-transform duration-300 hover:scale-105 hover:-translate-y-1 fade-in-up">
-                    <div class="absolute left-0 top-0 w-1 h-full bg-teal-800 rounded-full"></div>
-                    <div class="pl-8 bg-white shadow-md rounded-lg p-4 h-full">
-                        <p class="text-gray-600 mb-1">January 23, 2018 - 2020</p>
-                        <h4 class="text-xl font-semibold text-teal-800">Advisor | National E-Service System (NESS) Project</h4>
-                        <p class="text-sm text-gray-600">For 6 months</p>
-                        <p class="text-gray-500 mt-2">The project owned by A2I (Prime Minister Office) and UNDP</p>
+                        <h4 class="text-xl font-semibold text-teal-800">{{ item.designation }} | {{ item.company_name }}</h4>
+                        <p class="text-sm text-gray-600">{{ item.duration }}</p>
+                        
+                        {% if item.details %}
+                            <p class="text-gray-500 mt-2">{{ item.details }}</p>
+                        {% endif %}
                     </div>
                 </div>
             </div>
+            {% endfor %}
         </div>
+        
     </div>
 </div>
 
@@ -616,89 +623,25 @@
                     <h1 class="text-5xl font-bold text-teal-800"  data-aos="fade-up">Technical Expertise</h1>
                 </div>
                 <div class="grid grid-cols-1 md:grid-cols-2 gap-8"  data-aos="fade-up">
+                    {% for item in expertises|slice:":6" %}
                     <!-- Skill Card: Oracle Database RAC Administration -->
                     <div class=" rounded-lg p-5 flex items-center justify-between shadow-lg transform transition-transform duration-300 hover:-translate-y-1">
                         <div class="flex items-center">
                             <img src="https://cdn-icons-png.flaticon.com/512/4248/4248443.png" alt="Database Icon" class="w-12 h-12 mr-4">
                             <div>
-                                <h3 class="text-black text-xl font-semibold">Oracle Database RAC Administration</h3>
+                                <h3 class="text-black text-xl font-semibold">{{item.name}}</h3>
+                        
                                 <div class="w-full bg-gray-700 rounded mt-2 h-1.5">
                                     <div class="bg-teal-800 h-1.5 rounded" style="width: 92%;"></div>
-                                </div>
+                              
+                                    </div>
                             </div>
                         </div>
-                        <div class="text-teal-800 text-xl font-bold">92%</div>
+                        <div class="text-teal-800 text-xl font-bold">{{item.experience_percentage}}</div>
                     </div>
     
-                    <!-- Skill Card: Oracle Clusterware Administration -->
-                    <div class=" rounded-lg p-5 flex items-center justify-between shadow-lg transform transition-transform duration-300 hover:-translate-y-1">
-                        <div class="flex items-center">
-                            <img src="https://cdn-icons-png.flaticon.com/512/5805/5805699.png" alt="Clusterware Icon" class="w-12 h-12 mr-4">
-                            <div>
-                                <h3 class="text-black text-xl font-semibold">Oracle Clusterware Administration</h3>
-                                <div class="w-full bg-gray-700 rounded mt-2 h-1.5">
-                                    <div class="bg-teal-800 h-1.5 rounded" style="width: 90%;"></div>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="text-teal-800 text-xl font-bold">90%</div>
-                    </div>
-    
-                    <!-- Skill Card: Oracle Data Guard Administration -->
-                    <div class=" rounded-lg p-5 flex items-center justify-between shadow-lg transform transition-transform duration-300 hover:-translate-y-1">
-                        <div class="flex items-center">
-                            <img src="https://cdn-icons-png.freepik.com/256/9386/9386717.png?semt=ais_hybrid" alt="Data Guard Icon" class="w-12 h-12 mr-4">
-                            <div>
-                                <h3 class="text-black text-xl font-semibold">Oracle Data Guard Administration</h3>
-                                <div class="w-full bg-gray-700 rounded mt-2 h-1.5">
-                                    <div class="bg-teal-800 h-1.5 rounded" style="width: 88%;"></div>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="text-teal-800 text-xl font-bold">88%</div>
-                    </div>
-    
-                    <!-- Skill Card: Core Banking System Implementation -->
-                    <div class=" rounded-lg p-5 flex items-center justify-between shadow-lg transform transition-transform duration-300 hover:-translate-y-1">
-                        <div class="flex items-center">
-                            <img src="https://cdn-icons-png.flaticon.com/128/2612/2612462.png" alt="Banking System Icon" class="w-12 h-12 mr-4">
-                            <div>
-                                <h3 class="text-black text-xl font-semibold">Core Banking System Implementation</h3>
-                                <div class="w-full bg-gray-700 rounded mt-2 h-1.5">
-                                    <div class="bg-teal-800 h-1.5 rounded" style="width: 85%;"></div>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="text-teal-800 text-xl font-bold">85%</div>
-                    </div>
-    
-                    <!-- Skill Card: Oracle ASM -->
-                    <div class=" rounded-lg p-5 flex items-center justify-between shadow-lg transform transition-transform duration-300 hover:-translate-y-1">
-                        <div class="flex items-center">
-                            <img src="https://cdn-icons-png.freepik.com/256/9523/9523340.png?semt=ais_hybrid" alt="ASM Icon" class="w-12 h-12 mr-4">
-                            <div>
-                                <h3 class="text-black text-xl font-semibold">Oracle Automatic Storage Management</h3>
-                                <div class="w-full bg-gray-700 rounded mt-2 h-1.5">
-                                    <div class="bg-teal-800 h-1.5 rounded" style="width: 87%;"></div>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="text-teal-800 text-xl font-bold">87%</div>
-                    </div>
-    
-                    <!-- Skill Card: ICT Security Policy Implementation -->
-                    <div class=" rounded-lg p-5 flex items-center justify-between shadow-lg transform transition-transform duration-300 hover:-translate-y-1">
-                        <div class="flex items-center">
-                            <img src="https://cdn-icons-png.flaticon.com/512/3135/3135715.png" alt="ICT Security Icon" class="w-12 h-12 mr-4">
-                            <div>
-                                <h3 class="text-black text-xl font-semibold">ICT Security Policy Implementation</h3>
-                                <div class="w-full bg-gray-700 rounded mt-2 h-1.5">
-                                    <div class="bg-teal-800 h-1.5 rounded" style="width: 89%;"></div>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="text-teal-800 text-xl font-bold">89%</div>
-                    </div>
+                    {% endfor %}
+                
                 </div>
             </div>
         </section>

@@ -17,538 +17,478 @@
         <!-- SWIPER JS STYLESHEET -->
         <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@8/swiper-bundle.min.css"/>
         <!-- MAIN STYLESHEET -->
-        <link rel="stylesheet" href="/static/css/output.css">
+        <link rel="stylesheet" href="public/output.css">
         <!-- SWIPER JS SCRIPT -->
         <script src="https://cdn.jsdelivr.net/npm/swiper/swiper-bundle.min.js" defer></script>
         <!-- EMAIL VALIDATION SCRIPT -->
-        <script src="/static/js/email-validation.js" defer></script>
+        <script src="src/js/email-validation.js" defer></script>
         <!-- MOBILE NAV MENU SCRIPT -->
-        <script src="/static/js/mobile-nav-menu.js" defer></script>
+        <script src="src/js/mobile-nav-menu.js" defer></script>
         <!-- TESTIMONIAL SLIDER SCRIPT -->
-        <script src="/static/js/testimonial-slider.js" defer></script>
+        <script src="src/js/testimonial-slider.js" defer></script>
         <!-- TEMPORARILY USING GOOGLE FONTS FROM SERVER -->
         <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Be+Vietnam+Pro:wght@500&display=swap" rel="stylesheet">
-  <!-- AOS CSS -->
-  <link href="https://cdn.jsdelivr.net/npm/aos@2.3.1/dist/aos.css" rel="stylesheet">
     </head>
-    <body class="font-BeVietnamPro">
+<body>
 
-<!-- NAV BAR -->
-<nav class="relative container mx-auto px-4 py-8 md:px-2 md:py-16 xl:px-12">
-            <!-- FLEX CONTAINER -->
-            <div class="flex items-center justify-between">
-                <!-- LOGO -->
-                <div class="pt-2">
-                    <a href="{% url 'index' %}"><img src="/static/images/logo.svg" height="24" width="146" alt="A horizontal wordmark logo with four dots of varying red and the words 'manage' next to it in lowercase sans-serif font"></a>
-                </div>
-                <div class="hidden md:flex space-x-6">
-                  <a href="{% url 'index' %}" aria-label="Visit our Pricing page" class="text-veryDarkBlue hover:text-darkGrayishBlue transition ease-in">Home</a>
-                  <a href="{% url 'about' %}" aria-label="Visit our Product page" class="hover:text-darkGrayishBlue transition ease-in">About</a>
-                  <a href="{% url 'tutorial' %}" aria-label="Visit our Careers page" class="hover:text-darkGrayishBlue transition ease-in">Tutorial</a>
-                  <a href="{% url 'contact' %}" aria-label="Visit our Community page" class="hover:text-darkGrayishBlue transition ease-in">Contact</a>
-                  <a href="{% url 'cv' %}" aria-label="Visit our Community page" class="hover:text-darkGrayishBlue transition ease-in">CV</a>
-                </div>
-                <!-- CTA BUTTON -->
-                <div class="button">
-                    <a href="#" class="hidden cta-button text-sm p-3 px-6 pt-2 text-veryLightGray bg-brightRed rounded-full baseline transition ease-in hover:bg-brightRedLight md:block">Get Started</a>
-                </div>
-
-                <!-- MOBILE NAV MENU ICON -->
-                <button id="mobile-nav-btn" class="block hamburger focus:outline-none md:hidden">
-                    <span></span>
-                    <span></span>
-                    <span></span>
-                </button>
-            </div>
-
-            <div class="md:hidden z-50 relative"> <!-- Make the z-index higher and set it to relative positioning -->
-                <div id="mobile-nav-menu" class="overflow-visible hidden absolute flex-col items-center self-end rounded py-8 mt-10 space-y-6 font-bold bg-veryLightGray left-6 right-6 drop-shadow-lg sm:w-auto sm:self-center z-50">
-                  <a href="{% url 'index' %}" aria-label="Visit our Pricing page" class="text-veryDarkBlue hover:text-darkGrayishBlue transition ease-in">Home</a>
-                  <a href="{% url 'about' %}" aria-label="Visit our Product page" class="hover:text-darkGrayishBlue transition ease-in">About</a>
-                  <a href="{% url 'tutorial' %}" aria-label="Visit our Careers page" class="hover:text-darkGrayishBlue transition ease-in">Tutorial</a>
-                  <a href="{% url 'contact' %}" aria-label="Visit our Community page" class="hover:text-darkGrayishBlue transition ease-in">Contact</a>
-                  <a href="{% url 'cv' %}" aria-label="Visit our Community page" class="hover:text-darkGrayishBlue transition ease-in">CV</a>
-                </div>
-            </div>
-
-</nav>
-<!--nav bar done-->
-
-
-    <!-- Preloader -->
-    <div id="preloader" class="fixed inset-0 bg-gray-200 flex items-center justify-center z-50">
-        <i class="fa fa-spinner fa-pulse fa-3x text-brightRed"></i>
-    </div>
-
-    <!-- Header -->
-    <section class="bg-gray-50 py-16 text-center">
-        <div class="container mx-auto">
-            <h1 class="text-4xl font-bold text-gray-800 fade-in">Welcome to Educampus</h1>
-            <p class="text-lg text-gray-600 mt-4 fade-in">Your gateway to modern education and global opportunities.</p>
-        </div>
-    </section>
-
-    <!-- Courses Section -->
-    <section class="py-16 bg-white">
-        <div class="container mx-auto text-center">
-            <h2 class="text-3xl font-bold text-gray-800 mb-8 fade-in">Our Courses</h2>
-
-            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 fade-in">
-                <!-- Example Course Card (with onclick to open the popup) -->
-<div onclick="openPopup()" class="bg-gray-100 p-6 rounded-lg shadow-md hover:shadow-lg transition duration-300 cursor-pointer">
-    <img src="/static/images/single_course_thumb_1.png" alt="Political Science" class="w-full h-40 object-cover rounded-md mb-4">
-    <h3 class="text-2xl font-semibold mb-2">Political Science</h3>
-    <p class="text-gray-600 mb-4">Explore the world of politics and governance through comprehensive studies and insights.</p>
-    <a href="#" class="text-brightRed hover:underline">Apply Now <i class="fa fa-angle-right"></i></a>
-  </div>
-  
-
-                <div class="bg-gray-100 p-6 rounded-lg shadow-md hover:shadow-lg transition duration-300">
-                    <img src="/static/images/single_course_thumb_2.png" alt="Literature" class="w-full h-40 object-cover rounded-md mb-4">
-                    <h3 class="text-2xl font-semibold mb-2">Literature</h3>
-                    <p class="text-gray-600 mb-4">Dive deep into the world of classic and modern literature.</p>
-                    <a href="#" class="text-brightRed hover:underline">Apply Now <i class="fa fa-angle-right"></i></a>
-                </div>
-
-                <div class="bg-gray-100 p-6 rounded-lg shadow-md hover:shadow-lg transition duration-300">
-                    <img src="/static/images/single_course_thumb_3.png" alt="Mathematics" class="w-full h-40 object-cover rounded-md mb-4">
-                    <h3 class="text-2xl font-semibold mb-2">Advanced Mathematics</h3>
-                    <p class="text-gray-600 mb-4">Solve complex problems and enhance your mathematical skills.</p>
-                    <a href="#" class="text-brightRed hover:underline">Apply Now <i class="fa fa-angle-right"></i></a>
-                </div>
-                <!-- Add more courses here -->
-            </div>
-
-            <a href="#" class="inline-block mt-8 px-6 py-3 bg-brightRed text-white rounded-full hover:bg-brightRedLight transition duration-300">View All Courses</a>
-        </div>
-    </section>
-
-    <!-- Call to Action -->
-    <section class="bg-brightRed text-white py-16">
-        <div class="container mx-auto text-center">
-            <h2 class="text-3xl font-bold mb-4">Ready to join us?</h2>
-            <p class="mb-8">Access all the information you need to make the right choice.</p>
-            <a href="#" class="bg-white text-brightRed px-6 py-3 rounded-full font-semibold hover:bg-gray-100 transition duration-300">Check Your Options</a>
-        </div>
-    </section>
-
-    <!-- Popup Modal (Hidden by default) -->
-<div id="course-popup" class="fixed inset-0 bg-gray-900 bg-opacity-50 flex items-center justify-center hidden z-50">
-    <div class="bg-white rounded-lg shadow-lg max-w-4xl w-full md:flex">
-      <!-- Left Side (Image like a YouTube video) -->
-      <div class="md:w-1/2">
-        <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQWVpVVITKudEHRYIHf4dWKQXw2TFvAITUo8A&s" alt="Course Video Thumbnail" class="w-full h-full object-cover rounded-t-lg md:rounded-l-lg md:rounded-tr-none">
-      </div>
-  
-      <!-- Right Side (Course Description and YouTube Button) -->
-      <div class="md:w-1/2 p-6">
-        <h3 class="text-2xl font-bold text-gray-800 mb-4">Course Title</h3>
-        <p class="text-gray-600 mb-4">
-          1. This is the first line of the description.<br>
-          2. Second line of description.<br>
-          3. Third line of description.<br>
-          4. Fourth line of description.<br>
-          5. Fifth line of description.<br>
-          6. Sixth line of description.
-        </p>
-        <a href="https://www.youtube.com" target="_blank" class="bg-blue-500 text-black px-4 py-2 rounded-md hover:bg-orange-600 transition">
-          Go to YouTube
-        </a>
-      </div>
-    </div>
-  
-    <!-- Close Button -->
-    <button id="close-popup" class="absolute top-4 right-4 text-white text-2xl">&times;</button>
-  </div>
-  
-  <style>
-    /* Custom style for dashed lines under icons */
-    .dashed-line {
-      width: 2px;
-      height: 60px;
-      background: repeating-linear-gradient(
-        to bottom,
-        #a1a191,
-        #a1a191 5px,
-        transparent 5px,
-        transparent 10px
-      );
-      margin: 0 auto;
-    }
-  </style>
-</head>
-
-<!------------------------------>
-
-<div class="bg-gray-100">
-  <div class="flex">
-    <!-- Left Section -->
-    <div class="w-1/2 bg-white p-16">
-      <h1 class="text-4xl font-bold mb-4">Welcome To Our University</h1>
-      <p class="text-gray-600 leading-relaxed">
-        When the odds are against him and their dangers work to do, you bet your life Speed Racer will see it through. Well, we're movin' on up to the east side, to a deluxe apartment in the sky. So this is the tale of our castaways.
-      </p>
-    </div>
-
-    <!-- Right Section -->
-    <div class="w-1/2 bg-yellow-100 p-16">
-      <div class="">
-        <!-- Associate's Degree -->
-        <div class="flex items-start">
-          <div class="flex flex-col items-center">
-            <div class="bg-gray-200 p-4 rounded-full">
-              <img src="https://img.icons8.com/ios-filled/50/000000/graduation-cap.png" class="w-12 h-12" alt="Associate's Degree Icon">
-            </div>
-            <div class="dashed-line"></div>
+    <!-- NAV BAR -->
+    <nav class="relative container mx-auto px-4 py-8 md:px-2 md:py-16 xl:px-12">
+      <!-- FLEX CONTAINER -->
+      <div class="flex items-center justify-between">
+          <!-- LOGO -->
+          <div class="pt-2">
+              <a href="{% url 'index' %}"><img src="/static/images/logo.svg" height="24" width="146" alt="A horizontal wordmark logo with four dots of varying red and the words 'manage' next to it in lowercase sans-serif font"></a>
           </div>
-          <div class="ml-8">
-            <h2 class="text-xl font-semibold">ASSOCIATE'S DEGREE</h2>
-            <p class="mt-2 text-gray-600">You would see the biggest gift would be from me and the card attached would say thank you for being a friend.</p>
+          <div class="hidden md:flex space-x-6">
+            <a href="{% url 'index' %}" aria-label="Visit our Pricing page" class="text-veryDarkBlue hover:text-darkGrayishBlue transition ease-in">Home</a>
+            <a href="{% url 'about' %}" aria-label="Visit our Product page" class="hover:text-darkGrayishBlue transition ease-in">About</a>
+            <a href="{% url 'tutorial' %}" aria-label="Visit our Careers page" class="hover:text-darkGrayishBlue transition ease-in">Tutorial</a>
+            <a href="{% url 'contact' %}" aria-label="Visit our Community page" class="hover:text-darkGrayishBlue transition ease-in">Contact</a>
+            <a href="{% url 'cv' %}" aria-label="Visit our Community page" class="hover:text-darkGrayishBlue transition ease-in">CV</a>
           </div>
-        </div>
-
-        <!-- Bachelor's Degree -->
-        <div class="flex items-start">
-          <div class="flex flex-col items-center">
-            <div class="bg-gray-200 p-4 rounded-full">
-              <img src="https://img.icons8.com/ios-filled/50/000000/graduation-cap.png" class="w-12 h-12" alt="Bachelor's Degree Icon">
-            </div>
-            <div class="dashed-line"></div>
-          </div>
-          <div class="ml-8">
-            <h2 class="text-xl font-semibold">BACHELOR'S DEGREE</h2>
-            <p class="mt-2 text-gray-600">On your mark, get set, and go now. Got a dream and we just know now we're gonna make our dream come true.</p>
-          </div>
-        </div>
-
-        <!-- Master's Degree -->
-        <div class="flex items-start">
-          <div class="flex flex-col items-center">
-            <div class="bg-gray-200 p-4 rounded-full">
-              <img src="https://img.icons8.com/ios-filled/50/000000/graduation-cap.png" class="w-12 h-12" alt="Master's Degree Icon">
-            </div>
-            
-          </div>
-          <div class="ml-8">
-            <h2 class="text-xl font-semibold">MASTER'S DEGREE</h2>
-            <p class="mt-2 text-gray-600">Just sit right back and you'll hear a tale, a tale of a fateful trip that started from this tropic port aboard this tiny ship.</p>
-          </div>
-        </div>
-      </div>
-    </div>
-  </div>
-</div>
-<style>
-    .hidden {
-      display: none;
-    }
-  </style>
-</head>
-
-<!------------------------------>
-
-<div class="container mx-auto p-6 grid grid-cols-3 gap-6">
-    
-    <!-- Main Content (Featured Post) -->
-    <div class="col-span-2 bg-white rounded-lg shadow-lg relative">
-      <!-- Featured Image -->
-      <img id="featured-image" src="" alt="Featured Post" class="w-full rounded-t-lg">
-      
-      <!-- Post Date Ribbon -->
-      <div class="absolute top-0 right-0 bg-orange-500 text-white text-center py-1 px-4">
-        <p id="featured-date" class="text-lg"></p>
-        <p id="featured-month"></p>
-      </div>
-      
-      <!-- Post Details -->
-      <div class="p-6">
-        <h2 id="featured-title" class="text-2xl font-bold mb-4"></h2>
-        <p id="featured-description" class="text-gray-600 mb-4"></p>
-      </div>
-    </div>
-    
-    <!-- Sidebar -->
-    <div class="col-span-1">
-      <!-- Latest News Section -->
-      <div class="bg-white p-4 rounded-lg shadow-lg mb-6">
-        <h3 class="font-semibold mb-4">Latest News</h3>
-        <ul class="space-y-4">
-          <li class="flex space-x-4 cursor-pointer" onclick="updateFeatured('https://www.aditmicrosys.com/assets/images/it_infra/oracle-big.jpg', '08', 'Apr', 'YOUR WAY IN THE WORLD TODAY TAKES EVERYTHING YOU\'VE GOT', 'Posted by: Admin')">
-            <img src="https://www.aditmicrosys.com/assets/images/it_infra/oracle-big.jpg" alt="News Image" class="w-16 h-16 rounded-lg">
-            <div>
-              <p class="font-bold">MISTER WE COULD USE A MAN LIKE HERBERT</p>
-              <p class="text-sm text-gray-500">April 19, 2015</p>
-            </div>
-          </li>
-          <li class="flex space-x-4 cursor-pointer" onclick="updateFeatured('https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQgv8tlZymsRnKgaOSHJ5oKv5o6OsXAw29KWeiz0K7L-JKT1r6EG6iI8HpsW4bh8fuaLJY&usqp=CAU', '12', 'Apr', 'E KNOW FLIPPER LIVES IN A WORLD FULL OF WONDER', 'Posted by: Admin 2')">
-            <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQgv8tlZymsRnKgaOSHJ5oKv5o6OsXAw29KWeiz0K7L-JKT1r6EG6iI8HpsW4bh8fuaLJY&usqp=CAU" alt="News Image" class="w-16 h-16 rounded-lg">
-            <div>
-              <p class="font-bold">E KNOW FLIPPER LIVES IN A WORLD FULL OF WONDER</p>
-              <p class="text-sm text-gray-500">April 12, 2015</p>
-            </div>
-          </li>
-          <li class="flex space-x-4 cursor-pointer" onclick="updateFeatured('https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcT-s0WLZLNQkVkSEQqxxMFXdQu37w0HB-0VihGmWLe1aFgBLpETJisKe1RDxwigZO32iYs&usqp=CAU', '15', 'Apr', 'VERY BEST TO MAKE THE OTHERS COMFORTABLE', 'Posted by: Admin 3')">
-            <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcT-s0WLZLNQkVkSEQqxxMFXdQu37w0HB-0VihGmWLe1aFgBLpETJisKe1RDxwigZO32iYs&usqp=CAU" alt="News Image" class="w-16 h-16 rounded-lg">
-            <div>
-              <p class="font-bold">VERY BEST TO MAKE THE OTHERS COMFORTABLE</p>
-              <p class="text-sm text-gray-500">April 15, 2015</p>
-            </div>
-          </li>
-        </ul>
-      </div>
-    </div>
-    
-  </div>
-
-  <script>
-    // Function to update the featured post on the left side
-    function updateFeatured(imageUrl, day, month, title, description) {
-      document.getElementById('featured-image').src = imageUrl;
-      document.getElementById('featured-date').innerText = day;
-      document.getElementById('featured-month').innerText = month;
-      document.getElementById('featured-title').innerText = title;
-      document.getElementById('featured-description').innerText = description;
-    }
-
-    // Initialize with first latest news item by default
-    window.onload = function() {
-      // Automatically load the first news item as the featured post
-      updateFeatured('https://www.aditmicrosys.com/assets/images/it_infra/oracle-big.jpg', '08', 'Apr', 'YOUR WAY IN THE WORLD TODAY TAKES EVERYTHING YOU\'VE GOT', 'Posted by: Admin');
-    };
-  </script>
-
-
-
-    <!-- Footer -->
-    <footer class="bg-gray-900 text-white py-12">
-        <div class="container mx-auto">
-            <div class="grid grid-cols-1 md:grid-cols-4 gap-8">
-                <div>
-                    <h3 class="text-xl font-semibold mb-4">About Us</h3>
-                    <p>Educampus is a modern online education platform offering world-class courses across various disciplines.</p>
-                    <div class="mt-4">
-                        <a href="#" class="inline-block text-gray-400 hover:text-white"><i class="fa fa-facebook"></i></a>
-                        <a href="#" class="inline-block text-gray-400 hover:text-white"><i class="fa fa-twitter"></i></a>
-                        <a href="#" class="inline-block text-gray-400 hover:text-white"><i class="fa fa-linkedin"></i></a>
-                    </div>
-                </div>
-                <div>
-                    <h3 class="text-xl font-semibold mb-4">Latest Posts</h3>
-                    <ul>
-                        <li class="mb-2"><a href="#" class="text-gray-400 hover:underline">On your mark, get set, go!</a></li>
-                        <li class="mb-2"><a href="#" class="text-gray-400 hover:underline">Discover the new curriculum.</a></li>
-                    </ul>
-                </div>
-                <div>
-                    <h3 class="text-xl font-semibold mb-4">Latest Tweets</h3>
-                    <ul>
-                        <li class="mb-2 text-gray-400">Check out our new courses! <a href="#" class="hover:underline">http://educampus.com</a></li>
-                    </ul>
-                </div>
-                <div>
-                    <h3 class="text-xl font-semibold mb-4">Contact Us</h3>
-                    <ul>
-                        <li class="mb-2">123 Design Street, Sydney, Australia</li>
-                        <li class="mb-2">+01 234 567 890</li>
-                        <li class="mb-2">info@educampus.com</li>
-                    </ul>
-                </div>
-            </div>
-        </div>
-    </footer>
-
-    <!-- Scripts -->
-    <script>
-        // Preloader
-        window.addEventListener('load', function () {
-            document.getElementById('preloader').style.display = 'none';
-        });
-
-        // Mobile Nav
-        const mobileNavBtn = document.getElementById('mobile-nav-btn');
-        const mobileNavMenu = document.getElementById('mobile-nav-menu');
-
-        mobileNavBtn.addEventListener('click', () => {
-            mobileNavMenu.classList.toggle('hidden');
-        });
-  // Open Popup Function
-  function openPopup() {
-    document.getElementById('course-popup').classList.remove('hidden');
-  }
-
-  // Close Popup Function
-  document.getElementById('close-popup').addEventListener('click', function() {
-    document.getElementById('course-popup').classList.add('hidden');
-  });
-
-  // Close popup when clicking outside of the content
-  window.addEventListener('click', function(e) {
-    const popup = document.getElementById('course-popup');
-    if (e.target === popup) {
-      popup.classList.add('hidden');
-    }
-  });
-
-
-    </script>
-
-
-<div class="max-w-md mx-auto rounded-lg relative overflow-hidden group">
-  <!-- Card Image -->
-  <div class="card-image">
-      <img src="https://html.fleexstudio.com/pico/assets/img/all-images/blog-img1.png" alt="Abstract Background" class="w-full h-80 object-cover">
-  </div>
-
-  <!-- Card Content Overlay -->
-  <div class="absolute inset-0 flex flex-col justify-end p-6 bg-black bg-opacity-70 text-white transition-transform duration-500 transform translate-y-full group-hover:translate-y-0">
-      <!-- Meta Information -->
-      <div class="flex items-center text-gray-300 text-sm mb-4 space-x-4">
-          <!-- Date -->
-          <div class="flex items-center space-x-1">
-              <i class="fas fa-calendar-alt"></i>
-              <span>23 April 2023</span>
-          </div>
-          <!-- Author -->
-          <div class="flex items-center space-x-1">
-              <i class="fas fa-user"></i>
-              <span>Alex Ross</span>
-          </div>
-      </div>
-
-      <!-- Title -->
-      <h3 class="text-lg font-bold mb-2">Crafting Compelling Designs & Strategic Marketing: A Creative Journey Unveiled</h3>
-
-      <!-- Description -->
-      <p class="text-gray-300 text-sm mb-4">Graphic design and digital marketing collide in a symphony of creativity and strategy. Here, we delve into the best art.</p>
-
-      <!-- Read More Link -->
-      <a href="#" class="text-orange-500 font-semibold text-sm inline-flex items-center space-x-1 hover:underline">
-          <span>Read More</span>
-          <i class="fas fa-arrow-right"></i>
-      </a>
-  </div>
-</div>
-
-
-<body class="bg-gray-100 py-10">
-  <div class="max-w-7xl mx-auto px-4">
-      <h2 class="text-center text-3xl font-bold text-gray-800 mb-8">Top Popular Course</h2>
-      <h3 class="text-center text-2xl font-semibold text-gray-600 mb-10">Building A Better Tomorrow</h3>
-
-      <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
-          <!-- Course Card 1 -->
-          <div class="bg-white rounded-lg shadow-md p-4">
-              <div class="relative mb-4">
-                  <span class="absolute top-2 left-2 bg-blue-500 text-white px-2 py-1 rounded text-xs">Development</span>
-                  <img src="https://wowtheme7.com/tf/escola/assets/img/course/2.png" alt="Course Image" class="w-full rounded-lg">
-              </div>
-              <div class="flex items-center justify-between mb-2">
-                  <span class="text-gray-600 text-sm">👤 50 Students</span>
-                  <span class="text-yellow-500 text-sm flex items-center">
-                      ★★★★★ (15)
-                  </span>
-              </div>
-              <h4 class="text-lg font-semibold text-gray-800 mb-2">The Power of Personal Branding</h4>
-              <div class="flex items-center">
-                  <img src="https://wowtheme7.com/tf/escola/assets/img/course/2.png" alt="Instructor" class="rounded-full w-8 h-8 mr-2">
-                  <span class="text-sm text-gray-600">By Angela</span>
-              </div>
-              <a href="#" class="text-blue-500 font-semibold mt-4 inline-block">Enroll Now →</a>
+          <!-- CTA BUTTON -->
+          <div class="button">
+              <a href="#" class="hidden cta-button text-sm p-3 px-6 pt-2 text-veryLightGray bg-brightRed rounded-full baseline transition ease-in hover:bg-brightRedLight md:block">Get Started</a>
           </div>
 
-          <!-- Course Card 2 -->
-          <div class="bg-white rounded-lg shadow-md p-4">
-              <div class="relative mb-4">
-                  <span class="absolute top-2 left-2 bg-blue-500 text-white px-2 py-1 rounded text-xs">Design</span>
-                  <img src="https://wowtheme7.com/tf/escola/assets/img/course/2.png" alt="Course Image" class="w-full rounded-lg">
-              </div>
-              <div class="flex items-center justify-between mb-2">
-                  <span class="text-gray-600 text-sm">👤 30 Students</span>
-                  <span class="text-yellow-500 text-sm flex items-center">
-                      ★★★★★ (11)
-                  </span>
-              </div>
-              <h4 class="text-lg font-semibold text-gray-800 mb-2">Design of Personal Shape Our Your Path</h4>
-              <div class="flex items-center">
-                  <img src="https://via.placeholder.com/30" alt="Instructor" class="rounded-full w-8 h-8 mr-2">
-                  <span class="text-sm text-gray-600">By Angela</span>
-              </div>
-              <a href="#" class="text-blue-500 font-semibold mt-4 inline-block">Enroll Now →</a>
-          </div>
-
-          <!-- Course Card 3 -->
-          <div class="bg-white rounded-lg shadow-md p-4">
-              <div class="relative mb-4">
-                  <span class="absolute top-2 left-2 bg-blue-500 text-white px-2 py-1 rounded text-xs">Python</span>
-                  <img src="https://via.placeholder.com/350x150" alt="Course Image" class="w-full rounded-lg">
-              </div>
-              <div class="flex items-center justify-between mb-2">
-                  <span class="text-gray-600 text-sm">👤 20 Students</span>
-                  <span class="text-yellow-500 text-sm flex items-center">
-                      ★★★★★ (12)
-                  </span>
-              </div>
-              <h4 class="text-lg font-semibold text-gray-800 mb-2">Python for Data Science & Machine</h4>
-              <div class="flex items-center">
-                  <img src="https://via.placeholder.com/30" alt="Instructor" class="rounded-full w-8 h-8 mr-2">
-                  <span class="text-sm text-gray-600">By Angela</span>
-              </div>
-              <a href="#" class="text-blue-500 font-semibold mt-4 inline-block">Enroll Now →</a>
-          </div>
-      </div>
-  </div>
-</body>
-
-
-<body class="bg-gray-100 py-10">
-<div class="relative max-w-7xl mx-auto px-4">
-  <!-- Introductory Text with Flex Layout -->
-  <div class="flex flex-col lg:flex-row justify-between items-start mb-8">
-      <!-- Heading Section -->
-      <div>
-          <p class="text-blue-600 font-semibold">Services we're offering</p>
-          <h2 class="text-4xl font-bold text-gray-800 mt-2">Knowledge Is Power Is<br>The Key Education</h2>
-      </div>
-      <!-- Text and Button Section -->
-      <div class="mt-4 lg:mt-0 lg:ml-8">
-          <p class="text-gray-600">
-              Education is the process of acquiring knowledge, skills, values, and attitudes through various methods such as
-          </p>
-          <button class="mt-4 px-4 py-2 border border-blue-500 text-blue-500 font-semibold rounded-md hover:bg-blue-100">
-              Contact Us
+          <!-- MOBILE NAV MENU ICON -->
+          <button id="mobile-nav-btn" class="block hamburger focus:outline-none md:hidden">
+              <span></span>
+              <span></span>
+              <span></span>
           </button>
       </div>
-  </div>
 
-  <!-- Main Content Section -->
-  <div class="flex flex-col lg:flex-row gap-8">
-      <!-- Yellow Card -->
-      <div class="bg-yellow-400 rounded-lg p-6 flex-1">
-          <h3 class="text-2xl font-bold mb-4">Education Is The Key</h3>
-          <ul class="space-y-2 text-gray-800">
-              <li class="flex items-start"><span class="text-blue-600 mr-2">✔️</span> Education is the key</li>
-              <li class="flex items-start"><span class="text-blue-600 mr-2">✔️</span> A Whole Lot of Digital Love for Less</li>
-              <li class="flex items-start"><span class="text-blue-600 mr-2">✔️</span> Know what your target market wants and</li>
-              <li class="flex items-start"><span class="text-blue-600 mr-2">✔️</span> A Whole Lot of Digital Love for Less</li>
-          </ul>
-      </div>
-
-      <!-- Image Section with Overlay and Dotted Design -->
-      <div class="relative flex-1 dot-pattern rounded-lg">
-          <div class="bg-gray-300 w-full h-full rounded-lg flex items-center justify-center">
-              <span class="text-gray-500 text-3xl">600 x 400</span>
-          </div>
-          <div class="absolute bottom-4 right-4 bg-blue-600 text-white px-4 py-2 rounded-lg">
-              <p class="text-lg font-bold">25</p>
-              <p class="text-sm">Years Of experience</p>
+      <div class="md:hidden z-50 relative"> <!-- Make the z-index higher and set it to relative positioning -->
+          <div id="mobile-nav-menu" class="overflow-visible hidden absolute flex-col items-center self-end rounded py-8 mt-10 space-y-6 font-bold bg-veryLightGray left-6 right-6 drop-shadow-lg sm:w-auto sm:self-center z-50">
+            <a href="{% url 'index' %}" aria-label="Visit our Pricing page" class="text-veryDarkBlue hover:text-darkGrayishBlue transition ease-in">Home</a>
+            <a href="{% url 'about' %}" aria-label="Visit our Product page" class="hover:text-darkGrayishBlue transition ease-in">About</a>
+            <a href="{% url 'tutorial' %}" aria-label="Visit our Careers page" class="hover:text-darkGrayishBlue transition ease-in">Tutorial</a>
+            <a href="{% url 'contact' %}" aria-label="Visit our Community page" class="hover:text-darkGrayishBlue transition ease-in">Contact</a>
+            <a href="{% url 'cv' %}" aria-label="Visit our Community page" class="hover:text-darkGrayishBlue transition ease-in">CV</a>
           </div>
       </div>
-  </div>
+
+  </nav>
+
+  <section class=" py-16 relative overflow-hidden">
+    <!-- Add the animated background container -->
+    <div class="area">
+        <ul class="circles">
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+        </ul>
+    </div>
+
+    <div class="relative max-w-7xl mx-auto grid grid-cols-12 z-10">
+        <div class="col-span-7 flex flex-col justify-center p-6 text-center rounded-sm lg:text-left">
+            <h1 class="text-5xl font-bold leading-none sm:text-6xl text-white">Better Learning <br>
+                <span class="text-violet-400">Future</span> Starts <br>
+                With <span class="text-yellow-300">Najib</span>
+            </h1>
+            
+            <div class="flex flex-col space-y-4 sm:items-center sm:justify-center sm:flex-row sm:space-y-0 sm:space-x-4 lg:justify-start pt-10">
+                <a rel="noopener noreferrer" href="#" class="px-8 py-3 text-lg font-semibold border rounded text-white border-white hover:border-yellow-600 hover:text-yellow-600">View Tutorials</a>
+            </div>
+        </div>
+        <div class="col-span-5 items-center justify-center p-6">
+            <img src="https://mambaui.com/assets/svg/Business_SVG.svg" alt="" class="object-contain w-full h-72 sm:h-80 lg:h-96 xl:h-112 2xl:h-128">
+        </div>
+    </div>
+</section>
+<style>
+    /* Background Animation */
+    .area {
+        background: #015a61;
+        background: -webkit-linear-gradient(to left, #8f94fb, #4e54c8);
+        width: 100%;
+        height: 100vh;
+        position: absolute;
+        top: 0;
+        left: 0;
+        z-index: -1;
+    }
+    
+    .circles {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 96%;
+        overflow: hidden;
+    }
+    
+    .circles li {
+        position: absolute;
+        display: block;
+        list-style: none;
+        width: 20px;
+        height: 20px;
+        background: rgba(255, 255, 255, 0.2);
+        animation: animate 25s linear infinite;
+        bottom: -150px;
+    }
+    
+    .circles li:nth-child(1) { left: 25%; width: 80px; height: 80px; animation-delay: 0s; }
+    .circles li:nth-child(2) { left: 10%; width: 20px; height: 20px; animation-delay: 2s; animation-duration: 12s; }
+    .circles li:nth-child(3) { left: 70%; width: 20px; height: 20px; animation-delay: 4s; }
+    .circles li:nth-child(4) { left: 40%; width: 60px; height: 60px; animation-delay: 0s; animation-duration: 18s; }
+    .circles li:nth-child(5) { left: 65%; width: 20px; height: 20px; animation-delay: 0s; }
+    .circles li:nth-child(6) { left: 75%; width: 110px; height: 110px; animation-delay: 3s; }
+    .circles li:nth-child(7) { left: 35%; width: 150px; height: 150px; animation-delay: 7s; }
+    .circles li:nth-child(8) { left: 50%; width: 25px; height: 25px; animation-delay: 15s; animation-duration: 45s; }
+    .circles li:nth-child(9) { left: 20%; width: 15px; height: 15px; animation-delay: 2s; animation-duration: 35s; }
+    .circles li:nth-child(10) { left: 85%; width: 150px; height: 150px; animation-delay: 0s; animation-duration: 11s; }
+    
+    @keyframes animate {
+        0% {
+            transform: translateY(0) rotate(0deg);
+            opacity: 1;
+            border-radius: 0;
+        }
+        100% {
+            transform: translateY(-1000px) rotate(720deg);
+            opacity: 0;
+            border-radius: 50%;
+        }
+    }
+    </style>
+
+
+
+
+
+ <!-- Section with Background Animation -->
+
+  <!-- <section class="">
+	<div class="container px-4 py-16 mx-auto space-y-8 lg:max-w-3xl">
+		<h2 class="text-2xl font-bold md:text-4xl">Timeline</h2>
+		<div class="space-y-8">
+			<div>
+				<h3 class="mb-3 text-lg font-bold md:text-xl">2021</h3>
+				<ul class="space-y-4">
+					<li class="space-y-1">
+						<div class="flex items-center space-x-2">
+							<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" class="w-4 h-4 fill-current dark:text-violet-600">
+								<path d="M426.072,86.928A238.75,238.75,0,0,0,88.428,424.572,238.75,238.75,0,0,0,426.072,86.928ZM257.25,462.5c-114,0-206.75-92.748-206.75-206.75S143.248,49,257.25,49,464,141.748,464,255.75,371.252,462.5,257.25,462.5Z"></path>
+								<polygon points="221.27 305.808 147.857 232.396 125.23 255.023 221.27 351.063 388.77 183.564 366.142 160.937 221.27 305.808"></polygon>
+							</svg>
+							<h4 class="font-medium">Quis velit quae similique maxime optio temporibus</h4>
+						</div>
+						<p class="ml-7 dark:text-gray-600">Illum hic placeat unde porro, cupiditate nesciunt? Numquam debitis eligendi aspernatur mum.</p>
+					</li>
+					<li class="space-y-1">
+						<div class="flex items-center space-x-2">
+							<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" class="w-4 h-4 fill-current dark:text-violet-600">
+								<path d="M426.072,86.928A238.75,238.75,0,0,0,88.428,424.572,238.75,238.75,0,0,0,426.072,86.928ZM257.25,462.5c-114,0-206.75-92.748-206.75-206.75S143.248,49,257.25,49,464,141.748,464,255.75,371.252,462.5,257.25,462.5Z"></path>
+								<polygon points="221.27 305.808 147.857 232.396 125.23 255.023 221.27 351.063 388.77 183.564 366.142 160.937 221.27 305.808"></polygon>
+							</svg>
+							<h4 class="font-medium">Quis velit quae similique maxime optio temporibus</h4>
+						</div>
+						<p class="ml-7 dark:text-gray-600">Illum hic placeat unde porro, cupiditate nesciunt? Numquam debitis eligendi aspernatur mum.</p>
+					</li>
+				</ul>
+			</div>
+			<div>
+				<h3 class="mb-3 text-lg font-bold md:text-xl">2020</h3>
+				<ul class="space-y-4">
+					<li class="space-y-1">
+						<div class="flex items-center space-x-2">
+							<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" class="w-4 h-4 fill-current dark:text-violet-600">
+								<path d="M426.072,86.928A238.75,238.75,0,0,0,88.428,424.572,238.75,238.75,0,0,0,426.072,86.928ZM257.25,462.5c-114,0-206.75-92.748-206.75-206.75S143.248,49,257.25,49,464,141.748,464,255.75,371.252,462.5,257.25,462.5Z"></path>
+								<polygon points="221.27 305.808 147.857 232.396 125.23 255.023 221.27 351.063 388.77 183.564 366.142 160.937 221.27 305.808"></polygon>
+							</svg>
+							<h4 class="font-medium">Quis velit quae similique maxime optio temporibus</h4>
+						</div>
+						<p class="ml-7 dark:text-gray-600">Illum hic placeat unde porro, cupiditate nesciunt? Numquam debitis eligendi aspernatur mum.</p>
+					</li>
+					<li class="space-y-1">
+						<div class="flex items-center space-x-2">
+							<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" class="w-4 h-4 fill-current dark:text-violet-600">
+								<path d="M426.072,86.928A238.75,238.75,0,0,0,88.428,424.572,238.75,238.75,0,0,0,426.072,86.928ZM257.25,462.5c-114,0-206.75-92.748-206.75-206.75S143.248,49,257.25,49,464,141.748,464,255.75,371.252,462.5,257.25,462.5Z"></path>
+								<polygon points="221.27 305.808 147.857 232.396 125.23 255.023 221.27 351.063 388.77 183.564 366.142 160.937 221.27 305.808"></polygon>
+							</svg>
+							<h4 class="font-medium">Quis velit quae similique maxime optio temporibus</h4>
+						</div>
+						<p class="ml-7 dark:text-gray-600">Illum hic placeat unde porro, cupiditate nesciunt? Numquam debitis eligendi aspernatur mum.</p>
+					</li>
+					<li class="space-y-1">
+						<div class="flex items-center space-x-2">
+							<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" class="w-4 h-4 fill-current dark:text-violet-600">
+								<path d="M426.072,86.928A238.75,238.75,0,0,0,88.428,424.572,238.75,238.75,0,0,0,426.072,86.928ZM257.25,462.5c-114,0-206.75-92.748-206.75-206.75S143.248,49,257.25,49,464,141.748,464,255.75,371.252,462.5,257.25,462.5Z"></path>
+								<polygon points="221.27 305.808 147.857 232.396 125.23 255.023 221.27 351.063 388.77 183.564 366.142 160.937 221.27 305.808"></polygon>
+							</svg>
+							<h4 class="font-medium">Quis velit quae similique maxime optio temporibus</h4>
+						</div>
+						<p class="ml-7 dark:text-gray-600">Illum hic placeat unde porro, cupiditate nesciunt? Numquam debitis eligendi aspernatur mum.</p>
+					</li>
+				</ul>
+			</div>
+			<div>
+				<h3 class="mb-3 text-lg font-bold md:text-xl">2019</h3>
+				<ul class="space-y-4">
+					<li class="space-y-1">
+						<div class="flex items-center space-x-2">
+							<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" class="w-4 h-4 fill-current dark:text-violet-600">
+								<path d="M426.072,86.928A238.75,238.75,0,0,0,88.428,424.572,238.75,238.75,0,0,0,426.072,86.928ZM257.25,462.5c-114,0-206.75-92.748-206.75-206.75S143.248,49,257.25,49,464,141.748,464,255.75,371.252,462.5,257.25,462.5Z"></path>
+								<polygon points="221.27 305.808 147.857 232.396 125.23 255.023 221.27 351.063 388.77 183.564 366.142 160.937 221.27 305.808"></polygon>
+							</svg>
+							<h4 class="font-medium">Quis velit quae similique maxime optio temporibus</h4>
+						</div>
+						<p class="ml-7 dark:text-gray-600">Illum hic placeat unde porro, cupiditate nesciunt? Numquam debitis eligendi aspernatur mum.</p>
+					</li>
+					<li class="space-y-1">
+						<div class="flex items-center space-x-2">
+							<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" class="w-4 h-4 fill-current dark:text-violet-600">
+								<path d="M426.072,86.928A238.75,238.75,0,0,0,88.428,424.572,238.75,238.75,0,0,0,426.072,86.928ZM257.25,462.5c-114,0-206.75-92.748-206.75-206.75S143.248,49,257.25,49,464,141.748,464,255.75,371.252,462.5,257.25,462.5Z"></path>
+								<polygon points="221.27 305.808 147.857 232.396 125.23 255.023 221.27 351.063 388.77 183.564 366.142 160.937 221.27 305.808"></polygon>
+							</svg>
+							<h4 class="font-medium">Quis velit quae similique maxime optio temporibus</h4>
+						</div>
+						<p class="ml-7 dark:text-gray-600">Illum hic placeat unde porro, cupiditate nesciunt? Numquam debitis eligendi aspernatur mum.</p>
+					</li>
+				</ul>
+			</div>
+		</div>
+	</div>
+</section> -->
+
+
+
+
+
+
+  <section class=" py-16 text-center">
+
+    <div class="ed-2-courses max-w-7xl mx-auto py-[120px] xl:py-[80px] md:py-[60px]">
+      <div class="mx-auto px-6">
+        <div class="text-center mx-auto py-10">
+            <h1 class="text-4xl font-bold text-gray-800 fade-in">Welcome to Datacampus</h1>
+            <p class="text-lg text-gray-600 mt-4 fade-in">Your gateway to modern education and global opportunities.</p>
+        </div>
+    <!-- Filter Buttons -->
+    <div class="flex flex-wrap justify-center gap-[10px] mb-[40px] xs:mb-[30px] pb-[30px] xs:pb-[20px] border-b border-[#002147]/15">
+        <button class="hover:bg-edpurple hover:text-teal-900 border border-teal-800 rounded-lg p-2" onclick="filterCourses('all')">All</button>
+        <button class="hover:bg-edpurple hover:text-teal-900 border border-teal-800 rounded-lg p-2" onclick="filterCourses('Data Science')">Data Science</button>
+        <button class="hover:bg-edpurple hover:text-teal-900 border border-teal-800 rounded-lg p-2" onclick="filterCourses('Web Development')">Web Development</button>
+        <button class="hover:bg-edpurple hover:text-teal-900 border border-teal-800 rounded-lg p-2" onclick="filterCourses('Marketing Strategies')">Marketing Strategies</button>
+        <button class="hover:bg-edpurple hover:text-teal-900 border border-teal-800 rounded-lg p-2" onclick="filterCourses('Advanced Data Analytics')">Advanced Data Analytics</button>
+        <button class="hover:bg-edpurple hover:text-teal-900 border border-teal-800 rounded-lg p-2" onclick="filterCourses('Finance')">Finance</button>
+    </div>
+
+    <div class="relative overflow-hidden">
+        <!-- Carousel Container -->
+        <div id="carousel" class="flex transition-transform duration-300 ease-in-out" style="transform: translateX(0);">
+            
+            <!-- Data Science Course -->
+            <div class="flex-shrink-0 w-full md:w-1/4 p-2 course-item" data-category="Data Science">
+                <div class="course-item border border-[#e5e5e5] shadow-lg p-[4px] group">
+                    <div class="relative overflow-hidden mb-[20px]">
+                        <img src="https://wowtheme7.com/tf/escola/assets/img/course/3.png" alt="Course Image" class="aspect-[290/180] w-full object-cover transition-transform duration-500 ease-in-out group-hover:scale-110">
+                        <span class="absolute bg-edyellow px-[10px] h-[33px] flex gap-[8px] items-center top-[16px] left-[16px] rounded-[6px]">
+                            <span class="icon">
+                                <img src="https://cdn-icons-png.flaticon.com/512/1041/1041916.png" alt="icon" class="w-4 h-4">
+                            </span>
+                        </span>
+                    </div>
+                    <div class="px-2">
+                        <h5 class="font-semibold text-[15px] text-edblue text-left">Data Science Fundamentals</h5>
+                        <h5 class="font-semibold text-[12px] text-edblue py-2 text-left">Presented by Tech-World</h5>
+                        <p class="text-[12px] text-gray-500 text-left">
+                            <span class="font-medium text-gray-700">Duration:</span>
+                            <span class="text-white bg-teal-700 px-2 inline-block">10h 00m</span>
+                            <div class="flex justify-center">
+                                <button class="bg-orange-400 transition-transform duration-500 ease-in-out hover:scale-105 hover:bg-blue-500 text-white text-xl py-1 my-3 w-3/4 items-center">Get it now!</button>
+                            </div>
+                        </p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Web Development Course -->
+            <div class="flex-shrink-0 w-full md:w-1/4 p-2 course-item" data-category="Web Development">
+                <div class="course-item border border-[#e5e5e5] shadow-lg p-[4px] group">
+                    <div class="relative overflow-hidden mb-[20px]">
+                        <img src="https://wowtheme7.com/tf/escola/assets/img/course/3.png" alt="Course Image" class="aspect-[290/180] w-full object-cover transition-transform duration-500 ease-in-out group-hover:scale-110">
+                        <span class="absolute bg-edyellow px-[10px] h-[33px] flex gap-[8px] items-center top-[16px] left-[16px] rounded-[6px]">
+                            <span class="icon">
+                                <img src="https://cdn-icons-png.flaticon.com/512/1041/1041916.png" alt="icon" class="w-4 h-4">
+                            </span>
+                        </span>
+                    </div>
+                    <div class="px-2">
+                        <h5 class="font-semibold text-[15px] text-edblue text-left">Web Development Bootcamp</h5>
+                        <h5 class="font-semibold text-[12px] text-edblue py-2 text-left">Presented by Code-Academy</h5>
+                        <p class="text-[12px] text-gray-500 text-left">
+                            <span class="font-medium text-gray-700">Duration:</span>
+                            <span class="text-white bg-teal-700 px-2 inline-block">15h 45m</span>
+                            <div class="flex justify-center">
+                                <button class="bg-orange-400 transition-transform duration-500 ease-in-out hover:scale-105 hover:bg-blue-500 text-white text-xl py-1 my-3 w-3/4 items-center">Get it now!</button>
+                            </div>
+                        </p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Marketing Strategies Course -->
+            <div class="flex-shrink-0 w-full md:w-1/4 p-2 course-item" data-category="Marketing Strategies">
+                <div class="course-item border border-[#e5e5e5] shadow-lg p-[4px] group">
+                    <div class="relative overflow-hidden mb-[20px]">
+                        <img src="https://wowtheme7.com/tf/escola/assets/img/course/3.png" alt="Course Image" class="aspect-[290/180] w-full object-cover transition-transform duration-500 ease-in-out group-hover:scale-110">
+                        <span class="absolute bg-edyellow px-[10px] h-[33px] flex gap-[8px] items-center top-[16px] left-[16px] rounded-[6px]">
+                            <span class="icon">
+                                <img src="https://cdn-icons-png.flaticon.com/512/1041/1041916.png" alt="icon" class="w-4 h-4">
+                            </span>
+                        </span>
+                    </div>
+                    <div class="px-2">
+                        <h5 class="font-semibold text-[15px] text-edblue text-left">Marketing Strategies for 2024</h5>
+                        <h5 class="font-semibold text-[12px] text-edblue py-2 text-left">Presented by MarketX</h5>
+                        <p class="text-[12px] text-gray-500 text-left">
+                            <span class="font-medium text-gray-700">Duration:</span>
+                            <span class="text-white bg-teal-700 px-2 inline-block">12h 00m</span>
+                            <div class="flex justify-center">
+                                <button class="bg-orange-400 transition-transform duration-500 ease-in-out hover:scale-105 hover:bg-blue-500 text-white text-xl py-1 my-3 w-3/4 items-center">Get it now!</button>
+                            </div>
+                        </p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Advanced Data Analytics Course -->
+            <div class="flex-shrink-0 w-full md:w-1/4 p-2 course-item" data-category="Advanced Data Analytics">
+                <div class="course-item border border-[#e5e5e5] shadow-lg p-[4px] group">
+                    <div class="relative overflow-hidden mb-[20px]">
+                        <img src="https://wowtheme7.com/tf/escola/assets/img/course/3.png" alt="Course Image" class="aspect-[290/180] w-full object-cover transition-transform duration-500 ease-in-out group-hover:scale-110">
+                        <span class="absolute bg-edyellow px-[10px] h-[33px] flex gap-[8px] items-center top-[16px] left-[16px] rounded-[6px]">
+                            <span class="icon">
+                                <img src="https://cdn-icons-png.flaticon.com/512/1041/1041916.png" alt="icon" class="w-4 h-4">
+                            </span>
+                        </span>
+                    </div>
+                    <div class="px-2">
+                        <h5 class="font-semibold text-[15px] text-edblue text-left">Advanced Data Analytics</h5>
+                        <h5 class="font-semibold text-[12px] text-edblue py-2 text-left">Presented by DataLab</h5>
+                        <p class="text-[12px] text-gray-500 text-left">
+                            <span class="font-medium text-gray-700">Duration:</span>
+                            <span class="text-white bg-teal-700 px-2 inline-block">18h 30m</span>
+                            <div class="flex justify-center">
+                                <button class="bg-orange-400 transition-transform duration-500 ease-in-out hover:scale-105 hover:bg-blue-500 text-white text-xl py-1 my-3 w-3/4 items-center">Get it now!</button>
+                            </div>
+                        </p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Finance Course -->
+            <div class="flex-shrink-0 w-full md:w-1/4 p-2 course-item" data-category="Finance">
+                <div class="course-item border border-[#e5e5e5] shadow-lg p-[4px] group">
+                    <div class="relative overflow-hidden mb-[20px]">
+                        <img src="https://wowtheme7.com/tf/escola/assets/img/course/3.png" alt="Course Image" class="aspect-[290/180] w-full object-cover transition-transform duration-500 ease-in-out group-hover:scale-110">
+                        <span class="absolute bg-edyellow px-[10px] h-[33px] flex gap-[8px] items-center top-[16px] left-[16px] rounded-[6px]">
+                            <span class="icon">
+                                <img src="https://cdn-icons-png.flaticon.com/512/1041/1041916.png" alt="icon" class="w-4 h-4">
+                            </span>
+                        </span>
+                    </div>
+                    <div class="px-2">
+                        <h5 class="font-semibold text-[15px] text-edblue text-left">Financial Management for Startups</h5>
+                        <h5 class="font-semibold text-[12px] text-edblue py-2 text-left">Presented by FinLab</h5>
+                        <p class="text-[12px] text-gray-500 text-left">
+                            <span class="font-medium text-gray-700">Duration:</span>
+                            <span class="text-white bg-teal-700 px-2 inline-block">20h 00m</span>
+                            <div class="flex justify-center">
+                                <button class="bg-orange-400 transition-transform duration-500 ease-in-out hover:scale-105 hover:bg-blue-500 text-white text-xl py-1 my-3 w-3/4 items-center">Get it now!</button>
+                            </div>
+                        </p>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+
+        <!-- Left Button -->
+        <button class="absolute left-0 top-1/2 transform -translate-y-1/2 bg-white rounded-full p-2 shadow-md" id="prevBtn">
+            &#10094;
+        </button>
+
+        <!-- Right Button -->
+        <button class="absolute right-0 top-1/2 transform -translate-y-1/2 bg-white rounded-full p-2 shadow-md" id="nextBtn">
+            &#10095;
+        </button>
+    </div>
+
+    <script>
+        // JavaScript for Filtering Courses
+        function filterCourses(category) {
+            const courses = document.querySelectorAll('.course-item');
+            
+            if (category === 'all') {
+                courses.forEach(course => {
+                    course.style.display = 'block';
+                });
+            } else {
+                courses.forEach(course => {
+                    if (course.getAttribute('data-category') === category) {
+                        course.style.display = 'block';
+                    } else {
+                        course.style.display = 'none';
+                    }
+                });
+            }
+        }
+    </script>
+      </div>
+
+      <!-- <script>
+    // Initialize carousel and filter logic
+const carousel = document.getElementById('carousel');
+const prevBtn = document.getElementById('prevBtn');
+const nextBtn = document.getElementById('nextBtn');
+let currentIndex = 0;
+const itemWidth = 100; // Assuming each item takes up full width in percentage
+
+
+
+// Carousel navigation logic
+nextBtn.addEventListener('click', () => {
+    const visibleCourses = document.querySelectorAll('.course-item[style*="display: block"]');
+    if (currentIndex < visibleCourses.length - 1) {
+        currentIndex++;
+        carousel.style.transform = `translateX(-${currentIndex * itemWidth}%)`;
+    }
+});
+
+prevBtn.addEventListener('click', () => {
+    if (currentIndex > 0) {
+        currentIndex--;
+        carousel.style.transform = `translateX(-${currentIndex * itemWidth}%)`;
+    }
+});
+
+
+
+    </script> -->
+
+
+    </section>
+    
+ 
+
+
+
+
 </div>
-</body>
-
-
+</div>
 </body>
 </html>

@@ -22,6 +22,7 @@ class Expertise(models.Model):
     id = models.AutoField(primary_key=True)
     name = models.CharField(max_length=50)
     batch =models.ImageField(null=True, blank=True)
+    experience_percentage = models.CharField(max_length=10,blank=True, null=True)
 
     def __str__(self):
         return self.name
@@ -65,13 +66,39 @@ class Work_Experience(models.Model):
         
     def __str__(self):
         return self.designation
+    
+class Database_Trainer(models.Model):
+    id = models.AutoField(primary_key=True)
+    designation = models.CharField(max_length=100)
+    company_name = models.CharField(max_length=50)
+    hours = models.CharField(max_length=20,blank=True, null=True)
+    participants = models.CharField(max_length=20,blank=True, null=True)
+    company_location = models.CharField(max_length=150)
+    starting_time = models.CharField(max_length=20,blank=True, null=True)
+    ending_time = models.CharField(max_length=20,blank=True, null=True)
+   
+        
+    def __str__(self):
+        return self.designation
+
+class Database_Consaltent(models.Model):
+    id = models.AutoField(primary_key=True)
+    designation = models.CharField(max_length=100)
+    company_name = models.CharField(max_length=50)
+    company_location = models.CharField(max_length=150)
+    details = models.CharField(max_length=250,blank=True, null=True)
+    duration = models.CharField(max_length=20,blank=True, null=True)
+    
+        
+    def __str__(self):
+        return self.designation
   
 class Education(models.Model):
     id = models.AutoField(primary_key=True)
     short_details = models.CharField(max_length=300)  
     
     
-class Editional_Experience(models.Model):
+class Additional_Experience(models.Model):
     id = models.AutoField(primary_key=True)
     designation = models.CharField(max_length=100)
     company_name = models.CharField(max_length=250)
@@ -95,9 +122,21 @@ class Career_Certificate(models.Model):
     duration=models.CharField(max_length=30,blank=True, null=True)
     time = models.CharField(max_length=20,blank=True, null=True)
    
-    class Meta:
-        verbose_name = "Career_Certificate"
-        verbose_name_plural = 'Career_Certificates'
-        
+
     def __str__(self):
         return self.certificcate_name
+    
+    
+class Tutorial(models.Model):
+    id = models.AutoField(primary_key=True)
+    topic=models.CharField(max_length=30)
+    image=models.ImageField(null=True, blank=True)
+    presented_by=models.CharField(max_length=50,null=True, blank=True)
+    created_by=models.CharField(max_length=50,null=True, blank=True)
+    duration=models.CharField(max_length=20,null=True, blank=True)
+    short_description = models.CharField(max_length=250,null=True, blank=True)
+    broad_description = models.CharField(max_length=1000,null=True, blank=True)
+    
+
+    def __str__(self):
+        return self.topic
