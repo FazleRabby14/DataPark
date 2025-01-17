@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Course Page</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+</head>
+<body class="bg-gray-900 text-white">
+  <!-- Main Container with Split Background -->
+  <div class="max-w-6xl mx-auto py-8 px-4 lg:px-0 lg:flex gap-8">
+    
+    <!-- Left Section with Dark Background -->
+    <div class="flex-1 p-8">
+        <div class="h-[450px]">
+          <!-- Breadcrumbs -->
+          <!-- <div class="text-sm text-gray-400 mb-4">
+            <a href="#" class="hover:text-gray-200">IT & Software</a> &gt; 
+            <a href="#" class="hover:text-gray-200">Database</a> &gt; 
+            <a href="#" class="hover:text-gray-200">Oracle</a>
+          </div> -->
+          
+         <!-- Course Title and Description -->
+<h1 class="text-4xl font-bold mb-4">{{ tutorial.topic }}</h1>
+<p class="text-xl text-white mb-4">
+  {{ tutorial.short_description }}
+</p>
+
+<!-- Badge and Ratings -->
+<!-- <div class="flex items-center space-x-2 mb-4 text-[12px]">
+  <span class="bg-yellow-500 text-black text-sm font-semibold px-2 py-1 rounded">Bestseller</span>
+  <span class="text-yellow-400">4.8</span>
+  <span class="text-white">(128,562 ratings)</span>
+  <span class="text-white">582,730 students</span>
+</div> -->
+
+<!-- Instructor and Update Info -->
+<p class="text-white mb-2 text-[12px]">
+  Created by <a href="#" class="text-blue-500">{{ tutorial.created_by }}</a>, Oracle Certified Expert and Instructor
+</p>
+<p class="flex items-center text-white space-x-2">
+  <span>Last updated {{ tutorial.created_at|date:"m/d/Y" }}</span>
+  <!-- <span>&bull;</span>
+  <span>English</span>
+  <span>&bull;</span>
+  <span>English, Spanish [Auto], 10 more</span> -->
+</p>
+
+<!-- What You'll Learn Section with Dark Background -->
+<div class="max-w-6xl mx-auto px-4 py-8 bg-white text-black rounded-lg mt-8 border-2 shadow-lg">
+  <h2 class="text-2xl font-semibold mb-4">What you'll learn</h2>
+  <div class="grid grid-cols-1 md:grid-cols-2 gap-4 text-sm">
+    <ul class="space-y-2">
+      <li>{{ tutorial.broad_description }}</li>
+
+    </ul>
+ 
+  </div>
+</div>
+
+
+
+<style>
+  /* Split background for top half black and bottom half white */
+  body {
+    background: linear-gradient(to bottom, #1a202c 50%, #ffffff 50%);
+    min-height: 100vh;
+  }
+</style>

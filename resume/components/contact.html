@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Beautiful Icon Scatter Layout</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+        /* Styling for the container holding the icons */
+        .circle-container {
+            position: relative;
+            width: 800px;
+            height: 500px;
+        }
+
+        /* General style for icons */
+        .icon {
+            position: absolute;
+            width: 60px;
+            height: 60px;
+            background-color: #fff;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        }
+
+        /* Center icon */
+        .center-icon {
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            width: 80px;
+            height: 80px;
+            background-color: #7c3aed;
+            z-index: 10;
+        }
+
+        /* Custom positions for each surrounding icon */
+        .icon1 { top: 20%; left: 30%; } /* Adjust positions */
+        .icon2 { top: 0%; left: 85%; }
+        .icon3 { top: 50%; left: 80%; }
+        .icon4 { top: 80%; left: 50%; }
+        .icon5 { top: 75%; left: 20%; }
+        .icon6 { top: 40%; left: 0%; }
+        .icon7 { top: 5%; left: 55%; }
+        .icon8 { top: 30%; left: 105%; }
+        .icon9 { top: 5%; left: 5%; }
+    </style>
+</head>
+<body class="bg-gray-900 flex items-center justify-center h-auto">
+    <div class="text-center text-white">
+        <h1 class="text-4xl font-bold mb-6">Connect with all apps</h1>
+        <p class="text-gray-400 mb-6">Amet minim mollit non deserunt ullamco est sit aliqua dolor do amet sint.</p>
+
+        <div class="circle-container mx-auto relative">
+            <!-- Central icon -->
+            <div class="icon center-icon text-white text-3xl">
+                <i class="fas fa-folder"></i> <!-- Main Folder Icon in Center -->
+            </div>
+
+            <!-- Scattered surrounding icons -->
+            <div class="icon icon1 text-black text-xl">
+                <i class="fab fa-js"></i> <!-- JavaScript -->
+            </div>
+            <div class="icon icon2 text-black text-xl">
+                <i class="fab fa-slack"></i> <!-- Slack -->
+            </div>
+            <div class="icon icon3 text-black text-xl">
+                <i class="fab fa-twitter"></i> <!-- Twitter -->
+            </div>
+            <div class="icon icon4 text-black text-xl">
+                <i class="fab fa-gmail"></i> <!-- Gmail -->
+            </div>
+            <div class="icon icon5 text-black text-xl">
+                <i class="fab fa-shopify"></i> <!-- Shopify -->
+            </div>
+            <div class="icon icon6 text-black text-xl">
+                <i class="fab fa-reddit"></i> <!-- Reddit -->
+            </div>
+            <div class="icon icon7 text-black text-xl">
+                <i class="fab fa-node-js"></i> <!-- Node.js -->
+            </div>
+            <div class="icon icon8 text-black text-xl">
+                <i class="fas fa-file"></i> <!-- Document Icon -->
+            </div>
+            <div class="icon icon9 text-black text-xl">
+                <i class="fab fa-react"></i> <!-- React.js -->
+            </div>
+        </div>
+
+        <button class="mt-8 px-4 py-2 bg-blue-500 rounded-lg text-white">Check all apps</button>
+    </div>
+
+    <!-- Font Awesome Icons -->
+    <script src="https://kit.fontawesome.com/a076d05399.js"></script>
+</body>
+</html>

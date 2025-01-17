@@ -1,0 +1,493 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <!-- SITE PAGE TITLE -->
+        <title>Frontend Mentor | Manage landing page</title>
+        <!-- SITE PAGE DESCRIPTION -->
+        <meta name="description" content="Bring everyone together to build better products.">
+        <!-- SITE AUTHORS -->
+        <meta name="author" content="Aman Singh Bhogal & Frontend Mentor">
+        <!-- FAVICON -->
+        <link rel="shortcut icon" href="src/img/favicon-32x32.png" type="image/x-icon" sizes="32x32">
+        <!-- TAILWIND ASSETS (FOR CLIENT DEPLOYMENT) -->
+        <script src="https://cdn.tailwindcss.com"></script>
+        <!-- SWIPER JS STYLESHEET -->
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@8/swiper-bundle.min.css"/>
+        <!-- MAIN STYLESHEET -->
+        <link rel="stylesheet" href="public/output.css">
+        <!-- SWIPER JS SCRIPT -->
+        <script src="https://cdn.jsdelivr.net/npm/swiper/swiper-bundle.min.js" defer></script>
+        <!-- EMAIL VALIDATION SCRIPT -->
+        <script src="src/js/email-validation.js" defer></script>
+        <!-- MOBILE NAV MENU SCRIPT -->
+        <script src="src/js/mobile-nav-menu.js" defer></script>
+        <!-- TESTIMONIAL SLIDER SCRIPT -->
+        <script src="src/js/testimonial-slider.js" defer></script>
+        <!-- TEMPORARILY USING GOOGLE FONTS FROM SERVER -->
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Be+Vietnam+Pro:wght@500&display=swap" rel="stylesheet">
+    </head>
+<body>
+
+    <!-- NAV BAR -->
+    <nav class="relative container mx-auto px-4 py-8 md:px-2 md:py-16 xl:px-12">
+      <!-- FLEX CONTAINER -->
+      <div class="flex items-center justify-between">
+          <!-- LOGO -->
+          <div class="pt-2">
+              <a href="index.html"><img src="/static/images/logo.svg" height="24" width="146" alt="A horizontal wordmark logo with four dots of varying red and the words 'manage' next to it in lowercase sans-serif font"></a>
+          </div>
+          <div class="hidden md:flex space-x-6">
+              <a href="/index.html" aria-label="Visit our Pricing page" class="text-veryDarkBlue hover:text-darkGrayishBlue transition ease-in">Home</a>
+              <a href="/about.html" aria-label="Visit our Product page" class="hover:text-darkGrayishBlue transition ease-in">About</a>
+              <a href="/tutorial.html" aria-label="Visit our Careers page" class="hover:text-darkGrayishBlue transition ease-in">Tutorial</a>
+              <a href="/contact.html" aria-label="Visit our Community page" class="hover:text-darkGrayishBlue transition ease-in">Contact</a>
+          </div>
+          <!-- CTA BUTTON -->
+          <div class="button">
+              <a href="#" class="hidden cta-button text-sm p-3 px-6 pt-2 text-veryLightGray bg-brightRed rounded-full baseline transition ease-in hover:bg-brightRedLight md:block">Get Started</a>
+          </div>
+
+          <!-- MOBILE NAV MENU ICON -->
+          <button id="mobile-nav-btn" class="block hamburger focus:outline-none md:hidden">
+              <span></span>
+              <span></span>
+              <span></span>
+          </button>
+      </div>
+
+      <div class="md:hidden z-50 relative"> <!-- Make the z-index higher and set it to relative positioning -->
+          <div id="mobile-nav-menu" class="overflow-visible hidden absolute flex-col items-center self-end rounded py-8 mt-10 space-y-6 font-bold bg-veryLightGray left-6 right-6 drop-shadow-lg sm:w-auto sm:self-center z-50">
+              <a href="/index.html" class="text-darkBlue">Home</a>
+              <a href="/about.html" class="text-darkBlue">About</a>
+              <a href="/tutorial.html" class="text-darkBlue">Tutorial</a>
+              <a href="/contact.html" class="text-darkBlue">Contact</a>
+          </div>
+      </div>
+
+  </nav>
+
+  <section class=" py-16 relative overflow-hidden">
+    <!-- Add the animated background container -->
+    <div class="area">
+        <ul class="circles">
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+        </ul>
+    </div>
+
+    <div class="relative max-w-7xl mx-auto grid grid-cols-12 z-10">
+        <div class="col-span-7 flex flex-col justify-center p-6 text-center rounded-sm lg:text-left">
+            <h1 class="text-5xl font-bold leading-none sm:text-6xl text-white">Better Learning <br>
+                <span class="text-violet-400">Future</span> Starts <br>
+                With <span class="text-yellow-300">Najib</span>
+            </h1>
+            
+            <div class="flex flex-col space-y-4 sm:items-center sm:justify-center sm:flex-row sm:space-y-0 sm:space-x-4 lg:justify-start pt-10">
+                <a rel="noopener noreferrer" href="#" class="px-8 py-3 text-lg font-semibold border rounded text-white border-white hover:border-yellow-600 hover:text-yellow-600">View Tutorials</a>
+            </div>
+        </div>
+        <div class="col-span-5 items-center justify-center p-6">
+            <img src="https://mambaui.com/assets/svg/Business_SVG.svg" alt="" class="object-contain w-full h-72 sm:h-80 lg:h-96 xl:h-112 2xl:h-128">
+        </div>
+    </div>
+</section>
+<style>
+    /* Background Animation */
+    .area {
+        background: #015a61;
+        background: -webkit-linear-gradient(to left, #8f94fb, #4e54c8);
+        width: 100%;
+        height: 100vh;
+        position: absolute;
+        top: 0;
+        left: 0;
+        z-index: -1;
+    }
+    
+    .circles {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 96%;
+        overflow: hidden;
+    }
+    
+    .circles li {
+        position: absolute;
+        display: block;
+        list-style: none;
+        width: 20px;
+        height: 20px;
+        background: rgba(255, 255, 255, 0.2);
+        animation: animate 25s linear infinite;
+        bottom: -150px;
+    }
+    
+    .circles li:nth-child(1) { left: 25%; width: 80px; height: 80px; animation-delay: 0s; }
+    .circles li:nth-child(2) { left: 10%; width: 20px; height: 20px; animation-delay: 2s; animation-duration: 12s; }
+    .circles li:nth-child(3) { left: 70%; width: 20px; height: 20px; animation-delay: 4s; }
+    .circles li:nth-child(4) { left: 40%; width: 60px; height: 60px; animation-delay: 0s; animation-duration: 18s; }
+    .circles li:nth-child(5) { left: 65%; width: 20px; height: 20px; animation-delay: 0s; }
+    .circles li:nth-child(6) { left: 75%; width: 110px; height: 110px; animation-delay: 3s; }
+    .circles li:nth-child(7) { left: 35%; width: 150px; height: 150px; animation-delay: 7s; }
+    .circles li:nth-child(8) { left: 50%; width: 25px; height: 25px; animation-delay: 15s; animation-duration: 45s; }
+    .circles li:nth-child(9) { left: 20%; width: 15px; height: 15px; animation-delay: 2s; animation-duration: 35s; }
+    .circles li:nth-child(10) { left: 85%; width: 150px; height: 150px; animation-delay: 0s; animation-duration: 11s; }
+    
+    @keyframes animate {
+        0% {
+            transform: translateY(0) rotate(0deg);
+            opacity: 1;
+            border-radius: 0;
+        }
+        100% {
+            transform: translateY(-1000px) rotate(720deg);
+            opacity: 0;
+            border-radius: 50%;
+        }
+    }
+    </style>
+
+
+
+
+
+
+
+
+
+
+<style>
+
+@layer utilities {
+  /* Chrome, Safari and Opera */
+  .scrollbar-hidden::-webkit-scrollbar {
+    display: none;
+  }
+
+  .scrollbar-hidden {
+    scrollbar-width: none; /* Firefox */
+    -ms-overflow-style: none; /* IE and Edge */
+  }
+}
+</style>
+
+
+  <section class="py-16 text-center">
+    <div class="ed-2-courses max-w-7xl mx-auto py-[120px] xl:py-[80px] md:py-[60px]">
+      <div class="mx-auto px-6">
+        <div class="text-center mx-auto py-10">
+          <h1 class="text-4xl font-bold text-gray-800 fade-in">Welcome to Datacampus</h1>
+          <p class="text-lg text-gray-600 mt-4 fade-in">Your gateway to modern education and global opportunities.</p>
+        </div>
+
+        <div class="flex flex-wrap justify-between items-center mb-[20px] xs:mb-[20px] pb-[20px] border-b border-[#002147]/15">
+            <!-- Filter Buttons (col-8 equivalent) -->
+            <div class="flex flex-wrap gap-[10px] w-full md:w-2/3">
+              {% for item in items %}
+              <!-- <button class="hover:bg-edpurple hover:text-teal-900 border border-teal-800 rounded-lg p-2" onclick="filterCourses('all')">All</button>
+              <button class="hover:bg-edpurple hover:text-teal-900 border border-teal-800 rounded-lg p-2" onclick="filterCourses('personal-skill')">Personal Skill</button>
+              <button class="hover:bg-edpurple hover:text-teal-900 border border-teal-800 rounded-lg p-2" onclick="filterCourses('web-dev')">Web Development</button>
+              <button class="hover:bg-edpurple hover:text-teal-900 border border-teal-800 rounded-lg p-2" onclick="filterCourses('ui-ux-design')">UX/UI Design</button>
+              <button class="hover:bg-edpurple hover:text-teal-900 border border-teal-800 rounded-lg p-2" onclick="filterCourses('data-science')">Data Science</button>
+              <button class="hover:bg-edpurple hover:text-teal-900 border border-teal-800 rounded-lg p-2" onclick="filterCourses('finance')">Finance</button> -->
+
+              <button class="hover:bg-edpurple hover:text-teal-900 border border-teal-800 rounded-lg p-2" onclick="filterCourses('{{item.name}}')">{{item.name}}</button>
+
+
+             {% endfor %}
+
+            </div>
+          
+            <!-- Search Field (col-4 equivalent) -->
+            <div class="w-full md:w-1/3 mt-4 md:mt-0">
+              <input
+                type="text"
+                id="searchInput"
+                placeholder="Search for courses..."
+                class="w-full border border-gray-300 rounded-lg p-3 text-gray-800"
+                oninput="searchCourses(this.value)"
+              />
+            </div>
+          </div>
+          
+  
+        <!-- Course Container -->
+        <div id="courseContainer" class="relative overflow-y-scroll scrollbar-hidden scroll h-[700px] grid grid-cols-2 md:grid-cols-4 gap-5"></div>
+      </div>
+    </div>
+  </section>
+  
+  <script>
+    // Course Data Array
+    const courses = [
+    {
+    category: 'personal-skill',
+    title: 'Public Speaking Skills',
+    presenter: 'SkillHub',
+    duration: '5h 20m',
+    image: 'https://media.istockphoto.com/id/889968488/photo/skill-concept.jpg?s=612x612&w=0&k=20&c=yDPoLvtvsnNbJQffOO8iMtfofeYLZ-r4PIdFCH7hBtc=',
+    link: '/personal-skill1.html',
+  },
+  {
+    category: 'personal-skill',
+    title: 'Time Management Mastery',
+    presenter: 'LifeCoach',
+    duration: '3h 40m',
+    image: 'https://media.istockphoto.com/id/1490859962/photo/power-soft-skills-multi-skills-responsibility-hr-human-resources-concept-personal-attribute.jpg?s=612x612&w=0&k=20&c=ToS6Yl5eZgQUc0t9FWp7tHkabQvoEe0ge1PFbPYvf7A=',
+    link: '/personal-skill2.html',
+  },
+
+  // Web Development
+  {
+    category: 'web-dev',
+    title: 'Master Full Stack Development',
+    presenter: 'CodeAcademy',
+    duration: '10h 45m',
+    image: 'https://www.hubspot.com/hs-fs/hubfs/web-development.webp?width=595&height=400&name=web-development.webp',
+    link: '/web-dev1.html',
+  },
+  {
+    category: 'web-dev',
+    title: 'React & Vue Mastery',
+    presenter: 'FrontendPro',
+    duration: '7h 30m',
+    image: 'https://www.usnews.com/dims4/USNEWS/fb6e5fb/2147483647/crop/2000x1334+0+2/resize/970x647/quality/85/?url=https%3A%2F%2Fwww.usnews.com%2Fcmsmedia%2F65%2F62%2Fc9cb60d24ac89d56462b1228574a%2F201009-codingcomputer-stock.jpg',
+    link: '/web-dev2.html',
+  },
+
+  // UX/UI Design
+  {
+    category: 'ui-ux-design',
+    title: 'Figma for Beginners',
+    presenter: 'UXStart',
+    duration: '4h 10m',
+    image: 'https://www.keenesystems.com/hubfs/blog-images/ux-ui.jpg',
+    link: '/ui-ux1.html',
+  },
+  {
+    category: 'ui-ux-design',
+    title: 'Advanced UX Research',
+    presenter: 'DesignPro',
+    duration: '6h 30m',
+    image: 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSrIZJ4EonjRC8CF_ZrNnJVz3kzSITU0K-aG2L7sT81V06H4nJ-9MscQDel4bS7vxdSmLQ&usqp=CAU',
+    link: '/ui-ux2.html',
+  },
+
+  // Data Science
+  {
+    category: 'data-science',
+    title: 'Data Analysis with Python',
+    presenter: 'DataCamp',
+    duration: '8h 20m',
+    image: 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRXeY_2rpyHpnH9QJYk61usUIQ1NTXrWrQefA&s',
+    link: '/data-science1.html',
+  },
+  {
+    category: 'data-science',
+    title: 'Machine Learning Basics',
+    presenter: 'AI Guru',
+    duration: '10h 45m',
+    image: 'https://www.naukri.com/campus/career-guidance/wp-content/uploads/2023/11/what-is-data-science.jpg',
+    link: '/data-science2.html',
+  },
+
+  // Finance
+  {
+    category: 'finance',
+    title: 'Personal Finance 101',
+    presenter: 'WealthHub',
+    duration: '3h 50m',
+    image: 'https://wp.globaluniversitysystems.com/bsbi/wp-content/uploads/sites/2/2021/12/7-very-good-reasons-to-do-master-s-in-finance.jpg',
+    link: '/finance1.html',
+  },
+  {
+    category: 'finance',
+    title: 'Investment Strategies',
+    presenter: 'FinancePro',
+    duration: '5h 25m',
+    image: 'https://www.aeccglobal.my/images/2023/01/24/finance-course.webp',
+    link: '/finance2.html',
+  },
+  {
+    category: 'finance',
+    title: 'Cryptocurrency Essentials',
+    presenter: 'CryptoAcademy',
+    duration: '6h 10m',
+    image: 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcT0te-L52Az_K2WGZhz9_23CGucwuIBPDmMWQ&s',
+    link: '/finance3.html',
+  },
+  {
+    category: 'finance',
+    title: 'Stock Market for Beginners',
+    presenter: 'WallStreet101',
+    duration: '4h 30m',
+    image: 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcS0DexUoikrzf9OweS4uY0iSysFCgjL22IBcP3iJzt-m02GkwcAewGK_kB68khBBXKCQnY&usqp=CAU',
+    link: '/finance4.html',
+  },
+    ];
+  
+    let activeCategory = 'all'; // Store the current category filter
+  
+    // Function to Generate Course HTML
+    function generateCourses(filteredCourses) {
+      const container = document.getElementById('courseContainer');
+      container.innerHTML = ''; // Clear existing courses
+  
+      filteredCourses.forEach(course => {
+        const courseHTML = `
+          <div class="flex-shrink-0 w-fullp-2">
+            <div class="course-item ${course.category} border border-[#e5e5e5] shadow-lg p-[4px] group rounded-[10px]">
+              <div class="relative overflow-hidden rounded-[10px] mb-[20px]">
+                <img src="${course.image}" alt="${course.title}" class="aspect-[290/180] w-full object-cover group-hover:scale-110 transition-transform duration-500">
+              </div>
+              <h5 class="font-semibold text-[15px] text-edblue text-left px-3">${course.title}</h5>
+              <h5 class="font-semibold text-[12px] text-edblue py-2 text-left px-3">Presented by ${course.presenter}</h5>
+              <p class="text-[12px] text-gray-500 text-left px-3">
+                <span class="font-medium text-gray-700">Duration:</span>
+                <span class="text-white bg-teal-700 px-2 inline-block rounded-lg">${course.duration}</span>
+              </p>
+              <div class="flex justify-center">
+                <a href="{% url 'tutorialView'  %}" class="bg-orange-400 transition-transform duration-500 ease-in-out hover:scale-105 hover:bg-blue-500 text-white text-xl py-1 my-3 w-3/4 items-center text-center">
+                  Get it now!
+                </a>
+              </div>
+            </div>
+          </div>
+        `;
+        container.innerHTML += courseHTML;
+      });
+    }
+  
+    // Filter Function
+    function filterCourses(category) {
+      activeCategory = category; // Update active category filter
+      const filteredCourses = courses.filter(course => category === 'all' || course.category === category);
+      const searchQuery = document.getElementById('searchInput').value.toLowerCase();
+      const searchedCourses = filteredCourses.filter(course =>
+        course.title.toLowerCase().includes(searchQuery) || course.presenter.toLowerCase().includes(searchQuery)
+      );
+      generateCourses(searchedCourses);
+    }
+  
+    // Search Function
+    function searchCourses(query) {
+      const filteredCourses = courses.filter(course => activeCategory === 'all' || course.category === activeCategory);
+      const searchedCourses = filteredCourses.filter(course =>
+        course.title.toLowerCase().includes(query.toLowerCase()) || course.presenter.toLowerCase().includes(query.toLowerCase())
+      );
+      generateCourses(searchedCourses);
+    }
+  
+    // Initialize Courses on Page Load
+    document.addEventListener('DOMContentLoaded', () => filterCourses('all'));
+  </script>
+  
+    
+
+
+  <!--latest news-->
+  <div class="container mx-auto px-4 py-12">
+    <!-- Heading -->
+    <div class="text-center mb-8">
+      <p class="text-sm text-gray-500 uppercase">Blogs</p>
+      <h2 class="text-4xl font-bold">
+        Latest <span class="text-purple-500">NEWS</span>
+      </h2>
+    </div>
+
+
+    <div class="container mx-auto p-6 grid grid-cols-3 gap-6">
+    
+        <!-- Main Content (Featured Post) -->
+        <div class="col-span-2 bg-white rounded-lg shadow-lg relative">
+          <!-- Featured Image -->
+          <img id="featured-image" src="" alt="Featured Post" class="w-full rounded-t-lg">
+          
+          <!-- Post Date Ribbon -->
+          <div class="absolute top-0 right-0 bg-orange-500 text-white text-center py-1 px-4">
+            <p id="featured-date" class="text-lg"></p>
+            <p id="featured-month"></p>
+          </div>
+          
+          <!-- Post Details -->
+          <div class="p-6">
+            <h2 id="featured-title" class="text-2xl font-bold mb-4"></h2>
+            <p id="featured-description" class="text-gray-600 mb-4"></p>
+          </div>
+        </div>
+        
+        <!-- Sidebar -->
+        <div class="col-span-1">
+          <!-- Latest News Section -->
+          <div class="bg-white p-4 rounded-lg shadow-lg mb-6">
+            <h3 class="font-semibold mb-4">Latest News</h3>
+            <ul class="space-y-4 ">
+                <li class="flex space-x-4 cursor-pointer" onclick="updateFeatured('https://html.hixstudio.net/educal/educal/assets/img/banner/banner-img-1.png', '08', 'Apr', 'YOUR WAY IN THE WORLD TODAY TAKES EVERYTHING YOU\'VE GOT', 'Posted by: Admin')">
+                    <img src="https://html.hixstudio.net/educal/educal/assets/img/banner/banner-img-1.png" alt="News Image" class="w-20 h-20 rounded-lg object-cover">
+                    <div>
+                        <p class="font-bold">MISTER WE COULD USE A MAN LIKE HERBERT</p>
+                        <p class="text-sm text-gray-500">April 19, 2015</p>
+                    </div>
+                </li>
+                <li class="flex space-x-4 cursor-pointer" onclick="updateFeatured('https://html.hixstudio.net/educal/educal/assets/img/course/course-4.jpg', '12', 'Apr', 'E KNOW FLIPPER LIVES IN A WORLD FULL OF WONDER', 'Posted by: Admin 2')">
+                    <img src="https://html.hixstudio.net/educal/educal/assets/img/course/course-4.jpg" alt="News Image" class="w-20 h-20 rounded-lg object-cover">
+                    <div>
+                        <p class="font-bold">E KNOW FLIPPER LIVES IN A WORLD FULL OF WONDER</p>
+                        <p class="text-sm text-gray-500">April 12, 2015</p>
+                    </div>
+                </li>
+                <li class="flex space-x-4 cursor-pointer" onclick="updateFeatured('https://html.hixstudio.net/educal/educal/assets/img/banner/banner-img-2.png', '15', 'Apr', 'VERY BEST TO MAKE THE OTHERS COMFORTABLE', 'Posted by: Admin 3')">
+                    <img src="https://html.hixstudio.net/educal/educal/assets/img/banner/banner-img-2.png" alt="News Image" class="w-20 h-20 rounded-lg object-cover">
+                    <div>
+                        <p class="font-bold">VERY BEST TO MAKE THE OTHERS COMFORTABLE</p>
+                        <p class="text-sm text-gray-500">April 15, 2015</p>
+                    </div>
+                </li>
+            </ul>
+        </div>
+        
+        </div>
+        
+      </div>
+    
+      <script>
+        // Function to update the featured post on the left side
+        function updateFeatured(imageUrl, day, month, title, description) {
+          document.getElementById('featured-image').src = imageUrl;
+          document.getElementById('featured-date').innerText = day;
+          document.getElementById('featured-month').innerText = month;
+          document.getElementById('featured-title').innerText = title;
+          document.getElementById('featured-description').innerText = description;
+        }
+    
+        // Initialize with first latest news item by default
+        window.onload = function() {
+          // Automatically load the first news item as the featured post
+          updateFeatured('https://www.aditmicrosys.com/assets/images/it_infra/oracle-big.jpg', '08', 'Apr', 'YOUR WAY IN THE WORLD TODAY TAKES EVERYTHING YOU\'VE GOT', 'Posted by: Admin');
+        };
+      </script>
+
+<!-- Grid Layout -->
+
+
+
+</div>
+</div>
+</div>
+</body>
+</html>

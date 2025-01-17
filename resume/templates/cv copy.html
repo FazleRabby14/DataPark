@@ -1,0 +1,747 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <!-- SITE PAGE TITLE -->
+    <title>Frontend Mentor | Manage landing page</title>
+    <!-- SITE PAGE DESCRIPTION -->
+    <meta
+      name="description"
+      content="Bring everyone together to build better products."
+    />
+    <!-- SITE AUTHORS -->
+    <meta name="author" content="Aman Singh Bhogal & Frontend Mentor" />
+    <!-- FAVICON -->
+    <link
+      rel="shortcut icon"
+      href="/static/images/favicon-32x32.png"
+      type="image/x-icon"
+      sizes="32x32"
+    />
+    <!-- TAILWIND ASSETS (FOR CLIENT DEPLOYMENT) -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- SWIPER JS STYLESHEET -->
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/swiper@8/swiper-bundle.min.css"
+    />
+    <!-- MAIN STYLESHEET -->
+    <link rel="stylesheet" href="public/output.css" />
+    <!-- SWIPER JS SCRIPT -->
+    <script
+      src="https://cdn.jsdelivr.net/npm/swiper/swiper-bundle.min.js"
+      defer
+    ></script>
+    <!-- EMAIL VALIDATION SCRIPT -->
+    <script src="/static/js/email-validation.js" defer></script>
+    <!-- MOBILE NAV MENU SCRIPT -->
+    <script src="/static/js/mobile-nav-menu.js" defer></script>
+    <!-- TESTIMONIAL SLIDER SCRIPT -->
+    <script src="/static/js/testimonial-slider.js" defer></script>
+    <!-- TEMPORARILY USING GOOGLE FONTS FROM SERVER -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Be+Vietnam+Pro:wght@500&display=swap"
+      rel="stylesheet"
+    />
+    <!-- Add this to your <head> section -->
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css"
+    />
+
+    <!-- AOS CSS -->
+    <link
+      href="https://cdn.jsdelivr.net/npm/aos@2.3.1/dist/aos.css"
+      rel="stylesheet"
+    />
+  </head>
+  <body class="font-BeVietnamPro">
+    <!-- NAV BAR -->
+    <nav class="relative container mx-auto px-4 py-8 md:px-2 md:py-16 xl:px-12">
+      <!-- FLEX CONTAINER -->
+      <div class="flex items-center justify-between">
+        <!-- LOGO -->
+        <div class="pt-2">
+          <a href="{% url 'index' %}"
+            ><img
+              src="/static/images/logo.svg"
+              height="24"
+              width="146"
+              alt="A horizontal wordmark logo with four dots of varying red and the words 'manage' next to it in lowercase sans-serif font"
+          /></a>
+        </div>
+        <div class="hidden md:flex space-x-6">
+          <a href="{% url 'index' %}" aria-label="Visit our Pricing page" class="text-veryDarkBlue hover:text-darkGrayishBlue transition ease-in">Home</a>
+          <a href="{% url 'about' %}" aria-label="Visit our Product page" class="hover:text-darkGrayishBlue transition ease-in">About</a>
+          <a href="{% url 'tutorial' %}" aria-label="Visit our Careers page" class="hover:text-darkGrayishBlue transition ease-in">Tutorial</a>
+          <a href="{% url 'contact' %}" aria-label="Visit our Community page" class="hover:text-darkGrayishBlue transition ease-in">Contact</a>
+          <a href="{% url 'cv' %}" aria-label="Visit our Community page" class="hover:text-darkGrayishBlue transition ease-in">CV</a>
+        </div>
+        <!-- CTA BUTTON -->
+        <div class="button">
+          <a
+            href="#"
+            class="hidden cta-button text-sm p-3 px-6 pt-2 text-veryLightGray bg-brightRed rounded-full baseline transition ease-in hover:bg-brightRedLight md:block"
+            >Get Started</a
+          >
+        </div>
+
+        <!-- MOBILE NAV MENU ICON -->
+        <button
+          id="mobile-nav-btn"
+          class="block hamburger focus:outline-none md:hidden"
+        >
+          <span></span>
+          <span></span>
+          <span></span>
+        </button>
+      </div>
+
+      <div class="md:hidden z-50 relative">
+        <!-- Make the z-index higher and set it to relative positioning -->
+        <div
+          id="mobile-nav-menu"
+          class="overflow-visible hidden absolute flex-col items-center self-end rounded py-8 mt-10 space-y-6 font-bold bg-veryLightGray left-6 right-6 drop-shadow-lg sm:w-auto sm:self-center z-50"
+        >
+        <a href="{% url 'index' %}" aria-label="Visit our Pricing page" class="text-veryDarkBlue hover:text-darkGrayishBlue transition ease-in">Home</a>
+        <a href="{% url 'about' %}" aria-label="Visit our Product page" class="hover:text-darkGrayishBlue transition ease-in">About</a>
+        <a href="{% url 'tutorial' %}" aria-label="Visit our Careers page" class="hover:text-darkGrayishBlue transition ease-in">Tutorial</a>
+        <a href="{% url 'contact' %}" aria-label="Visit our Community page" class="hover:text-darkGrayishBlue transition ease-in">Contact</a>
+        <a href="{% url 'cv' %}" aria-label="Visit our Community page" class="hover:text-darkGrayishBlue transition ease-in">CV</a>
+        
+        </div>
+      </div>
+    </nav>
+    <!--nav bar done-->
+
+    <div class="grid grid-cols-12 bg-white border border-gray-200 mx-16">
+      <div class="col-span-4 bg-teal-900 rounded-l-lg">
+        <!--image n basic summary-->
+        <div class="flex justify-center items-center pt-10">
+          <img
+            class="rounded-full w-48 h-48 object-cover border-2 border-white"
+            src="https://images.ctfassets.net/h6goo9gw1hh6/2sNZtFAWOdP1lmQ33VwRN3/24e953b920a9cd0ff2e1d587742a2472/1-intro-photo-final.jpg?w=1200&h=992&fl=progressive&q=70&fm=jpg"
+            alt=""
+          />
+        </div>
+        <div class="flex p-4">
+          <!-- Vertical line with details -->
+          <div class="flex flex-col px-10">
+            <div class="relative grid grid-cols-1 md:grid-cols-2">
+              <!-- <div class="absolute top-0 left-0 w-0.5 h-full bg-yellow-400"></div>
+         -->
+              <!-- Details with connecting lines -->
+              <div class="flex items-center mb-2">
+                <div class="h-2 w-2 bg-yellow-400 rounded-full"></div>
+                <div class="w-0.5 h-4 bg-yellow-400 mx-2"></div>
+                <p class="text-yellow-300 font-medium">
+                  <i class="fa-regular fa-user"></i>
+                  <span class="font-normal">Nazibur Rahman</span>
+                </p>
+              </div>
+
+              <div class="flex items-center mb-2">
+                <div class="h-2 w-2 bg-yellow-400 rounded-full"></div>
+                <div class="w-0.5 h-4 bg-yellow-400 mx-2"></div>
+                <p class="text-yellow-300 font-medium">
+                  <i class="fa-solid fa-location-pin"></i>
+                  <span class="font-normal">Dhaka, Bangladesh</span>
+                </p>
+              </div>
+
+              <div class="flex items-center mb-2">
+                <div class="h-2 w-2 bg-yellow-400 rounded-full"></div>
+                <div class="w-0.5 h-4 bg-yellow-400 mx-2"></div>
+                <p class="text-yellow-300 font-medium">
+                  <i class="fa-brands fa-linkedin"></i>
+                  <a
+                    href="https://www.linkedin.com/in/naziburrahman707"
+                    target="_blank"
+                    class="font-normal hover:underline"
+                  >
+                    Nazibur Rahman
+                  </a>
+                </p>
+              </div>
+
+              <div class="flex items-center mb-2">
+                <div class="h-2 w-2 bg-yellow-400 rounded-full"></div>
+                <div class="w-0.5 h-4 bg-yellow-400 mx-2"></div>
+                <p class="text-yellow-300 font-medium">
+                  <i class="fa-regular fa-envelope"></i>
+                  <span class="font-normal">henry@domain.com</span>
+                </p>
+              </div>
+
+              <div class="flex items-center">
+                <div class="h-2 w-2 bg-yellow-400 rounded-full"></div>
+                <div class="w-0.5 h-4 bg-yellow-400 mx-2"></div>
+                <p class="text-yellow-300 font-medium">
+                  <i class="fas fa-phone-alt"></i>
+                  <!-- Mobile icon -->
+                  <span class="font-normal">+8801711568149</span>
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+        <!--Done-->
+
+        <section class="mb-12">
+          <!-- <h2 class="text-2xl font-semibold text-yellow-400 mb-4">Professional Summary</h2> -->
+          <p class="text-yellow-300 leading-relaxed text-justify px-12">
+            <i class="fa-solid fa-comment"></i>
+            "I am a seasoned IT professional with over 24 years of experience in
+            database administration, team leadership, and corporate training.
+            Proficient in Oracle, MySQL, and PostgreSQL, I have successfully
+            managed critical projects, including database migrations, security
+            policy implementations, and core banking solutions."
+          </p>
+        </section>
+        <!--Education Part-->
+        <div class="mb-8 px-12">
+          <div class="flex items-center space-x-2">
+            <!-- Image on the left side -->
+            <img
+              src="https://cdn-icons-png.flaticon.com/512/3197/3197967.png"
+              alt="Icon"
+              class="w-10 h-10"
+            />
+
+            <!-- Text on the right side -->
+            <h2 class="text-xl font-semibold text-yellow-400">Education</h2>
+          </div>
+
+          <ul
+            class="relative list-disc list-inside mt-2 text-gray-600 space-y-1"
+          >
+            <div class="absolute top-0 left-0 w-2/5 h-0.5 bg-yellow-400"></div>
+
+            <div class="py-5">
+              <div class="flex items-center mb-2">
+                <div class="w-0.5 h-4 bg-yellow-400 mx-2"></div>
+                <p class="text-yellow-300 font-medium">
+                  <span class="font-normal"
+                    >Masters in Physics from University of Dhaka - Dhaka in
+                    1994</span
+                  >
+                </p>
+              </div>
+            </div>
+          </ul>
+        </div>
+        <!--Education Done-->
+
+        <!--IT professional-->
+
+        <div class="mb-8 px-12">
+          <div class="flex items-center space-x-2">
+            <!-- Image on the left side -->
+            <img
+              src="https://cdn-icons-png.freepik.com/256/12594/12594345.png?semt=ais_hybrid"
+              alt="Icon"
+              class="w-10 h-10"
+            />
+
+            <!-- Text on the right side -->
+            <h2 class="text-xl font-semibold text-yellow-400">
+              IT Professional (24 years of experience)
+            </h2>
+          </div>
+
+          <ul
+            class="relative list-disc list-inside mt-2 text-gray-600 space-y-1"
+          >
+            <div class="absolute top-0 left-0 w-full h-0.5 bg-yellow-400"></div>
+
+            <div class="py-5">
+              <div class="flex items-center mb-2">
+                <div class="w-0.5 h-4 bg-yellow-400 mx-2"></div>
+                <p class="text-yellow-300 font-medium">
+                  <span class="font-normal">Corporate Trainer</span>
+                </p>
+              </div>
+
+              <div class="flex items-center mb-2">
+                <div class="w-0.5 h-4 bg-yellow-400 mx-2"></div>
+                <p class="text-yellow-300 font-medium">
+                  <span class="font-normal">Database Consultant</span>
+                </p>
+              </div>
+
+              <div class="flex items-center mb-2">
+                <div class="w-0.5 h-4 bg-yellow-400 mx-2"></div>
+                <p class="text-yellow-300 font-medium">
+                  <span class="font-normal">IT Team Management</span>
+                </p>
+              </div>
+
+              <div class="flex items-center mb-2">
+                <div class="w-0.5 h-4 bg-yellow-400 mx-2"></div>
+                <p class="text-yellow-300 font-medium">
+                  <span class="font-normal"
+                    >Oracle Database Expert | Oracle 19C RAC
+                  </span>
+                </p>
+              </div>
+
+              <div class="flex items-center mb-2">
+                <div class="w-0.5 h-4 bg-yellow-400 mx-2"></div>
+                <p class="text-yellow-300 font-medium">
+                  <span class="font-normal"
+                    >Data Guard | GoldenGate | AVDF 20 | Database Security</span
+                  >
+                </p>
+              </div>
+
+              <div class="flex items-center mb-2">
+                <div class="w-0.5 h-4 bg-yellow-400 mx-2"></div>
+                <p class="text-yellow-300 font-medium">
+                  <span class="font-normal">
+                    Postgres | MySQL | SQL Server | MongoDB</span
+                  >
+                </p>
+              </div>
+
+              <div class="flex items-center mb-2">
+                <div class="w-0.5 h-4 bg-yellow-400 mx-2"></div>
+                <p class="text-yellow-300 font-medium">
+                  <span class="font-normal"
+                    >Technical Lead – DBA Team, Wipro | Bangladesh |</span
+                  >
+                </p>
+              </div>
+
+              <div class="flex items-center mb-2">
+                <div class="w-0.5 h-4 bg-yellow-400 mx-2"></div>
+                <p class="text-yellow-300 font-medium">
+                  <span class="font-normal">
+                    Telenor - Grameen Phone Account</span
+                  >
+                </p>
+              </div>
+            </div>
+          </ul>
+        </div>
+        <!--Done-->
+        <!-- Certifications and Licenses -->
+        <section class="mb-12 px-10">
+          <h2 class="text-2xl font-semibold text-teal-900 mb-4">
+            <span class="bg-yellow-400 px-3 py-1 rounded-r-3xl"
+              >Certifications and Licenses</span
+            >
+          </h2>
+          <ul class="text-yellow-300 leading-relaxed">
+            <li class="border-l-2 border-yellow-300 px-2 my-2">
+              Oracle GoldenGate 12c Certified Implementation Specialist (Feb
+              2023 - Present)
+            </li>
+            <li class="border-l-2 border-yellow-300 px-2 my-2">
+              Oracle Database Administration 2019 Certified Professional (Sep
+              2021 - Present)
+            </li>
+            <li class="border-l-2 border-yellow-300 px-2 my-2">
+              Oracle Database 12c Administrator Certified Professional (Oct 2016
+              - Present)
+            </li>
+            <li class="border-l-2 border-yellow-300 px-2 my-2">
+              Oracle Database 11g Security Certified Implementation Specialist
+              (Apr 2015 - Present)
+            </li>
+            <li class="border-l-2 border-yellow-300 px-2 my-2">
+              Oracle Certified Expert, RAC 11g and Grid Infrastructure
+              Administrator (July 2015 - Present)
+            </li>
+            <li class="border-l-2 border-yellow-300 px-2 my-2">
+              Oracle Database 11g Administrator Certified Professional (Jan 2015
+              - Present)
+            </li>
+            <li class="border-l-2 border-yellow-300 px-2 my-2">
+              ORACLE 10g Database Administrator Certified Professional (Sep 2006
+              - Present)
+            </li>
+            <li class="border-l-2 border-yellow-300 px-2 my-2">
+              ORACLE Forms Certified Professional (July 2005 - Present)
+            </li>
+            <li class="border-l-2 border-yellow-300 px-2 my-2">
+              ORACLE 9i Database Administrator Certified Professional (May 2004
+              - Present)
+            </li>
+            <li class="border-l-2 border-yellow-300 px-2 my-2">
+              ORACLE TESTING ID: OC1305421
+            </li>
+            <li class="border-l-2 border-yellow-300 px-2 my-2">
+              IBM Certified Database Associate DB2 10.1 Fundamentals (Dec 2012 -
+              Present)
+            </li>
+            <li class="border-l-2 border-yellow-300 px-2 my-2">
+              Microsoft Certified Database Administrator on Microsoft SQL Server
+              2000 (Oct 2002 - Present)
+            </li>
+            <li class="border-l-2 border-yellow-300 px-2 my-2">
+              Certified Ethical Hacker v11 (26 June, 2021 – 25 June, 2024)
+            </li>
+            <li class="border-l-2 border-yellow-300 px-2 my-2">
+              ITIL® Foundation Certificate in IT Service Management (Aug 2015 -
+              Present)
+            </li>
+          </ul>
+        </section>
+
+        <!--Skill set-->
+        <div class="mb-8 px-12">
+          <div class="flex items-center space-x-2">
+            <!-- Image on the left side -->
+            <img
+              src="https://cdn-icons-png.flaticon.com/512/10262/10262344.png"
+              alt="Icon"
+              class="w-10 h-10"
+            />
+
+            <!-- Text on the right side -->
+            <h2 class="text-xl font-semibold text-yellow-400">Skill</h2>
+          </div>
+
+          <ul
+            class="relative list-disc list-inside mt-2 text-gray-600 space-y-1"
+          >
+            <div class="absolute top-0 left-0 w-1/3 h-0.5 bg-yellow-400"></div>
+
+            <div class="py-5">
+              <div class="grid grid-cols-2 gap-2">
+                <div class="p-1">
+                  <div class="flex items-center mb-2">
+                    <div class="w-0.5 h-9 bg-yellow-400 mx-2"></div>
+                    <p class="text-yellow-300 font-medium">
+                      <span class="font-normal">
+                        Oracle Database 19c: RAC Administration
+                      </span>
+                    </p>
+                  </div>
+
+                  <div class="flex items-center mb-2">
+                    <div class="w-0.5 h-9 bg-yellow-400 mx-2"></div>
+                    <p class="text-yellow-300 font-medium">
+                      <span class="font-normal"
+                        >Oracle Database 19c: Data Guard Administration</span
+                      >
+                    </p>
+                  </div>
+
+                  <div class="flex items-center mb-2">
+                    <div class="w-0.5 h-9 bg-yellow-400 mx-2"></div>
+                    <p class="text-yellow-300 font-medium">
+                      <span class="font-normal"
+                        >Oracle Automatic Storage Manage (ASM)</span
+                      >
+                    </p>
+                  </div>
+
+                  <div class="flex items-center mb-2">
+                    <div class="w-0.5 h-9 bg-yellow-400 mx-2"></div>
+                    <p class="text-yellow-300 font-medium">
+                      <span class="font-normal">
+                        ICT Security Policy Implementation
+                      </span>
+                    </p>
+                  </div>
+
+                  <div class="flex items-center mb-2">
+                    <div class="w-0.5 h-9 bg-yellow-400 mx-2"></div>
+                    <p class="text-yellow-300 font-medium">
+                      <span class="font-normal"> Oracle Database AVDF 20 </span>
+                    </p>
+                  </div>
+                </div>
+                <div class="p-1">
+                  <div class="flex items-center mb-2">
+                    <div class="w-0.5 h-9 bg-yellow-400 mx-2"></div>
+                    <p class="text-yellow-300 font-medium">
+                      <span class="font-normal">
+                        Oracle Database 19c: Clusterware Administration
+                      </span>
+                    </p>
+                  </div>
+
+                  <div class="flex items-center mb-2">
+                    <div class="w-0.5 h-9 bg-yellow-400 mx-2"></div>
+                    <p class="text-yellow-300 font-medium">
+                      <span class="font-normal"
+                        >Oracle Database 19c: Database Administration
+                      </span>
+                    </p>
+                  </div>
+
+                  <div class="flex items-center mb-2">
+                    <div class="w-0.5 h-9 bg-yellow-400 mx-2"></div>
+                    <p class="text-yellow-300 font-medium">
+                      <span class="font-normal"
+                        >Oracle Database Multitenant Architecture
+                      </span>
+                    </p>
+                  </div>
+
+                  <div class="flex items-center mb-2">
+                    <div class="w-0.5 h-9 bg-yellow-400 mx-2"></div>
+                    <p class="text-yellow-300 font-medium">
+                      <span class="font-normal">
+                        Core Banking system implementation
+                      </span>
+                    </p>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </ul>
+        </div>
+        <!--Skill set done-->
+      </div>
+      <div class="col-span-8 p-8">
+        <!-- Professional Summary -->
+
+        <!-- Certifications and Licenses -->
+        <section class="mb-12">
+          <h2 class="text-2xl font-semibold text-teal-900 mb-4">
+            <span class="bg-yellow-400 px-3 py-1 rounded-r-3xl"
+              >Certifications and Licenses</span
+            >
+          </h2>
+          <ul class="grid grid-cols-2 text-gray-700 leading-relaxed">
+            <li class="border-l-2 border-teal-900 px-2 my-1">
+              Oracle GoldenGate 12c Certified Implementation Specialist (Feb
+              2023 - Present)
+            </li>
+            <li class="border-l-2 border-teal-900 px-2 my-1">
+              Oracle Database Administration 2019 Certified Professional (Sep
+              2021 - Present)
+            </li>
+            <li class="border-l-2 border-teal-900 px-2 my-1">
+              Oracle Database 12c Administrator Certified Professional (Oct 2016
+              - Present)
+            </li>
+            <li class="border-l-2 border-teal-900 px-2 my-1">
+              Oracle Database 11g Security Certified Implementation Specialist
+              (Apr 2015 - Present)
+            </li>
+            <li class="border-l-2 border-teal-900 px-2 my-1">
+              Oracle Certified Expert, RAC 11g and Grid Infrastructure
+              Administrator (July 2015 - Present)
+            </li>
+            <li class="border-l-2 border-teal-900 px-2 my-1">
+              Oracle Database 11g Administrator Certified Professional (Jan 2015
+              - Present)
+            </li>
+            <li class="border-l-2 border-teal-900 px-2 my-1">
+              ORACLE 10g Database Administrator Certified Professional (Sep 2006
+              - Present)
+            </li>
+            <li class="border-l-2 border-teal-900 px-2 my-1">
+              ORACLE Forms Certified Professional (July 2005 - Present)
+            </li>
+            <li class="border-l-2 border-teal-900 px-2 my-1">
+              ORACLE 9i Database Administrator Certified Professional (May 2004
+              - Present)
+            </li>
+            <li class="border-l-2 border-teal-900 px-2 my-1">
+              ORACLE TESTING ID: OC1305421
+            </li>
+            <li class="border-l-2 border-teal-900 px-2 my-1">
+              IBM Certified Database Associate DB2 10.1 Fundamentals (Dec 2012 -
+              Present)
+            </li>
+            <li class="border-l-2 border-teal-900 px-2 my-1">
+              Microsoft Certified Database Administrator on Microsoft SQL Server
+              2000 (Oct 2002 - Present)
+            </li>
+            <li class="border-l-2 border-teal-900 px-2 my-1">
+              Certified Ethical Hacker v11 (26 June, 2021 – 25 June, 2024)
+            </li>
+            <li class="border-l-2 border-teal-900 px-2 my-1">
+              ITIL® Foundation Certificate in IT Service Management (Aug 2015 -
+              Present)
+            </li>
+          </ul>
+        </section>
+
+        <!-- Work Experience -->
+        <section class="mb-12">
+          <h2 class="text-2xl font-semibold text-teal-900 mb-4">
+            <span class="bg-yellow-400 px-3 py-1 rounded-r-3xl"
+              >Work Experience</span
+            >
+          </h2>
+          <div
+            class="grid grid-cols-1 md:grid-cols-2 gap-6 text-gray-700 leading-relaxed"
+          >
+            <p class="border-l-2 border-teal-900 px-2">
+              <strong>Technical Lead - Database Administrator</strong><br />
+              Wipro | Bangladesh | Grameen Phone Account, Dhaka, Bangladesh<br />
+              (January 11, 2024 – Present)
+            </p>
+            <p class="border-l-2 border-teal-900 px-2">
+              <strong>Lead Database Administrator</strong><br />
+              F-Z Technologies LTD (ORACLE Service Partner), Dhaka,
+              Bangladesh<br />
+              (February 2023 – January 10, 2024)
+            </p>
+            <p class="border-l-2 border-teal-900 px-2">
+              <strong
+                >Database Consultant of Bangladesh Power Deployment
+                Board</strong
+              ><br />
+              Infonet Associates Ltd, Dhaka, Bangladesh<br />
+              (December 2021 – January 2023)
+            </p>
+            <p class="border-l-2 border-teal-900 px-2">
+              <strong
+                >Assistant General Manager and Operation Head - ICT
+                Division</strong
+              ><br />
+              BASIC Bank Limited, Dhaka, Bangladesh<br />
+              (July 2019 – December 2021)
+            </p>
+            <p class="border-l-2 border-teal-900 px-2">
+              <strong>Assistant General Manager - ICT Division</strong><br />
+              BASIC Bank Limited, Dhaka<br />
+              (December 2015 - July 2019)
+            </p>
+            <p class="border-l-2 border-teal-900 px-2">
+              <strong
+                >Executive Manager and Senior Database Administrator - ICT
+                Division</strong
+              ><br />
+              BASIC Bank Limited, Dhaka<br />
+              (September 2011 - December 2015)
+            </p>
+            <p class="border-l-2 border-teal-900 px-2">
+              <strong
+                >Deputy Manager and Database Administrator - ICT
+                Division</strong
+              ><br />
+              BASIC Bank Limited, Dhaka<br />
+              (October 2006 - September 2011)
+            </p>
+            <p class="border-l-2 border-teal-900 px-2">
+              <strong>Database Administrator</strong><br />
+              IBCS-Primax Software (BD) Ltd., Dhaka, Bangladesh<br />
+              (August 2005 - October 2006)
+            </p>
+            <p class="border-l-2 border-teal-900 px-2">
+              <strong>Senior Developer</strong><br />
+              Base Ltd., Dhaka, Bangladesh<br />
+              (January 2003 - August 2005)
+            </p>
+            <p class="border-l-2 border-teal-900 px-2">
+              <strong>Senior Programmer</strong><br />
+              Software Zone Ltd, Dhaka, Bangladesh<br />
+              (November 1999 - December 2002)
+            </p>
+          </div>
+        </section>
+
+        <!-- Work Experience as Database Trainer -->
+        <section class="mb-12">
+          <h2 class="text-2xl font-semibold text-teal-900 mb-4">
+            <span class="bg-yellow-400 px-3 py-1 rounded-r-3xl"
+              >Work Experience as Database Trainer</span
+            >
+          </h2>
+          <div class="space-y-4 text-gray-700 leading-relaxed">
+            <p>
+              <strong>Part Time Lecturer</strong> | IBCS-PRIMAX Software
+              (Bangladesh) Ltd., Dhaka, Bangladesh
+            </p>
+            <p>
+              <strong>Part Time Lecturer</strong> | Next-one Technology, Dhaka,
+              Bangladesh
+            </p>
+            <p>
+              <strong>Part Time Lecturer</strong> | IT-Nest Limited, Dhaka,
+              Bangladesh
+            </p>
+            <p>
+              <strong>Part Time Lecturer</strong> | United International
+              University (UIU), Dhaka, Bangladesh
+            </p>
+            <ul class="grid grid-cols-1 md:grid-cols-2 gap-5">
+              <li class="border-l-2 border-teal-800 px-2">
+                Oracle Audit Vault and Database Firewall (AVDF 20): 40 Hours, 10
+                Participants (BBS, Dhaka)
+              </li>
+              <li class="border-l-2 border-teal-800 px-2">
+                Oracle Database 19C RAC, 19C DataGuard: 48 Hours, 10
+                Participants (Jamuna Bank PLC, Dhaka)
+              </li>
+              <li class="border-l-2 border-teal-800 px-2">
+                Oracle Database 19C Database Administration, 19C RAC, 19C
+                DataGuard: 200 Hours, 32 Participants (Janata Bank PLC, Dhaka)
+              </li>
+              <li class="border-l-2 border-teal-800 px-2">
+                Oracle Database 19C RAC, 19C DataGuard, 19C GoldenGate: 120
+                Hours, 10 Participants (BPDB, Dhaka)
+              </li>
+              <li class="border-l-2 border-teal-800 px-2">
+                Oracle Database 19C RAC, 19C DataGuard: 80 Hours, 4 Participants
+                (DPDC, Dhaka)
+              </li>
+              <li class="border-l-2 border-teal-800 px-2">
+                Oracle Database 19C RAC: 50 Hours with Project, 21 Participants
+                (BPMI, Dhaka)
+              </li>
+              <li class="border-l-2 border-teal-800 px-2">
+                Oracle Database 19C DataGuard: 50 Hours with Project, 22
+                Participants (BPMI, Dhaka)
+              </li>
+              <li class="border-l-2 border-teal-800 px-2">
+                Oracle Database 19C Administration and Backup Recovery: 50 Hours
+                with Project, 20 Participants (Batch 1, BPMI, Dhaka)
+              </li>
+              <li class="border-l-2 border-teal-800 px-2">
+                Oracle Database 19C Administration and Backup Recovery: 50 Hours
+                with Project, 20 Participants (Batch 2, BPMI, Dhaka)
+              </li>
+              <li class="border-l-2 border-teal-800 px-2">
+                Oracle Database 19C Administration and Backup Recovery: 40
+                Hours, 6 Participants (Batch 1, BREB, Dhaka)
+              </li>
+              <li class="border-l-2 border-teal-800 px-2">
+                Oracle Database 19C Administration and Backup Recovery: 80
+                Hours, 8 Participants (Batch 2, BREB, Dhaka)
+              </li>
+              <li class="border-l-2 border-teal-800 px-2">
+                Oracle Database 19C Administration and Backup Recovery: 80
+                Hours, 6 Participants (Karmasangsthan Bank, Dhaka)
+              </li>
+              <li class="border-l-2 border-teal-800 px-2">
+                Oracle Database 10G Administration and Backup Recovery: 80
+                Hours, 12 Participants (ERA-Info Tech Limited and Bank Asia PLC,
+                Dhaka)
+              </li>
+              <li class="border-l-2 border-teal-800 px-2">
+                Oracle Database 10G SQL, Administration and Backup Recovery: 120
+                Hours, 10 Participants (Bangladesh Bank, Dhaka)
+              </li>
+              <li class="border-l-2 border-teal-800 px-2">
+                Oracle Database 10G SQL, Administration and Backup Recovery: 120
+                Hours, 12 Participants (Investment Corporation of Bangladesh,
+                Dhaka)
+              </li>
+              <li class="border-l-2 border-teal-800 px-2">
+                Oracle Database 10G SQL, Administration and Backup Recovery: 120
+                Hours, 15 Participants (President Guard Regiment, Dhaka)
+              </li>
+              <li class="border-l-2 border-teal-800 px-2">
+                Oracle Database 10G SQL, Administration and Backup Recovery: 120
+                Hours, 12 Participants (Bangladesh Army, Dhaka)
+              </li>
+            </ul>
+          </div>
+        </section>
+      </div>
+    </div>
+  </body>
+</html>

@@ -1,0 +1,592 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <!-- SITE PAGE TITLE -->
+        <title>Frontend Mentor | Manage landing page</title>
+        <!-- SITE PAGE DESCRIPTION -->
+        <meta name="description" content="Bring everyone together to build better products.">
+        <!-- SITE AUTHORS -->
+        <meta name="author" content="Aman Singh Bhogal & Frontend Mentor">
+        <!-- FAVICON -->
+        <link rel="shortcut icon" href="src/img/favicon-32x32.png" type="image/x-icon" sizes="32x32">
+        <!-- TAILWIND ASSETS (FOR CLIENT DEPLOYMENT) -->
+        <script src="https://cdn.tailwindcss.com"></script>
+        <!-- SWIPER JS STYLESHEET -->
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@8/swiper-bundle.min.css"/>
+        <!-- MAIN STYLESHEET -->
+        <link rel="stylesheet" href="/static/css/output.css">
+        <!-- SWIPER JS SCRIPT -->
+        <script src="https://cdn.jsdelivr.net/npm/swiper/swiper-bundle.min.js" defer></script>
+        <!-- EMAIL VALIDATION SCRIPT -->
+        <script src="/static/js/email-validation.js" defer></script>
+        <!-- MOBILE NAV MENU SCRIPT -->
+        <script src="/static/js/mobile-nav-menu.js" defer></script>
+        <!-- TESTIMONIAL SLIDER SCRIPT -->
+        <script src="/static/js/testimonial-slider.js" defer></script>
+        <!-- TEMPORARILY USING GOOGLE FONTS FROM SERVER -->
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Be+Vietnam+Pro:wght@500&display=swap" rel="stylesheet">
+    </head>
+<body>
+
+    <!-- NAV BAR -->
+    <nav class="relative container mx-auto px-4 py-8 md:px-2 md:py-16 xl:px-12">
+      <!-- FLEX CONTAINER -->
+      <div class="flex items-center justify-between">
+          <!-- LOGO -->
+          <div class="pt-2">
+              <a href="{% url 'index' %}"><img src="/static/images/logo.svg" height="24" width="146" alt="A horizontal wordmark logo with four dots of varying red and the words 'manage' next to it in lowercase sans-serif font"></a>
+          </div>
+          <div class="hidden md:flex space-x-6">
+            <a href="{% url 'index' %}" aria-label="Visit our Pricing page" class="text-veryDarkBlue hover:text-darkGrayishBlue transition ease-in">Home</a>
+            <a href="{% url 'about' %}" aria-label="Visit our Product page" class="hover:text-darkGrayishBlue transition ease-in">About</a>
+            <a href="{% url 'tutorial' %}" aria-label="Visit our Careers page" class="hover:text-darkGrayishBlue transition ease-in">Tutorial</a>
+            <a href="{% url 'contact' %}" aria-label="Visit our Community page" class="hover:text-darkGrayishBlue transition ease-in">Contact</a>
+            <a href="{% url 'cv' %}" aria-label="Visit our Community page" class="hover:text-darkGrayishBlue transition ease-in">CV</a>
+          </div>
+          <!-- CTA BUTTON -->
+          <div class="button">
+              <a href="#" class="hidden cta-button text-sm p-3 px-6 pt-2 text-veryLightGray bg-brightRed rounded-full baseline transition ease-in hover:bg-brightRedLight md:block">Get Started</a>
+          </div>
+
+          <!-- MOBILE NAV MENU ICON -->
+          <button id="mobile-nav-btn" class="block hamburger focus:outline-none md:hidden">
+              <span></span>
+              <span></span>
+              <span></span>
+          </button>
+      </div>
+
+      <div class="md:hidden z-50 relative"> <!-- Make the z-index higher and set it to relative positioning -->
+          <div id="mobile-nav-menu" class="overflow-visible hidden absolute flex-col items-center self-end rounded py-8 mt-10 space-y-6 font-bold bg-veryLightGray left-6 right-6 drop-shadow-lg sm:w-auto sm:self-center z-50">
+            <a href="{% url 'index' %}" aria-label="Visit our Pricing page" class="text-veryDarkBlue hover:text-darkGrayishBlue transition ease-in">Home</a>
+            <a href="{% url 'about' %}" aria-label="Visit our Product page" class="hover:text-darkGrayishBlue transition ease-in">About</a>
+            <a href="{% url 'tutorial' %}" aria-label="Visit our Careers page" class="hover:text-darkGrayishBlue transition ease-in">Tutorial</a>
+            <a href="{% url 'contact' %}" aria-label="Visit our Community page" class="hover:text-darkGrayishBlue transition ease-in">Contact</a>
+            <a href="{% url 'cv' %}" aria-label="Visit our Community page" class="hover:text-darkGrayishBlue transition ease-in">CV</a>
+          </div>
+      </div>
+
+  </nav>
+
+  <section class=" py-16 relative overflow-hidden">
+    <!-- Add the animated background container -->
+    <div class="area">
+        <ul class="circles">
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+        </ul>
+    </div>
+
+    <div class="relative max-w-7xl mx-auto grid grid-cols-12 z-10">
+        <div class="col-span-7 flex flex-col justify-center p-6 text-center rounded-sm lg:text-left">
+            <h1 class="text-5xl font-bold leading-none sm:text-6xl text-white">Better Learning <br>
+                <span class="text-violet-400">Future</span> Starts <br>
+                With <span class="text-yellow-300">Najib</span>
+            </h1>
+            
+            <div class="flex flex-col space-y-4 sm:items-center sm:justify-center sm:flex-row sm:space-y-0 sm:space-x-4 lg:justify-start pt-10">
+                <a rel="noopener noreferrer" href="#" class="px-8 py-3 text-lg font-semibold border rounded text-white border-white hover:border-yellow-600 hover:text-yellow-600">View Tutorials</a>
+            </div>
+        </div>
+        <div class="col-span-5 items-center justify-center p-6">
+            <img src="https://mambaui.com/assets/svg/Business_SVG.svg" alt="" class="object-contain w-full h-72 sm:h-80 lg:h-96 xl:h-112 2xl:h-128">
+        </div>
+    </div>
+</section>
+<style>
+    /* Background Animation */
+    .area {
+        background: #015a61;
+        background: -webkit-linear-gradient(to left, #8f94fb, #4e54c8);
+        width: 100%;
+        height: 100vh;
+        position: absolute;
+        top: 0;
+        left: 0;
+        z-index: -1;
+    }
+    
+    .circles {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 96%;
+        overflow: hidden;
+    }
+    
+    .circles li {
+        position: absolute;
+        display: block;
+        list-style: none;
+        width: 20px;
+        height: 20px;
+        background: rgba(255, 255, 255, 0.2);
+        animation: animate 25s linear infinite;
+        bottom: -150px;
+    }
+    
+    .circles li:nth-child(1) { left: 25%; width: 80px; height: 80px; animation-delay: 0s; }
+    .circles li:nth-child(2) { left: 10%; width: 20px; height: 20px; animation-delay: 2s; animation-duration: 12s; }
+    .circles li:nth-child(3) { left: 70%; width: 20px; height: 20px; animation-delay: 4s; }
+    .circles li:nth-child(4) { left: 40%; width: 60px; height: 60px; animation-delay: 0s; animation-duration: 18s; }
+    .circles li:nth-child(5) { left: 65%; width: 20px; height: 20px; animation-delay: 0s; }
+    .circles li:nth-child(6) { left: 75%; width: 110px; height: 110px; animation-delay: 3s; }
+    .circles li:nth-child(7) { left: 35%; width: 150px; height: 150px; animation-delay: 7s; }
+    .circles li:nth-child(8) { left: 50%; width: 25px; height: 25px; animation-delay: 15s; animation-duration: 45s; }
+    .circles li:nth-child(9) { left: 20%; width: 15px; height: 15px; animation-delay: 2s; animation-duration: 35s; }
+    .circles li:nth-child(10) { left: 85%; width: 150px; height: 150px; animation-delay: 0s; animation-duration: 11s; }
+    
+    @keyframes animate {
+        0% {
+            transform: translateY(0) rotate(0deg);
+            opacity: 1;
+            border-radius: 0;
+        }
+        100% {
+            transform: translateY(-1000px) rotate(720deg);
+            opacity: 0;
+            border-radius: 50%;
+        }
+    }
+    </style>
+
+
+
+
+
+ <!-- Section with Background Animation -->
+
+  <!-- <section class="">
+	<div class="container px-4 py-16 mx-auto space-y-8 lg:max-w-3xl">
+		<h2 class="text-2xl font-bold md:text-4xl">Timeline</h2>
+		<div class="space-y-8">
+			<div>
+				<h3 class="mb-3 text-lg font-bold md:text-xl">2021</h3>
+				<ul class="space-y-4">
+					<li class="space-y-1">
+						<div class="flex items-center space-x-2">
+							<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" class="w-4 h-4 fill-current dark:text-violet-600">
+								<path d="M426.072,86.928A238.75,238.75,0,0,0,88.428,424.572,238.75,238.75,0,0,0,426.072,86.928ZM257.25,462.5c-114,0-206.75-92.748-206.75-206.75S143.248,49,257.25,49,464,141.748,464,255.75,371.252,462.5,257.25,462.5Z"></path>
+								<polygon points="221.27 305.808 147.857 232.396 125.23 255.023 221.27 351.063 388.77 183.564 366.142 160.937 221.27 305.808"></polygon>
+							</svg>
+							<h4 class="font-medium">Quis velit quae similique maxime optio temporibus</h4>
+						</div>
+						<p class="ml-7 dark:text-gray-600">Illum hic placeat unde porro, cupiditate nesciunt? Numquam debitis eligendi aspernatur mum.</p>
+					</li>
+					<li class="space-y-1">
+						<div class="flex items-center space-x-2">
+							<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" class="w-4 h-4 fill-current dark:text-violet-600">
+								<path d="M426.072,86.928A238.75,238.75,0,0,0,88.428,424.572,238.75,238.75,0,0,0,426.072,86.928ZM257.25,462.5c-114,0-206.75-92.748-206.75-206.75S143.248,49,257.25,49,464,141.748,464,255.75,371.252,462.5,257.25,462.5Z"></path>
+								<polygon points="221.27 305.808 147.857 232.396 125.23 255.023 221.27 351.063 388.77 183.564 366.142 160.937 221.27 305.808"></polygon>
+							</svg>
+							<h4 class="font-medium">Quis velit quae similique maxime optio temporibus</h4>
+						</div>
+						<p class="ml-7 dark:text-gray-600">Illum hic placeat unde porro, cupiditate nesciunt? Numquam debitis eligendi aspernatur mum.</p>
+					</li>
+				</ul>
+			</div>
+			<div>
+				<h3 class="mb-3 text-lg font-bold md:text-xl">2020</h3>
+				<ul class="space-y-4">
+					<li class="space-y-1">
+						<div class="flex items-center space-x-2">
+							<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" class="w-4 h-4 fill-current dark:text-violet-600">
+								<path d="M426.072,86.928A238.75,238.75,0,0,0,88.428,424.572,238.75,238.75,0,0,0,426.072,86.928ZM257.25,462.5c-114,0-206.75-92.748-206.75-206.75S143.248,49,257.25,49,464,141.748,464,255.75,371.252,462.5,257.25,462.5Z"></path>
+								<polygon points="221.27 305.808 147.857 232.396 125.23 255.023 221.27 351.063 388.77 183.564 366.142 160.937 221.27 305.808"></polygon>
+							</svg>
+							<h4 class="font-medium">Quis velit quae similique maxime optio temporibus</h4>
+						</div>
+						<p class="ml-7 dark:text-gray-600">Illum hic placeat unde porro, cupiditate nesciunt? Numquam debitis eligendi aspernatur mum.</p>
+					</li>
+					<li class="space-y-1">
+						<div class="flex items-center space-x-2">
+							<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" class="w-4 h-4 fill-current dark:text-violet-600">
+								<path d="M426.072,86.928A238.75,238.75,0,0,0,88.428,424.572,238.75,238.75,0,0,0,426.072,86.928ZM257.25,462.5c-114,0-206.75-92.748-206.75-206.75S143.248,49,257.25,49,464,141.748,464,255.75,371.252,462.5,257.25,462.5Z"></path>
+								<polygon points="221.27 305.808 147.857 232.396 125.23 255.023 221.27 351.063 388.77 183.564 366.142 160.937 221.27 305.808"></polygon>
+							</svg>
+							<h4 class="font-medium">Quis velit quae similique maxime optio temporibus</h4>
+						</div>
+						<p class="ml-7 dark:text-gray-600">Illum hic placeat unde porro, cupiditate nesciunt? Numquam debitis eligendi aspernatur mum.</p>
+					</li>
+					<li class="space-y-1">
+						<div class="flex items-center space-x-2">
+							<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" class="w-4 h-4 fill-current dark:text-violet-600">
+								<path d="M426.072,86.928A238.75,238.75,0,0,0,88.428,424.572,238.75,238.75,0,0,0,426.072,86.928ZM257.25,462.5c-114,0-206.75-92.748-206.75-206.75S143.248,49,257.25,49,464,141.748,464,255.75,371.252,462.5,257.25,462.5Z"></path>
+								<polygon points="221.27 305.808 147.857 232.396 125.23 255.023 221.27 351.063 388.77 183.564 366.142 160.937 221.27 305.808"></polygon>
+							</svg>
+							<h4 class="font-medium">Quis velit quae similique maxime optio temporibus</h4>
+						</div>
+						<p class="ml-7 dark:text-gray-600">Illum hic placeat unde porro, cupiditate nesciunt? Numquam debitis eligendi aspernatur mum.</p>
+					</li>
+				</ul>
+			</div>
+			<div>
+				<h3 class="mb-3 text-lg font-bold md:text-xl">2019</h3>
+				<ul class="space-y-4">
+					<li class="space-y-1">
+						<div class="flex items-center space-x-2">
+							<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" class="w-4 h-4 fill-current dark:text-violet-600">
+								<path d="M426.072,86.928A238.75,238.75,0,0,0,88.428,424.572,238.75,238.75,0,0,0,426.072,86.928ZM257.25,462.5c-114,0-206.75-92.748-206.75-206.75S143.248,49,257.25,49,464,141.748,464,255.75,371.252,462.5,257.25,462.5Z"></path>
+								<polygon points="221.27 305.808 147.857 232.396 125.23 255.023 221.27 351.063 388.77 183.564 366.142 160.937 221.27 305.808"></polygon>
+							</svg>
+							<h4 class="font-medium">Quis velit quae similique maxime optio temporibus</h4>
+						</div>
+						<p class="ml-7 dark:text-gray-600">Illum hic placeat unde porro, cupiditate nesciunt? Numquam debitis eligendi aspernatur mum.</p>
+					</li>
+					<li class="space-y-1">
+						<div class="flex items-center space-x-2">
+							<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" class="w-4 h-4 fill-current dark:text-violet-600">
+								<path d="M426.072,86.928A238.75,238.75,0,0,0,88.428,424.572,238.75,238.75,0,0,0,426.072,86.928ZM257.25,462.5c-114,0-206.75-92.748-206.75-206.75S143.248,49,257.25,49,464,141.748,464,255.75,371.252,462.5,257.25,462.5Z"></path>
+								<polygon points="221.27 305.808 147.857 232.396 125.23 255.023 221.27 351.063 388.77 183.564 366.142 160.937 221.27 305.808"></polygon>
+							</svg>
+							<h4 class="font-medium">Quis velit quae similique maxime optio temporibus</h4>
+						</div>
+						<p class="ml-7 dark:text-gray-600">Illum hic placeat unde porro, cupiditate nesciunt? Numquam debitis eligendi aspernatur mum.</p>
+					</li>
+				</ul>
+			</div>
+		</div>
+	</div>
+</section> -->
+
+
+
+
+
+
+  <section class=" py-16 text-center">
+    <!-- <div class="container mx-auto">
+        <h1 class="text-4xl font-bold text-gray-800 fade-in">Welcome to Educampus</h1>
+        <p class="text-lg text-gray-600 mt-4 fade-in">Your gateway to modern education and global opportunities.</p>
+    </div> -->
+    <div class="ed-2-courses max-w-7xl mx-auto py-[120px] xl:py-[80px] md:py-[60px]">
+      <div class="mx-auto px-6">
+        <div class="text-center mx-auto py-10">
+            <h1 class="text-4xl font-bold text-gray-800 fade-in">Welcome to Datacampus</h1>
+            <p class="text-lg text-gray-600 mt-4 fade-in">Your gateway to modern education and global opportunities.</p>
+        </div>
+    
+          <!-- Filter Buttons -->
+          <div class="flex flex-wrap justify-center gap-[10px] mb-[40px] xs:mb-[30px] pb-[30px] xs:pb-[20px] border-b border-[#002147]/15">
+              <button class="hover:bg-edpurple hover:text-teal-900 border border-teal-800 rounded-lg p-2" onclick="filterCourses('all')">All</button>
+              <button class="hover:bg-edpurple hover:text-teal-900 border border-teal-800 rounded-lg p-2" onclick="filterCourses('personal-skill')">Personal Skill</button>
+              <button class="hover:bg-edpurple hover:text-teal-900 border border-teal-800 rounded-lg p-2" onclick="filterCourses('web-dev')">Web Development</button>
+              <button class="hover:bg-edpurple hover:text-teal-900 border border-teal-800 rounded-lg p-2" onclick="filterCourses('ui-ux-design')">UX/UI Design</button>
+              <button class="hover:bg-edpurple hover:text-teal-900 border border-teal-800 rounded-lg p-2" onclick="filterCourses('data-science')">Data Science</button>
+              <button class="hover:bg-edpurple hover:text-teal-900 border border-teal-800 rounded-lg p-2" onclick="filterCourses('finance')">Finance</button>
+          </div>
+    
+          <div class="relative overflow-hidden">
+            <!-- Carousel Container -->
+            <div id="carousel" class="flex transition-transform duration-300 ease-in-out" style="transform: translateX(0);">
+                <div class="flex-shrink-0 w-full md:w-1/4 p-2">
+                    <!-- Course Item -->
+                    <div class="course-item border border-[#e5e5e5] rounded-[10px] p-[4px] group">
+                        <div class="relative overflow-hidden rounded-[10px] mb-[24px]">
+                            <img src="https://wowtheme7.com/tf/escola/assets/img/course/3.png" alt="Course Image" class="aspect-[290/180] w-full object-cover group-hover:scale-110">
+                            <span class="absolute bg-edyellow px-[10px] h-[33px] flex gap-[8px] items-center top-[16px] left-[16px] rounded-[6px]">
+                                <span class="icon"><img src="https://cdn-icons-png.flaticon.com/512/1041/1041916.png" alt="icon" class="w-4 h-4"></span>
+                                <span class="text-white bg-teal-900 rounded-lg p-2">8h 30m</span>
+                            </span>
+                        </div>
+                        <div class="flex justify-between items-center mb-[16px]">
+                            <span class="inline-flex items-center justify-center border border-[#e5e5e5] px-[10px] h-[33px] rounded-[6px] font-medium text-[#808080] text-[14px]">Expert</span>
+                            <span class="text-edpurple font-semibold text-[20px]">$59.00</span>
+                        </div>
+                        <h5 class="font-semibold text-[20px] text-edblue mb-[23px]"><a href="course-details.html" class="hover:text-edpurple">Financial Analyst Training & Investing Course</a></h5>
+                    </div>
+                </div>
+        
+                <!-- Repeat similar course items here -->
+                <div class="flex-shrink-0 w-full md:w-1/4 p-2">
+                    <div class="course-item border border-[#e5e5e5] rounded-[10px] p-[4px] group">
+                        <div class="relative overflow-hidden rounded-[10px] mb-[24px]">
+                            <img src="https://wowtheme7.com/tf/escola/assets/img/course/2.png" alt="Course Image" class="aspect-[290/180] w-full object-cover group-hover:scale-110">
+                            <span class="absolute bg-edyellow px-[10px] h-[33px] flex gap-[8px] items-center top-[16px] left-[16px] rounded-[6px]">
+                                <span class="icon"><img src="https://cdn-icons-png.flaticon.com/512/1041/1041916.png" alt="icon" class="w-4 h-4"></span>
+                                <span class="text-white bg-teal-900 rounded-lg p-2">8h 30m</span>
+                            </span>
+                        </div>
+                        <div class="flex justify-between items-center mb-[16px]">
+                            <span class="inline-flex items-center justify-center border border-[#e5e5e5] px-[10px] h-[33px] rounded-[6px] font-medium text-[#808080] text-[14px]">Expert</span>
+                            <span class="text-edpurple font-semibold text-[20px]">$59.00</span>
+                        </div>
+                        <h5 class="font-semibold text-[20px] text-edblue mb-[23px]"><a href="course-details.html" class="hover:text-edpurple">Web Development with React</a></h5>
+                    </div>
+                </div>
+    
+                <div class="flex-shrink-0 w-full md:w-1/4 p-2">
+                  <!-- Course Item -->
+                  <div class="course-item border border-[#e5e5e5] rounded-[10px] p-[4px] group">
+                      <div class="relative overflow-hidden rounded-[10px] mb-[24px]">
+                          <img src="https://wowtheme7.com/tf/escola/assets/img/course/3.png" alt="Course Image" class="aspect-[290/180] w-full object-cover group-hover:scale-110">
+                          <span class="absolute bg-edyellow px-[10px] h-[33px] flex gap-[8px] items-center top-[16px] left-[16px] rounded-[6px]">
+                              <span class="icon"><img src="https://cdn-icons-png.flaticon.com/512/1041/1041916.png" alt="icon" class="w-4 h-4"></span>
+                              <span class="text-white bg-teal-900 rounded-lg p-2">8h 30m</span>
+                          </span>
+                      </div>
+                      <div class="flex justify-between items-center mb-[16px]">
+                          <span class="inline-flex items-center justify-center border border-[#e5e5e5] px-[10px] h-[33px] rounded-[6px] font-medium text-[#808080] text-[14px]">Expert</span>
+                          <span class="text-edpurple font-semibold text-[20px]">$59.00</span>
+                      </div>
+                      <h5 class="font-semibold text-[20px] text-edblue mb-[23px]"><a href="course-details.html" class="hover:text-edpurple">Financial Analyst Training & Investing Course</a></h5>
+                  </div>
+              </div>
+      
+              <!-- Repeat similar course items here -->
+              <div class="flex-shrink-0 w-full md:w-1/4 p-2">
+                  <div class="course-item border border-[#e5e5e5] rounded-[10px] p-[4px] group">
+                      <div class="relative overflow-hidden rounded-[10px] mb-[24px]">
+                          <img src="https://wowtheme7.com/tf/escola/assets/img/course/2.png" alt="Course Image" class="aspect-[290/180] w-full object-cover group-hover:scale-110">
+                          <span class="absolute bg-edyellow px-[10px] h-[33px] flex gap-[8px] items-center top-[16px] left-[16px] rounded-[6px]">
+                              <span class="icon"><img src="https://cdn-icons-png.flaticon.com/512/1041/1041916.png" alt="icon" class="w-4 h-4"></span>
+                              <span class="text-white bg-teal-900 rounded-lg p-2">8h 30m</span>
+                          </span>
+                      </div>
+                      <div class="flex justify-between items-center mb-[16px]">
+                          <span class="inline-flex items-center justify-center border border-[#e5e5e5] px-[10px] h-[33px] rounded-[6px] font-medium text-[#808080] text-[14px]">Expert</span>
+                          <span class="text-edpurple font-semibold text-[20px]">$59.00</span>
+                      </div>
+                      <h5 class="font-semibold text-[20px] text-edblue mb-[23px]"><a href="course-details.html" class="hover:text-edpurple">Web Development with React</a></h5>
+                  </div>
+              </div>
+    
+              <div class="flex-shrink-0 w-full md:w-1/4 p-2">
+                <!-- Course Item -->
+                <div class="course-item border border-[#e5e5e5] rounded-[10px] p-[4px] group">
+                    <div class="relative overflow-hidden rounded-[10px] mb-[24px]">
+                        <img src="https://wowtheme7.com/tf/escola/assets/img/course/3.png" alt="Course Image" class="aspect-[290/180] w-full object-cover group-hover:scale-110">
+                        <span class="absolute bg-edyellow px-[10px] h-[33px] flex gap-[8px] items-center top-[16px] left-[16px] rounded-[6px]">
+                            <span class="icon"><img src="https://cdn-icons-png.flaticon.com/512/1041/1041916.png" alt="icon" class="w-4 h-4"></span>
+                            <span class="text-white bg-teal-900 rounded-lg p-2">8h 30m</span>
+                        </span>
+                    </div>
+                    <div class="flex justify-between items-center mb-[16px]">
+                        <span class="inline-flex items-center justify-center border border-[#e5e5e5] px-[10px] h-[33px] rounded-[6px] font-medium text-[#808080] text-[14px]">Expert</span>
+                        <span class="text-edpurple font-semibold text-[20px]">$59.00</span>
+                    </div>
+                    <h5 class="font-semibold text-[20px] text-edblue mb-[23px]"><a href="course-details.html" class="hover:text-edpurple">Financial Analyst Training & Investing Course</a></h5>
+                </div>
+            </div>
+    
+            <!-- Repeat similar course items here -->
+            <div class="flex-shrink-0 w-full md:w-1/4 p-2">
+                <div class="course-item border border-[#e5e5e5] rounded-[10px] p-[4px] group">
+                    <div class="relative overflow-hidden rounded-[10px] mb-[24px]">
+                        <img src="https://wowtheme7.com/tf/escola/assets/img/course/2.png" alt="Course Image" class="aspect-[290/180] w-full object-cover group-hover:scale-110">
+                        <span class="absolute bg-edyellow px-[10px] h-[33px] flex gap-[8px] items-center top-[16px] left-[16px] rounded-[6px]">
+                            <span class="icon"><img src="https://cdn-icons-png.flaticon.com/512/1041/1041916.png" alt="icon" class="w-4 h-4"></span>
+                            <span class="text-white bg-teal-900 rounded-lg p-2">8h 30m</span>
+                        </span>
+                    </div>
+                    <div class="flex justify-between items-center mb-[16px]">
+                        <span class="inline-flex items-center justify-center border border-[#e5e5e5] px-[10px] h-[33px] rounded-[6px] font-medium text-[#808080] text-[14px]">Expert</span>
+                        <span class="text-edpurple font-semibold text-[20px]">$59.00</span>
+                    </div>
+                    <h5 class="font-semibold text-[20px] text-edblue mb-[23px]"><a href="course-details.html" class="hover:text-edpurple">Web Development with React</a></h5>
+                </div>
+            </div>
+    
+            <div class="flex-shrink-0 w-full md:w-1/4 p-2">
+              <!-- Course Item -->
+              <div class="course-item border border-[#e5e5e5] rounded-[10px] p-[4px] group">
+                  <div class="relative overflow-hidden rounded-[10px] mb-[24px]">
+                      <img src="https://wowtheme7.com/tf/escola/assets/img/course/3.png" alt="Course Image" class="aspect-[290/180] w-full object-cover group-hover:scale-110">
+                      <span class="absolute bg-edyellow px-[10px] h-[33px] flex gap-[8px] items-center top-[16px] left-[16px] rounded-[6px]">
+                          <span class="icon"><img src="https://cdn-icons-png.flaticon.com/512/1041/1041916.png" alt="icon" class="w-4 h-4"></span>
+                          <span class="text-white bg-teal-900 rounded-lg p-2">8h 30m</span>
+                      </span>
+                  </div>
+                  <div class="flex justify-between items-center mb-[16px]">
+                      <span class="inline-flex items-center justify-center border border-[#e5e5e5] px-[10px] h-[33px] rounded-[6px] font-medium text-[#808080] text-[14px]">Expert</span>
+                      <span class="text-edpurple font-semibold text-[20px]">$59.00</span>
+                  </div>
+                  <h5 class="font-semibold text-[20px] text-edblue mb-[23px]"><a href="course-details.html" class="hover:text-edpurple">Financial Analyst Training & Investing Course</a></h5>
+              </div>
+          </div>
+    
+          <!-- Repeat similar course items here -->
+          <div class="flex-shrink-0 w-full md:w-1/4 p-2">
+              <div class="course-item border border-[#e5e5e5] rounded-[10px] p-[4px] group">
+                  <div class="relative overflow-hidden rounded-[10px] mb-[24px]">
+                      <img src="https://wowtheme7.com/tf/escola/assets/img/course/2.png" alt="Course Image" class="aspect-[290/180] w-full object-cover group-hover:scale-110">
+                      <span class="absolute bg-edyellow px-[10px] h-[33px] flex gap-[8px] items-center top-[16px] left-[16px] rounded-[6px]">
+                          <span class="icon"><img src="https://cdn-icons-png.flaticon.com/512/1041/1041916.png" alt="icon" class="w-4 h-4"></span>
+                          <span class="text-white bg-teal-900 rounded-lg p-2">8h 30m</span>
+                      </span>
+                  </div>
+                  <div class="flex justify-between items-center mb-[16px]">
+                      <span class="inline-flex items-center justify-center border border-[#e5e5e5] px-[10px] h-[33px] rounded-[6px] font-medium text-[#808080] text-[14px]">Expert</span>
+                      <span class="text-edpurple font-semibold text-[20px]">$59.00</span>
+                  </div>
+                  <h5 class="font-semibold text-[20px] text-edblue mb-[23px]"><a href="course-details.html" class="hover:text-edpurple">Web Development with React</a></h5>
+              </div>
+          </div>
+    
+          <div class="flex-shrink-0 w-full md:w-1/4 p-2">
+            <!-- Course Item -->
+            <div class="course-item border border-[#e5e5e5] rounded-[10px] p-[4px] group">
+                <div class="relative overflow-hidden rounded-[10px] mb-[24px]">
+                    <img src="https://wowtheme7.com/tf/escola/assets/img/course/3.png" alt="Course Image" class="aspect-[290/180] w-full object-cover group-hover:scale-110">
+                    <span class="absolute bg-edyellow px-[10px] h-[23px] flex gap-[8px] items-center   rounded-[6px]">
+                        <span class="icon"><img src="https://cdn-icons-png.flaticon.com/512/1041/1041916.png" alt="icon" class="w-4 h-4"></span>
+                        <span class="text-white bg-teal-900 rounded-lg p-2">8h 30m</span>
+                    </span>
+                </div>
+                <div class="flex justify-between items-center mb-[16px]">
+                    <span class="inline-flex items-center justify-center border border-[#e5e5e5] px-[10px] h-[33px] rounded-[6px] font-medium text-[#808080] text-[14px]">Expert</span>
+                    <span class="text-edpurple font-semibold text-[20px]">$59.00</span>
+                </div>
+                <h5 class="font-semibold text-[20px] text-edblue mb-[23px]"><a href="course-details.html" class="hover:text-edpurple">Financial Analyst Training & Investing Course</a></h5>
+            </div>
+        </div>
+    
+        <!-- Repeat similar course items here -->
+        <div class="flex-shrink-0 w-full md:w-1/4 p-2">
+            <div class="course-item border border-[#e5e5e5] rounded-[10px] p-[4px] group">
+                <div class="relative overflow-hidden rounded-[10px] mb-[24px]">
+                    <img src="https://wowtheme7.com/tf/escola/assets/img/course/2.png" alt="Course Image" class="aspect-[290/180] w-full object-cover group-hover:scale-110">
+                    <span class="absolute bg-edyellow px-[10px] h-[33px] flex gap-[8px] items-center top-[16px] left-[16px] rounded-[6px]">
+                        <span class="icon"><img src="https://cdn-icons-png.flaticon.com/512/1041/1041916.png" alt="icon" class="w-4 h-4"></span>
+                        <span class="text-white bg-teal-900 rounded-lg p-2">8h 30m</span>
+                    </span>
+                </div>
+                <div class="flex justify-between items-center mb-[16px]">
+                    <span class="inline-flex items-center justify-center border border-[#e5e5e5] px-[10px] h-[33px] rounded-[6px] font-medium text-[#808080] text-[14px]">Expert</span>
+                    <span class="text-edpurple font-semibold text-[20px]">$59.00</span>
+                </div>
+                <h5 class="font-semibold text-[20px] text-edblue mb-[23px]"><a href="course-details.html" class="hover:text-edpurple">Web Development with React</a></h5>
+            </div>
+        </div>
+        
+                <!-- Add more course items as needed -->
+            </div>
+        
+            <!-- Left Button -->
+            <button class="absolute left-0 top-1/2 transform -translate-y-1/2 bg-white rounded-full p-2 shadow-md" id="prevBtn">
+                &#10094; <!-- Left arrow icon -->
+            </button>
+        
+            <!-- Right Button -->
+            <button class="absolute right-0 top-1/2 transform -translate-y-1/2 bg-white rounded-full p-2 shadow-md" id="nextBtn">
+                &#10095; <!-- Right arrow icon -->
+            </button>
+        </div>
+        
+        <script>
+            const carousel = document.getElementById('carousel');
+            const prevBtn = document.getElementById('prevBtn');
+            const nextBtn = document.getElementById('nextBtn');
+            let currentIndex = 0;
+            const totalItems = 4; // Number of course items in one view
+        
+            // Adjust this value to change the width of each course item
+            const itemWidth = 100; // in percentage, assuming 100% for full width
+        
+            nextBtn.addEventListener('click', () => {
+                if (currentIndex < totalItems - 1) {
+                    currentIndex++;
+                    carousel.style.transform = `translateX(-${currentIndex * itemWidth}%)`;
+                }
+            });
+        
+            prevBtn.addEventListener('click', () => {
+                if (currentIndex > 0) {
+                    currentIndex--;
+                    carousel.style.transform = `translateX(-${currentIndex * itemWidth}%)`;
+                }
+            });
+        </script>
+        
+      </div>
+    </section>
+    
+    <!-- JavaScript for Filtering -->
+    <script>
+      function filterCourses(category) {
+          const courses = document.querySelectorAll('.course-item');
+    
+          courses.forEach(course => {
+              if (category === 'all') {
+                  course.style.display = 'block';
+              } else {
+                  if (course.classList.contains(category)) {
+                      course.style.display = 'block';
+                  } else {
+                      course.style.display = 'none';
+                  }
+              }
+          });
+      }
+    
+      // Initialize by showing all courses by default
+      window.onload = function() {
+          filterCourses('all');
+      };
+    </script>
+    
+    
+    
+
+
+<!-- JavaScript for Filtering -->
+<script>
+  function filterCourses(category) {
+      const courses = document.querySelectorAll('.course-item');
+
+      courses.forEach(course => {
+          if (category === 'all') {
+              course.style.display = 'block';
+          } else {
+              if (course.classList.contains(category)) {
+                  course.style.display = 'block';
+              } else {
+                  course.style.display = 'none';
+              }
+          }
+      });
+  }
+
+  // Initialize by showing all courses by default
+  window.onload = function() {
+      filterCourses('all');
+  };
+</script>
+
+
+  <!--latest news-->
+  <div class="container mx-auto px-4 py-12">
+    <!-- Heading -->
+    <div class="text-center mb-8">
+      <p class="text-sm text-gray-500 uppercase">Blogs</p>
+      <h2 class="text-4xl font-bold">
+        Latest <span class="text-purple-500">NEWS</span>
+      </h2>
+    </div>
+
+
+    
+
+<!-- Grid Layout -->
+
+
+
+</div>
+</div>
+</div>
+</body>
+</html>

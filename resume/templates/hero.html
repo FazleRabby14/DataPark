@@ -1,0 +1,313 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <!-- SITE PAGE TITLE -->
+        <title>Frontend Mentor | Manage landing page</title>
+        <!-- SITE PAGE DESCRIPTION -->
+        <meta name="description" content="Bring everyone together to build better products.">
+        <!-- SITE AUTHORS -->
+        <meta name="author" content="Aman Singh Bhogal & Frontend Mentor">
+        <!-- FAVICON -->
+        <link rel="shortcut icon" href="/static/images/favicon-32x32.png" type="image/x-icon" sizes="32x32">
+        <!-- TAILWIND ASSETS (FOR CLIENT DEPLOYMENT) -->
+        <script src="https://cdn.tailwindcss.com"></script>
+        <!-- SWIPER JS STYLESHEET -->
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@8/swiper-bundle.min.css"/>
+        <!-- MAIN STYLESHEET -->
+        <link rel="stylesheet" href="/static/css/output.css">
+        <!-- SWIPER JS SCRIPT -->
+        <script src="https://cdn.jsdelivr.net/npm/swiper/swiper-bundle.min.js" defer></script>
+        <!-- EMAIL VALIDATION SCRIPT -->
+        <script src="/static/js/email-validation.js" defer></script>
+        <!-- MOBILE NAV MENU SCRIPT -->
+        <script src="/static/js/mobile-nav-menu.js" defer></script>
+        <!-- TESTIMONIAL SLIDER SCRIPT -->
+        <script src="/static/js/testimonial-slider.js" defer></script>
+        <!-- TEMPORARILY USING GOOGLE FONTS FROM SERVER -->
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Be+Vietnam+Pro:wght@500&display=swap" rel="stylesheet">
+
+    </head>
+
+    <body class="font-BeVietnamPro">
+         <!-- HERO SECTION -->
+         <style>
+            /* Animation for text moving from bottom to top */
+            .slide-up {
+                opacity: 0;
+                transform: translateY(50px); /* Move up by 50px */
+                animation: slideUp 1s ease forwards; /* Duration 1s, forwards keeps the final state */
+            }
+        
+            /* Keyframes to define the sliding effect */
+            @keyframes slideUp {
+                0% {
+                    opacity: 0;
+                    transform: translateY(50px); /* Start from 50px below */
+                }
+                100% {
+                    opacity: 1;
+                    transform: translateY(0); /* End at original position */
+                }
+            }
+
+            
+        </style>
+        
+        <section id="hero">
+
+            <!-- SVG Wave Background -->
+        <div class="absolute inset-0 -z-10">
+            <svg version="1.1" xmlns="http://www.w3.org/2000/svg" x="0px" y="0px" width="100%" height="100%" viewBox="0 0 1600 900" preserveAspectRatio="xMidYMax slice">
+                <defs>
+                    <linearGradient id="bg">
+                        <stop offset="0%" style="stop-color:rgba(24, 160, 194, 0.06)"></stop>
+                        <stop offset="50%" style="stop-color:rgba(3, 95, 109, 0.87)"></stop>
+                        <stop offset="100%" style="stop-color:rgba(38, 125, 160, 0.2)"></stop>
+                    </linearGradient>
+                    <path id="wave" fill="url(#bg)" d="M-363.852,502.589c0,0,236.988-41.997,505.475,0 s371.981,38.998,575.971,0s293.985-39.278,505.474,5.859s493.475,48.368,716.963-4.995v560.106H-363.852V502.589z" />
+                </defs>
+                <g>
+                    <use xlink:href='#wave' opacity=".3">
+                        <animateTransform attributeName="transform" attributeType="XML" type="translate" dur="10s"
+                            calcMode="spline" values="270 230; -334 180; 270 230" keyTimes="0; .5; 1"
+                            keySplines="0.42, 0, 0.58, 1.0;0.42, 0, 0.58, 1.0" repeatCount="indefinite" />
+                    </use>
+                    <use xlink:href='#wave' opacity=".6">
+                        <animateTransform attributeName="transform" attributeType="XML" type="translate" dur="8s"
+                            calcMode="spline" values="-270 230;243 220;-270 230" keyTimes="0; .6; 1"
+                            keySplines="0.42, 0, 0.58, 1.0;0.42, 0, 0.58, 1.0" repeatCount="indefinite" />
+                    </use>
+                    <use xlink:href='#wave' opacity=".9">
+                        <animateTransform attributeName="transform" attributeType="XML" type="translate" dur="6s"
+                            calcMode="spline" values="0 230;-140 200;0 230" keyTimes="0; .4; 1"
+                            keySplines="0.42, 0, 0.58, 1.0;0.42, 0, 0.58, 1.0" repeatCount="indefinite" />
+                    </use>
+                </g>
+            </svg>
+        </div>
+            <!-- FLEX CONTAINER -->
+            <div class="p-5 container flex flex-col-reverse items-center md:px-12 mx-auto my-10 space-y-0 md:flex-row md:space-y-0">
+                <!-- LEFT COLUMN -->
+                <section class="text-white font-sans pt-10 md:pt-0 md:py-16">
+                    <div class="max-w-4xl mx-auto md:px-8">
+                        <!-- Section Title -->
+                        <div class="flex items-center space-x-2 mb-4 slide-up">
+                            <div class="w-6 h-6 rounded-full border-2 border-teal-400 flex items-center justify-center">
+                                <span class="text-xs text-white">⚫</span>
+                            </div>
+                            <span class="text-sm uppercase tracking-wide text-teal-600">About Me</span>
+                        </div>
+                
+                        <!-- About Content -->
+                        <h1 class="text-4xl font-bold text-teal-800 mb-4 slide-up">
+                            About <span class="text-teal-500">Me</span>
+                        </h1>
+                        <p class="text-gray-800 text-lg mb-6">
+                            <!-- Mobile View (only visible on small screens) -->
+                            <span class="block lg:hidden">
+                                A lifelong learner, I have long experience on ORACLE database management, working as a Consultant.
+                            </span>
+                            <!-- Larger Screens (visible on medium and larger screens) -->
+                            <span class="slide-up lg:block">
+                                Hi 👋, I am <span class="font-semibold text-blue-700">Shahriyar Suhan</span>, a lifelong learner, I have long experience on ORACLE database management, working as a Consultant and Team Leader to implement Oracle databases in several organizations. Have acceptable experience on IT team management and have expertise on teaching on Oracle certification courses.
+                            </span>
+                        </p>
+                        
+                
+                        <!-- Skills Section -->
+                        <div class="grid grid-cols-3 md:grid-cols-4 max-w-[800px] gap-3 flex mb-8">
+                            <div class="bg-teal-800 px-2 py-2 rounded-3xl text-center flex items-center justify-center skill-item" id="skill1">
+                                <span class="text-white text-[8px] md:text-[10px]">Corporate Trainer</span> 
+                            </div>
+                            <div class="bg-teal-800 px-2 py-2 rounded-3xl text-center flex items-center justify-center skill-item" id="skill2">
+                                <span class="text-white text-[8px] md:text-[10px]">Oracle Database Expert</span> 
+                            </div>
+                            <div class="bg-teal-800 px-2 py-2 rounded-3xl text-center flex items-center justify-center skill-item" id="skill3">
+                                <span class="text-white text-[8px] md:text-[10px]">Database Management</span> 
+                            </div>
+                            <div class="bg-teal-800 px-2 py-2 rounded-3xl text-center flex items-center justify-center skill-item" id="skill4">
+                                <span class="text-white text-[8px] md:text-[10px]">Corporate Trainer</span> 
+                            </div>
+                           <div class="bg-teal-800 px-2 py-2 rounded-3xl text-center flex items-center justify-center skill-item" id="skill5">
+                                <span class="text-white text-[8px] md:text-[10px]">Oracle Database Expert</span> 
+                            </div>
+                            <div class="bg-teal-800 px-2 py-2 rounded-3xl text-center flex items-center justify-center skill-item" id="skill6">
+                                <span class="text-white text-[8px] md:text-[10px]">Database Management</span> 
+                            </div>
+                        </div>
+                        
+                        
+       
+                        <!-- Contact Information -->
+                        <div class="grid grid-cols-2 gap-4 mb-8 slide-up">
+                            <!-- Phone Section -->
+                            <div class="flex items-center space-x-2">
+                                <div class="bg-teal-800 p-3 rounded-full text-white flex items-center justify-center">
+                                    <i class="fas fa-phone-alt"></i> <!-- Phone icon -->
+                                </div>
+                                <p class="font-semibold text-gray-800">+880 18894-55578</p>
+                            </div>
+                            
+                            <!-- Email Section -->
+                            <!-- <div class="flex items-center space-x-2">
+                                <div class="bg-teal-800 p-3 rounded-full text-white flex items-center justify-center">
+                                    <i class="fas fa-envelope"></i>
+                                </div>
+                                <p class="font-semibold text-gray-800">shahriyarsuhan@gmail.com</p>
+                            </div> -->
+                        </div>
+                        
+                        
+                    </div>
+                </section>
+        
+                <!-- RIGHT COLUMN -->
+                <div class="relative z-10">
+                    <div class="bg-blue-200">
+                        <div class="flex justify-center items-center">
+                            <!-- Main Container -->
+                            <div class="relative bg-white rounded-lg max-w-md">
+                                <!-- Image Section -->
+                                <div class="relative  slide-up">
+                                    <img class="rounded-lg w-full h-auto" src="https://easy-peasy.ai/cdn-cgi/image/quality=80,format=auto,width=700/https://fdczvxmwwjwpwbeeqcth.supabase.co/storage/v1/object/public/images/50dab922-5d48-4c6b-8725-7fd0755d9334/3a3f2d35-8167-4708-9ef0-bdaa980989f9.png" alt="Profile Image">
+                                    <!-- Overlay Section 1 - Top Left -->
+                                    <div class="absolute -mt-10  md:-ml-16 top-4 left-4 bg-white p-3 rounded-md shadow-md flex items-center space-x-2">
+                                        <h1 id="yearsOfSuccess" class="text-sm md:text-3xl font-bold text-blue-500">24</h1>
+                                        <span class="text-lg text-gray-600">Years of Success</span>
+                                    </div>
+                                    <!-- Overlay Section 2 - Top Right (Trophy) -->
+                                    <!-- <div class="absolute top-4 right-4  p-2 -mt-12 h-28 w-20">
+                                        <img src="https://images.credly.com/images/56c98681-6f78-436d-866d-04035e5505da/Oracle_Specialist_Badge__1_.png" alt="Trophy Icon">
+                                    </div> -->
+                                    <!-- Overlay Section 3 - Bottom Right -->
+                                    <!-- <div class="absolute md:-mr-32 bottom-4 right-4 bg-white p-3 rounded-md shadow-md flex items-center space-x-2">
+                                        <h1 id="projectsCompleted" class="text-3xl font-bold text-red-500"></h1>
+                                        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="blue" viewBox="0 0 24 24">
+                                            <path d="M12 5v14m7-7H5" stroke="orange" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                                          </svg>
+                                          
+                                        <span class="text-lg text-gray-600">Projects Completed </span>
+                                    </div> -->
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        
+        <script>
+            // Function to animate the counter
+            function animateValue(id, start, end, duration) {
+                let element = document.getElementById(id);
+                let range = end - start;
+                let current = start;
+                let increment = end > start ? 1 : -1;
+                let stepTime = Math.abs(Math.floor(duration / range));
+                
+                let timer = setInterval(() => {
+                    current += increment;
+                    element.textContent = current;
+                    if (current === end) {
+                        clearInterval(timer);
+                    }
+                }, stepTime);
+            }
+        
+            // Start the counter when the page loads
+            window.onload = function () {
+                animateValue("yearsOfSuccess", 0, 24, 2000);  // 12 Years of Success
+                animateValue("projectsCompleted", 0, 800, 200); // 800+ Projects Completed
+            };
+        </script>
+         <style>
+            /* Add keyframes for the fade animations */
+ @keyframes fadeIn {
+     from { opacity: 0; transform: translateY(20px); }
+     to { opacity: 1; transform: translateY(0); }
+ }
+ 
+ @keyframes fadeOut {
+     from { opacity: 1; transform: translateY(0); }
+     to { opacity: 0; transform: translateY(20px); }
+ }
+ 
+ /* Initial state - hidden */
+ .skill-item {
+     opacity: 0;
+     display: flex;
+ }
+ 
+ /* Fade-in animation for each skill */
+ .skill-item.fade-in {
+     animation: fadeIn 1s forwards;
+ }
+ 
+ /* Fade-out animation */
+ .skill-item.fade-out {
+     animation: fadeOut 1s forwards;
+ }
+ 
+ /* Hide the skill section initially */
+.skill-item {
+    opacity: 0;
+    transform: translateY(20px);
+    transition: opacity 0.5s ease, transform 0.5s ease;
+}
+
+/* Show the section when the class is added */
+.skill-item.show {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+         </style>
+
+
+         <script>
+            const skills = [
+     document.getElementById('skill1'),
+     document.getElementById('skill2'),
+     document.getElementById('skill3'),
+     document.getElementById('skill4'),
+     document.getElementById('skill5'),
+     document.getElementById('skill6')
+ ];
+ 
+ let currentIndex = 0;
+ 
+ // Function to animate the skills one by one
+ function showSkills() {
+     skills.forEach(skill => skill.classList.remove('fade-in', 'fade-out')); // Reset all skills
+     currentIndex = 0;
+     // Animate each skill with a delay
+     skills.forEach((skill, index) => {
+         setTimeout(() => {
+             skill.classList.add('fade-in');
+         }, index * 1000); // Delay each one by 1 second
+     });
+ 
+     // Hide all skills after they have all appeared
+     setTimeout(hideSkills, skills.length * 1000 + 3000); // 3 seconds after the last skill appears
+ }
+ 
+ // Function to hide all skills
+ function hideSkills() {
+     skills.forEach(skill => skill.classList.add('fade-out'));
+     
+     // Restart the animation cycle after all skills are hidden
+     setTimeout(showSkills, 1000); // Wait for the fade-out animation to complete
+ }
+ 
+ // Start the animation
+ showSkills();
+ 
+ 
+         </script>
+</body>
+</html>

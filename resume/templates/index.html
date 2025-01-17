@@ -1,0 +1,894 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <!-- SITE PAGE TITLE -->
+        <title>Frontend Mentor | Manage landing page</title>
+        <!-- SITE PAGE DESCRIPTION -->
+        <meta name="description" content="Bring everyone together to build better products.">
+        <!-- SITE AUTHORS -->
+        <meta name="author" content="Aman Singh Bhogal & Frontend Mentor">
+        <!-- FAVICON -->
+        <link rel="shortcut icon" href="/static/images/favicon-32x32.png" type="image/x-icon" sizes="32x32">
+        <!-- TAILWIND ASSETS (FOR CLIENT DEPLOYMENT) -->
+        <script src="https://cdn.tailwindcss.com"></script>
+        <!-- SWIPER JS STYLESHEET -->
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@8/swiper-bundle.min.css"/>
+        <!-- MAIN STYLESHEET -->
+        <link rel="stylesheet" href="/static/output.css">
+        <!-- SWIPER JS SCRIPT -->
+        <script src="https://cdn.jsdelivr.net/npm/swiper/swiper-bundle.min.js" defer></script>
+        <!-- EMAIL VALIDATION SCRIPT -->
+        <script src="/static/js/email-validation.js" defer></script>
+        <!-- MOBILE NAV MENU SCRIPT -->
+        <script src="/static/js/mobile-nav-menu.js" defer></script>
+        <!-- TESTIMONIAL SLIDER SCRIPT -->
+        <script src="/static/js/testimonial-slider.js" defer></script>
+        <!-- TEMPORARILY USING GOOGLE FONTS FROM SERVER -->
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Be+Vietnam+Pro:wght@500&display=swap" rel="stylesheet">
+  <!-- AOS CSS -->
+  <link href="https://cdn.jsdelivr.net/npm/aos@2.3.1/dist/aos.css" rel="stylesheet">
+    </head>
+    <body class="font-BeVietnamPro">
+
+<!-- NAV BAR -->
+<nav class="relative container mx-auto px-4 py-8 md:px-2 md:py-16 xl:px-12">
+            <!-- FLEX CONTAINER -->
+            <div class="flex items-center justify-between">
+                <!-- LOGO -->
+                <div class="pt-2">
+                    <a href="{% url 'index' %}"><img src="/static/images/logo.svg" height="24" width="146" alt="A horizontal wordmark logo with four dots of varying red and the words 'manage' next to it in lowercase sans-serif font"></a>
+                </div>
+                <div class=" md:flex space-x-6">
+                    <a href="{% url 'index' %}" aria-label="Visit our Pricing page" class="text-veryDarkBlue hover:text-darkGrayishBlue transition ease-in">Home</a>
+                    <a href="{% url 'about' %}" aria-label="Visit our Product page" class="hover:text-darkGrayishBlue transition ease-in">About</a>
+                    <a href="{% url 'TutorialView' %}" aria-label="Visit our Careers page" class="hover:text-darkGrayishBlue transition ease-in">Tutorial</a>
+                    <a href="{% url 'contact' %}" aria-label="Visit our Community page" class="hover:text-darkGrayishBlue transition ease-in">Contact</a>
+                    <a href="{% url 'cv' %}" aria-label="Visit our Community page" class="hover:text-darkGrayishBlue transition ease-in">CV</a>
+                </div>
+                <!-- CTA BUTTON -->
+                <div class="button">
+                    <a href="#" class=" cta-button text-sm p-3 px-6 pt-2 text-veryLightGray bg-brightRed rounded-full baseline transition ease-in hover:bg-brightRedLight md:block">Get Started</a>
+                </div>
+
+                <!-- MOBILE NAV MENU ICON -->
+                <button id="mobile-nav-btn" class="block hamburger focus:outline-none md:hidden">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </button>
+            </div>
+
+            <div class="md:hidden z-50 relative"> <!-- Make the z-index higher and set it to relative positioning -->
+                <div id="mobile-nav-menu" class="overflow-visible hidden absolute flex-col items-center self-end rounded py-8 mt-10 space-y-6 font-bold bg-veryLightGray left-6 right-6 drop-shadow-lg sm:w-auto sm:self-center z-50">
+                    <a href="{% url 'index' %}" aria-label="Visit our Pricing page" class="text-veryDarkBlue hover:text-darkGrayishBlue transition ease-in">Home</a>
+                    <a href="{% url 'about' %}" aria-label="Visit our Product page" class="hover:text-darkGrayishBlue transition ease-in">About</a>
+                    <a href="{% url 'TutorialView' %}" aria-label="Visit our Careers page" class="hover:text-darkGrayishBlue transition ease-in">Tutorial</a>
+                    <a href="{% url 'contact' %}" aria-label="Visit our Community page" class="hover:text-darkGrayishBlue transition ease-in">Contact</a>
+                    <a href="{% url 'cv' %}" aria-label="Visit our Community page" class="hover:text-darkGrayishBlue transition ease-in">CV</a>
+                </div>
+            </div>
+
+</nav>
+<!--nav bar done-->
+
+
+
+<!--Hero Profile summary-->
+{% comment %} <iframe  src="./components/hero.html" width="100%"  frameborder="0"></iframe> {% endcomment %}
+{% include "hero.html" %}
+
+
+<style>
+    iframe {
+    width: 100%;
+    height: 80vh;
+    border: 0; /* Removes the default iframe border */
+    display: block;
+    }
+</style>
+<!--Profile summary done-->
+
+<!--blog section-->
+   
+        <section class="max-w-7xl mx-auto p-8 mt-60">
+     
+
+            <!-- Text and Image Column -->
+            <div class="grid grid-cols-12">
+                <!-- Heading and Description -->
+                <div class="col-span-12 md:col-span-8">
+                    <h1 class="text-4xl font-bold leading-tight text-gray-800">
+                        We help you to <span class="text-orange-500">Curated</span> The Best House
+                    </h1>
+                    <p class="mt-4 text-gray-600">
+                        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Donec quam felis, ultricies nec, pellentesque eu, pretium quis, sem..
+                    </p>
+                </div>
+                <div class="col-span-12 md:col-span-4 bg-teal-900 text-white p-6  shadow-lg">
+                    <div class="flex items-center space-x-3">
+                        <span class="text-3xl">🌟</span>
+                        <h2 class="text-xl text-white font-semibold">The Best Quality</h2>
+                    </div>
+                    <p class="mt-2">
+                        Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
+                    </p>
+                </div>
+                <!-- House Image -->
+                  </div>
+
+            <!-- Quality and Agent Section -->
+            <div class="grid grid-cols-12">
+                <!-- Best Quality Box -->
+                
+                <img src="https://www.washingtonpost.com/wp-apps/imrs.php?src=https://arc-anglerfish-washpost-prod-washpost.s3.amazonaws.com/public/VCUD23WIIII6PKUWKRAXLEWPOI.jpg&w=1200" alt="House Image" class="col-span-12 md:col-span-8  shadow-lg w-full">
+          
+                <!-- Professional Agent Box -->
+                <div class="col-span-12 md:col-span-4 bg-white p-6 rounded-lg ">
+                    <div class="flex items-center space-x-3 text-orange-500">
+                        <img class="transition-transform duration-500 hover:rotate-[360deg]" src="https://cdn-icons-png.freepik.com/256/12594/12594345.png?semt=ais_hybrid" alt="Descriptive Alt Text" width="53" height="61">
+                       
+                    </div>
+                    <p class="mt-2 text-gray-600">
+                        <h2 class="text-xl font-semibold text-gray-800">Professional Agent</h2>
+                        Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
+                    </p>
+                </div>
+            </div>
+
+       
+    </section>
+    <!--done-->
+
+<!--profile summary section-->
+<div class=" flex flex-wrap p-8 max-w-[1600px] mx-auto">
+    
+    <div class="w-full px-4 md:w-1/2 lg:w-1/3 " data-aos="fade-up" data-aos-delay="0">
+        <div class="mb-9 rounded-xl py-8 px-7 shadow-md transition-all hover:shadow-lg hover:-translate-y-2 duration-800 hover:bg-teal-800 hover:text-white sm:p-9 lg:px-6 xl:px-9">
+            <div class="flex justify-center items-center mx-auto mb-7 inline-block gap-5">
+                <img class="transition-transform duration-500 hover:rotate-[360deg]" src="https://cdn-icons-png.flaticon.com/512/4341/4341586.png" alt="Descriptive Alt Text" width="53" height="61">
+            </div>
+            <div>
+                <p class="text-base font-medium text-body-color text-justify">Team Lead for diverse teams comprising DBA, Disaster Recovery, Data Center Maintenance Team</p>
+            </div>
+        </div>
+    </div>
+    
+    <div class="w-full px-4 md:w-1/2 lg:w-1/3" data-aos="fade-up" data-aos-delay="100">
+        <div class="mb-9 rounded-xl py-8 px-7 shadow-md transition-all hover:shadow-lg hover:-translate-y-2 hover:bg-teal-800 hover:text-white sm:p-9 lg:px-6 xl:px-9">
+            <div class="flex justify-center items-center mx-auto mb-7 inline-block">
+                <img class="transition-transform duration-500 hover:rotate-[360deg]" src="https://cdn-icons-png.flaticon.com/512/8420/8420301.png" alt="Descriptive Alt Text" width="53" height="61">
+            </div>
+            <div>
+                <p class="text-base font-medium text-body-color text-justify">leading database migration, process optimization, ICT security policy planning.</p>
+            </div>
+        </div>
+    </div>
+    
+    <div class="w-full px-4 md:w-1/2 lg:w-1/3" data-aos="fade-up" data-aos-delay="200">
+        <div class="mb-9 rounded-xl py-8 px-7 shadow-md transition-all hover:shadow-lg hover:-translate-y-2 hover:bg-teal-800 hover:text-white sm:p-9 lg:px-6 xl:px-9">
+            <div class="flex justify-center items-center mx-auto mb-7 inline-block">
+                <img class="transition-transform duration-500 hover:rotate-[360deg]" src="https://cdn-icons-png.flaticon.com/512/1582/1582374.png" alt="Descriptive Alt Text" width="53" height="61">
+            </div>
+            <div>
+                <p class="text-base font-medium text-body-color">Adept in undertaking projects, business continuity planning to streamline IT operations.</p>
+            </div>
+        </div>
+    </div>
+    
+    <div class="w-full px-4 md:w-1/2 lg:w-1/3" data-aos="fade-up" data-aos-delay="300">
+        <div class="mb-9 rounded-xl py-8 px-7 shadow-md transition-all hover:shadow-lg hover:-translate-y-2 hover:bg-teal-800 hover:text-white sm:p-9 lg:px-6 xl:px-9">
+            <div class="flex justify-center items-center mx-auto mb-7 inline-block">
+                <img class="transition-transform duration-500 hover:rotate-[360deg]" src="https://cdn-icons-png.flaticon.com/512/8375/8375756.png" alt="Descriptive Alt Text" width="53" height="61">
+            </div>
+            <div>
+                <p class="text-base font-medium text-body-color">Proficiency to develop backup, recovery and disaster recovery strategies for project success.</p>
+            </div>
+        </div>
+    </div>
+    
+    <div class="w-full px-4 md:w-1/2 lg:w-1/3" data-aos="fade-up" data-aos-delay="400">
+        <div class="mb-9 rounded-xl py-8 px-7 shadow-md transition-all hover:shadow-lg hover:-translate-y-2 hover:bg-teal-800 hover:text-white sm:p-9 lg:px-6 xl:px-9">
+            <div class="flex justify-center items-center mx-auto mb-7 inline-block">
+                <img class="transition-transform duration-500 hover:rotate-[360deg]" src="https://cdn-icons-png.flaticon.com/512/2188/2188907.png" alt="Descriptive Alt Text" width="53" height="61">
+            </div>
+            <div>
+                <p class="text-base font-medium text-body-color">Verified skills in performing ORACLE database migration as well as implementation.</p>
+            </div>
+        </div>
+    </div>
+    
+    <div class="w-full px-4 md:w-1/2 lg:w-1/3" data-aos="fade-up" data-aos-delay="500">
+        <div class="mb-9 rounded-xl py-8 px-7 shadow-md transition-all hover:shadow-lg hover:-translate-y-2 hover:bg-teal-800 hover:text-white sm:p-9 lg:px-6 xl:px-9">
+            <div class="flex justify-center items-center mx-auto mb-7 inline-block">
+                <img class="transition-transform duration-500 hover:rotate-[360deg]" src="https://png.pngtree.com/png-vector/20220925/ourmid/pngtree-certified-ribbon-badge-stamp-design-png-image_6216210.png" alt="Descriptive Alt Text" width="53" height="61">
+            </div>
+            <div>
+                <p class="text-base font-medium text-body-color">Certified in Oracle DBA, OCP 19C, MCDBA, IBM Certified Database.</p>
+            </div>
+        </div>
+    </div>
+    
+</div>
+
+
+<!--profile summary section done-->
+
+
+<!-- Expertise SECTION -->
+<section class=" py-16 relative overflow-hidden">
+    <!-- Add the animated background container -->
+    <div class="area">
+        <ul class="circles">
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+        </ul>
+    </div>
+
+    <div class="grid grid-cols-1 md:grid-cols-2 md:max-w-7xl mx-auto px-4 z-10 relative">
+        <!-- Left Side: Image with Play Button -->
+        <div class="flex justify-center items-center">
+            <div class="relative w-96 h-96">
+                <img src="https://images.credly.com/images/56c98681-6f78-436d-866d-04035e5505da/Oracle_Specialist_Badge__1_.png" alt="Student 1" class="w-full h-full object-cover">
+            </div>
+        </div>
+
+        <!-- Right Side: Text Section -->
+        <div class="text-center lg:text-left relative z-20">
+            <h3 class="text-[#d9ff00] font-bold text-lg mb-2 relative inline-block pb-1 after:content-[''] after:w-12 after:h-0.5 after:bg-[#d9ff00] after:absolute after:bottom-0 after:left-0">
+                Expertise
+            </h3>
+            <h1 class="text-4xl font-extrabold mb-6 text-white">
+                With 24 years of proven Oracle database expertise, delivering results
+            </h1>
+            <p class="text-[#d9ff00] mb-6 text-justify">
+                I have expertise in Oracle database management, specializing in SQL, PL/SQL programming, performance tuning, and implementing robust data solutions to enhance operational efficiency.
+            </p>
+            <div class="grid grid-cols-2 gap-y-4 mb-6">
+                <div class="flex items-center">
+                    <div class="rounded-full border-2 border-[#9be546] w-9 h-9 flex items-center justify-center">
+                        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="#66ff00" class="w-4 h-4">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7" />
+                        </svg>
+                    </div>
+                    <span class="text-[#d9ff00] font-medium ml-2">Flexible Course Plan</span>
+                </div>
+                <div class="flex items-center">
+                    <div class="rounded-full border-2 border-[#9be546] w-9 h-9 flex items-center justify-center">
+                        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="#66ff00" class="w-4 h-4">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7" />
+                        </svg>
+                    </div>
+                    <span class="text-[#d9ff00] font-medium ml-2">24/7 Support</span>
+                </div>
+            </div>
+            <div class="mt-6">
+                <a href="{% url 'cv' %}#expertise" 
+                class="bg-teal-400 text-white px-6 py-2 rounded-lg shadow-lg hover:bg-teal-500 transition-all">
+                 Show More
+             </a>
+            </div>
+        </div>
+    </div>
+</section>
+<style>
+    /* Background Animation */
+    .area {
+        background: #015a61;
+        background: -webkit-linear-gradient(to left, #8f94fb, #4e54c8);
+        width: 100%;
+        height: 100vh;
+        position: absolute;
+        top: 0;
+        left: 0;
+        z-index: -1;
+    }
+    
+    .circles {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 96%;
+        overflow: hidden;
+    }
+    
+    .circles li {
+        position: absolute;
+        display: block;
+        list-style: none;
+        width: 20px;
+        height: 20px;
+        background: rgba(255, 255, 255, 0.2);
+        animation: animate 25s linear infinite;
+        bottom: -150px;
+    }
+    
+    .circles li:nth-child(1) { left: 25%; width: 80px; height: 80px; animation-delay: 0s; }
+    .circles li:nth-child(2) { left: 10%; width: 20px; height: 20px; animation-delay: 2s; animation-duration: 12s; }
+    .circles li:nth-child(3) { left: 70%; width: 20px; height: 20px; animation-delay: 4s; }
+    .circles li:nth-child(4) { left: 40%; width: 60px; height: 60px; animation-delay: 0s; animation-duration: 18s; }
+    .circles li:nth-child(5) { left: 65%; width: 20px; height: 20px; animation-delay: 0s; }
+    .circles li:nth-child(6) { left: 75%; width: 110px; height: 110px; animation-delay: 3s; }
+    .circles li:nth-child(7) { left: 35%; width: 150px; height: 150px; animation-delay: 7s; }
+    .circles li:nth-child(8) { left: 50%; width: 25px; height: 25px; animation-delay: 15s; animation-duration: 45s; }
+    .circles li:nth-child(9) { left: 20%; width: 15px; height: 15px; animation-delay: 2s; animation-duration: 35s; }
+    .circles li:nth-child(10) { left: 85%; width: 150px; height: 150px; animation-delay: 0s; animation-duration: 11s; }
+    
+    @keyframes animate {
+        0% {
+            transform: translateY(0) rotate(0deg);
+            opacity: 1;
+            border-radius: 0;
+        }
+        100% {
+            transform: translateY(-1000px) rotate(720deg);
+            opacity: 0;
+            border-radius: 50%;
+        }
+    }
+    </style>
+    
+<!-- Expertise SECTION done-->
+
+
+
+<!--Card sumary -->
+<body class="bg-gray-100">
+
+   <div class="text-center p-8 my-20">
+        <h2 class="text-3xl font-semibold">Career <span class="text-yellow-500">certificates</span></h2>
+        <p class="text-gray-600 mt-2">Lorem Ipsum is simply dummy text of the printing and typesetting</p>
+
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-6 mt-8 max-w-7xl mx-auto">
+            
+            <!-- Course Card 1 -->
+            <div class="relative group w-full h-full rounded-lg overflow-hidden" data-aos="fade-up">
+                <img src="https://i0.wp.com/umbrellait.com/wp-content/uploads/2021/04/group-1-min.jpg?ssl=1" alt="Micro Biology" class="w-full h-full object-cover transition-transform duration-500 transform group-hover:scale-110">
+                <div class="absolute inset-0 bg-black bg-opacity-80 opacity-0 group-hover:opacity-100 transition-opacity duration-500 p-4 w-full h-full flex items-center justify-center">
+                    <div class="w-full h-4/5 border-r-4 border-yellow-500 p-4 text-left">
+                        <div class="w-3/4">
+                            <h3 class="text-white text-xl font-semibold">Micro Biology</h3>
+                            <p class="text-yellow-500 text-sm">(Peter Parker)</p>
+                            <p class="text-gray-300 mt-2 text-sm">Then one day he was shooting some When the against him bubbling</p>
+                            <p class="text-gray-300 mt-2 text-sm"><i class="fas fa-calendar-alt"></i> Course Duration: 3 Yr</p>
+                            <p class="text-gray-300 text-sm"><i class="fas fa-graduation-cap"></i> Degree Level: Master's Degree</p>
+                            <div class="mt-2 flex text-yellow-500">
+                                <span>⭐⭐⭐⭐☆</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Course Card 2 -->
+            <div class="relative group w-full h-full rounded-lg overflow-hidden" data-aos="fade-up">
+                <img src="https://i0.wp.com/umbrellait.com/wp-content/uploads/2021/04/group-1-min.jpg?ssl=1" alt="Micro Biology" class="w-full h-full object-cover transition-transform duration-500 transform group-hover:scale-110">
+                <div class="absolute inset-0 bg-black bg-opacity-80 opacity-0 group-hover:opacity-100 transition-opacity duration-500 p-4 w-full h-full flex items-center justify-center">
+                    <div class="w-full h-4/5 border-r-4 border-yellow-500 p-4 text-left">
+                        <div class="w-3/4">
+                            <h3 class="text-white text-xl font-semibold">Micro Biology</h3>
+                            <p class="text-yellow-500 text-sm">(Peter Parker)</p>
+                            <p class="text-gray-300 mt-2 text-sm">Then one day he was shooting some When the against him bubbling</p>
+                            <p class="text-gray-300 mt-2 text-sm"><i class="fas fa-calendar-alt"></i> Course Duration: 3 Yr</p>
+                            <p class="text-gray-300 text-sm"><i class="fas fa-graduation-cap"></i> Degree Level: Master's Degree</p>
+                            <div class="mt-2 flex text-yellow-500">
+                                <span>⭐⭐⭐⭐☆</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Course Card 3 -->
+            <div class="relative group w-full h-full rounded-lg overflow-hidden" data-aos="fade-up">
+                <img src="https://i0.wp.com/umbrellait.com/wp-content/uploads/2021/04/group-1-min.jpg?ssl=1" alt="Micro Biology" class="w-full h-full object-cover transition-transform duration-500 transform group-hover:scale-110">
+                <div class="absolute inset-0 bg-black bg-opacity-80 opacity-0 group-hover:opacity-100 transition-opacity duration-500 p-4 w-full h-full flex items-center justify-center">
+                    <div class="w-full h-4/5 border-r-4 border-yellow-500 p-4 text-left">
+                        <div class="w-3/4">
+                            <h3 class="text-white text-xl font-semibold">Micro Biology</h3>
+                            <p class="text-yellow-500 text-sm">(Peter Parker)</p>
+                            <p class="text-gray-300 mt-2 text-sm">Then one day he was shooting some When the against him bubbling</p>
+                            <p class="text-gray-300 mt-2 text-sm"><i class="fas fa-calendar-alt"></i> Course Duration: 3 Yr</p>
+                            <p class="text-gray-300 text-sm"><i class="fas fa-graduation-cap"></i> Degree Level: Master's Degree</p>
+                            <div class="mt-2 flex text-yellow-500">
+                                <span>⭐⭐⭐⭐☆</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+        </div>
+    </div>
+
+    <!-- AOS JS -->
+    <script src="https://cdn.jsdelivr.net/npm/aos@2.3.1/dist/aos.js"></script>
+    <script>
+        AOS.init({
+            duration: 1000, // Animation duration in milliseconds
+            once: true // Animation triggers only once
+        });
+    </script>
+</body>
+<!--Card sumary done-->
+
+
+
+<!-- Parallax Section with Image and Experience -->
+<section class="bg-cover bg-fixed bg-center flex items-center justify-center" data-aos="fade-up" style="background-image: url('https://wallpapercrafter.com/desktop1/512931-pixel-art-stars-Moon-clouds-sky-no-people-nature.jpg');">
+    <div class="bg-black bg-opacity-50 w-full py-10"> <!-- Reduced padding for less height -->
+        <div class="max-w-[1600px] mx-auto md:px-8 grid grid-cols-1 md:grid-cols-2 gap-6" data-aos="fade-up"> <!-- Reduced gap -->
+            <!-- Left Side - Cover Image -->
+            <div class="flex justify-center items-center mb-6 md:mb-0"> <!-- Center the image -->
+                <img src="https://i.redd.it/rg52cvw0mq9b1.png" alt="Cover Image" 
+                     class="rounded-lg shadow-lg object-cover h-auto w-2/3 max-w-[400px]"> <!-- Reduced size with max width -->
+            </div>
+
+            <!-- Right Side - Work Experience -->
+            <div class="bg-opacity-80 p-6 rounded-lg"> <!-- Reduced padding for less height -->
+                <!-- Title Section -->
+                <div class="mb-6">
+                    <h1 class="text-3xl font-bold text-teal-400">Work <span class="text-white">Experience</span></h1>
+                    <p class="text-white mt-2">
+                        Strong communication and teamwork skills, with a focus on delivering exceptional results.
+                    </p>
+                </div>
+
+                <!-- Experience Section -->
+                <div class="h-[300px] space-y-6 overflow-auto"> <!-- Reduced height -->
+                    {% for item in works|slice:":3" %}
+                    <!-- First Job -->
+                    <div class="relative">
+                        <div class="absolute top-0 left-0 w-1 h-full bg-teal-400"></div>
+                        <div class="ml-8">
+                            <div class="flex items-center mb-2">
+                                <h3 class="text-sm md:text-lg font-semibold text-white">{{item.designation}} | {{item.company_location}}</h3>
+                                <span class="ml-auto text-[5px] md:text-sm text-white">{{item.starting_time}} – {{item.ending_time}}</span>
+                            </div>
+                            <h4 class="md:text-[12px] font-semibold text-teal-400">{{item.company_name}}</h4>
+                        </div>
+                    </div>
+                    {% endfor %}
+                </div>
+
+                <!-- Show More Button -->
+                <div class="mt-6">
+                    <a href="{% url 'cv' %}#work-experience" 
+                    class="bg-teal-400 text-white px-6 py-2 rounded-lg shadow-lg hover:bg-teal-500 transition-all">
+                     Show More
+                 </a>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+
+<!--Paralal Time SECTION done-->
+
+<div class="container mx-auto px-4 py-8 my-20">
+    <h2 class="text-4xl font-bold text-center mb-10"  data-aos="fade-up">My <span class="text-teal-800">Additional Work Experience</span></h2>
+
+    <div class="grid grid-cols-1 md:grid-cols-2 gap-10 max-w-7xl mx-auto"  data-aos="fade-up">
+        <div class="flex flex-col h-full">
+           
+            <h3 class="text-lg font-semibold mb-4">As Database Trainer</h3>
+            {% for item in trainers|slice:":2" %}
+            <div class="space-y-8 flex-grow">
+
+            
+                <div class="relative transform transition-transform duration-300 hover:scale-105 hover:-translate-y-1 fade-in-up">
+                    <div class="absolute left-0 top-0 w-1 h-full bg-teal-800 rounded-full"></div>
+                    <div class="pl-8 bg-white shadow-md rounded-lg p-4 h-full">
+                        {% comment %} <p class="text-gray-600 mb-1">{{item.starting_time}} - {{item.ending_time}}</p> {% endcomment %}
+                        <h4 class="text-md font-semibold text-teal-800">{{item.designation}}</h4>
+                        <p class="text-sm text-gray-600">{{item.hours}} & {{item.participants}}</p>
+                        <p class="text-gray-500 mt-2">For {{item.company_name}}, {{item.company_location}}</p>
+                    </div>
+                 
+
+                </div>
+              
+
+                {% comment %} <div class="relative transform transition-transform duration-300 hover:scale-105 hover:-translate-y-1 fade-in-up">
+                    <div class="absolute left-0 top-0 w-1 h-full bg-teal-800 rounded-full"></div>
+                    <div class="pl-8 bg-white shadow-md rounded-lg p-4 h-full">
+                        <p class="text-gray-600 mb-1">June 12, 2010 - 2013</p>
+                        <h4 class="text-xl font-semibold text-teal-800">Oracle Database 19C RAC, 19C DataGuard</h4>
+                        <p class="text-sm text-gray-600">48 Hours & 10 Participants</p>
+                        <p class="text-gray-500 mt-2">For Jamuna Bank PLC, Dhaka, Bangladesh</p>
+                    </div>
+                </div> {% endcomment %}
+            </div>
+            {% endfor%}
+        </div>
+
+        <div class="flex flex-col h-full">
+            <h3 class="text-lg font-semibold mb-4">As Database Consultant</h3>
+            {% for item in consaltents|slice:":2" %}
+            <div class="space-y-8 flex-grow">
+                <div class="relative transform transition-transform duration-300 hover:scale-105 hover:-translate-y-1 fade-in-up">
+                    <div class="absolute left-0 top-0 w-1 h-full bg-teal-800 rounded-full"></div>
+                    <div class="pl-8 bg-white shadow-md rounded-lg p-4 h-full">
+                        <h4 class="text-xl font-semibold text-teal-800">{{ item.designation }} | {{ item.company_name }}</h4>
+                        <p class="text-sm text-gray-600">{{ item.duration }}</p>
+                        
+                        {% if item.details %}
+                            <p class="text-gray-500 mt-2">{{ item.details }}</p>
+                        {% endif %}
+                    </div>
+                </div>
+            </div>
+            {% endfor %}
+        </div>
+        
+    </div>
+</div>
+
+<!--finish work experience-->
+
+
+    <!--project work-->
+    <!-- <div class="bg-white py-24 sm:py-32">
+        <div class="mx-auto max-w-7xl px-6 lg:px-8">
+          <div class="mx-auto max-w-2xl lg:text-center">
+            <h2 class="text-base/7 font-semibold text-indigo-600">Deploy faster</h2>
+            <p class="mt-2 text-pretty text-4xl font-semibold tracking-tight text-gray-900 sm:text-5xl lg:text-balance">Everything you need to deploy your app</p>
+            <p class="mt-6 text-lg/8 text-gray-600">Quis tellus eget adipiscing convallis sit sit eget aliquet quis. Suspendisse eget egestas a elementum pulvinar et feugiat blandit at. In mi viverra elit nunc.</p>
+          </div>
+          <div class="mx-auto mt-16 max-w-2xl sm:mt-20 lg:mt-24 lg:max-w-4xl">
+            <dl class="grid max-w-xl grid-cols-1 gap-x-8 gap-y-10 lg:max-w-none lg:grid-cols-2 lg:gap-y-16">
+              <div class="relative pl-16">
+                <dt class="text-base/7 font-semibold text-gray-900">
+                  <div class="absolute left-0 top-0 flex h-10 w-10 items-center justify-center rounded-lg bg-indigo-600">
+                    <svg class="h-6 w-6 text-white" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" aria-hidden="true" data-slot="icon">
+                      <path stroke-linecap="round" stroke-linejoin="round" d="M12 16.5V9.75m0 0 3 3m-3-3-3 3M6.75 19.5a4.5 4.5 0 0 1-1.41-8.775 5.25 5.25 0 0 1 10.233-2.33 3 3 0 0 1 3.758 3.848A3.752 3.752 0 0 1 18 19.5H6.75Z" />
+                    </svg>
+                  </div>
+                  Push to deploy
+                </dt>
+                <dd class="mt-2 text-base/7 text-gray-600">Morbi viverra dui mi arcu sed. Tellus semper adipiscing suspendisse semper morbi. Odio urna massa nunc massa.</dd>
+              </div>
+              <div class="relative pl-16">
+                <dt class="text-base/7 font-semibold text-gray-900">
+                  <div class="absolute left-0 top-0 flex h-10 w-10 items-center justify-center rounded-lg bg-indigo-600">
+                    <svg class="h-6 w-6 text-white" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" aria-hidden="true" data-slot="icon">
+                      <path stroke-linecap="round" stroke-linejoin="round" d="M16.5 10.5V6.75a4.5 4.5 0 1 0-9 0v3.75m-.75 11.25h10.5a2.25 2.25 0 0 0 2.25-2.25v-6.75a2.25 2.25 0 0 0-2.25-2.25H6.75a2.25 2.25 0 0 0-2.25 2.25v6.75a2.25 2.25 0 0 0 2.25 2.25Z" />
+                    </svg>
+                  </div>
+                  SSL certificates
+                </dt>
+                <dd class="mt-2 text-base/7 text-gray-600">Sit quis amet rutrum tellus ullamcorper ultricies libero dolor eget. Sem sodales gravida quam turpis enim lacus amet.</dd>
+              </div>
+              <div class="relative pl-16">
+                <dt class="text-base/7 font-semibold text-gray-900">
+                  <div class="absolute left-0 top-0 flex h-10 w-10 items-center justify-center rounded-lg bg-indigo-600">
+                    <svg class="h-6 w-6 text-white" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" aria-hidden="true" data-slot="icon">
+                      <path stroke-linecap="round" stroke-linejoin="round" d="M16.023 9.348h4.992v-.001M2.985 19.644v-4.992m0 0h4.992m-4.993 0 3.181 3.183a8.25 8.25 0 0 0 13.803-3.7M4.031 9.865a8.25 8.25 0 0 1 13.803-3.7l3.181 3.182m0-4.991v4.99" />
+                    </svg>
+                  </div>
+                  Simple queues
+                </dt>
+                <dd class="mt-2 text-base/7 text-gray-600">Quisque est vel vulputate cursus. Risus proin diam nunc commodo. Lobortis auctor congue commodo diam neque.</dd>
+              </div>
+              <div class="relative pl-16">
+                <dt class="text-base/7 font-semibold text-gray-900">
+                  <div class="absolute left-0 top-0 flex h-10 w-10 items-center justify-center rounded-lg bg-indigo-600">
+                    <svg class="h-6 w-6 text-white" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" aria-hidden="true" data-slot="icon">
+                      <path stroke-linecap="round" stroke-linejoin="round" d="M7.864 4.243A7.5 7.5 0 0 1 19.5 10.5c0 2.92-.556 5.709-1.568 8.268M5.742 6.364A7.465 7.465 0 0 0 4.5 10.5a7.464 7.464 0 0 1-1.15 3.993m1.989 3.559A11.209 11.209 0 0 0 8.25 10.5a3.75 3.75 0 1 1 7.5 0c0 .527-.021 1.049-.064 1.565M12 10.5a14.94 14.94 0 0 1-3.6 9.75m6.633-4.596a18.666 18.666 0 0 1-2.485 5.33" />
+                    </svg>
+                  </div>
+                  Advanced security
+                </dt>
+                <dd class="mt-2 text-base/7 text-gray-600">Arcu egestas dolor vel iaculis in ipsum mauris. Tincidunt mattis aliquet hac quis. Id hac maecenas ac donec pharetra eget.</dd>
+              </div>
+            </dl>
+          </div>
+        </div>
+      </div> -->
+     <!--done-->      
+     
+     <!--skill set-->
+     <body class=" text-black font-sans" >
+        <section class="px-8 py-16">
+            <div class="max-w-7xl mx-auto">
+                <div class="mb-12  text-center">
+                    <h2 class="text-lg text-gray-400 uppercase"  data-aos="fade-up"> Skills</h2>
+                    <h1 class="text-5xl font-bold text-teal-800"  data-aos="fade-up">Technical Expertise</h1>
+                </div>
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-8"  data-aos="fade-up">
+                    <!-- Skill Card: Oracle Database RAC Administration -->
+                    <div class=" rounded-lg p-5 flex items-center justify-between shadow-lg transform transition-transform duration-300 hover:-translate-y-1">
+                        <div class="flex items-center">
+                            <img src="https://cdn-icons-png.flaticon.com/512/4248/4248443.png" alt="Database Icon" class="w-12 h-12 mr-4">
+                            <div>
+                                <h3 class="text-black text-xl font-semibold">Oracle Database RAC Administration</h3>
+                                <div class="w-full bg-gray-700 rounded mt-2 h-1.5">
+                                    <div class="bg-teal-800 h-1.5 rounded" style="width: 92%;"></div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="text-teal-800 text-xl font-bold">92%</div>
+                    </div>
+    
+                    <!-- Skill Card: Oracle Clusterware Administration -->
+                    <div class=" rounded-lg p-5 flex items-center justify-between shadow-lg transform transition-transform duration-300 hover:-translate-y-1">
+                        <div class="flex items-center">
+                            <img src="https://cdn-icons-png.flaticon.com/512/5805/5805699.png" alt="Clusterware Icon" class="w-12 h-12 mr-4">
+                            <div>
+                                <h3 class="text-black text-xl font-semibold">Oracle Clusterware Administration</h3>
+                                <div class="w-full bg-gray-700 rounded mt-2 h-1.5">
+                                    <div class="bg-teal-800 h-1.5 rounded" style="width: 90%;"></div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="text-teal-800 text-xl font-bold">90%</div>
+                    </div>
+    
+                    <!-- Skill Card: Oracle Data Guard Administration -->
+                    <div class=" rounded-lg p-5 flex items-center justify-between shadow-lg transform transition-transform duration-300 hover:-translate-y-1">
+                        <div class="flex items-center">
+                            <img src="https://cdn-icons-png.freepik.com/256/9386/9386717.png?semt=ais_hybrid" alt="Data Guard Icon" class="w-12 h-12 mr-4">
+                            <div>
+                                <h3 class="text-black text-xl font-semibold">Oracle Data Guard Administration</h3>
+                                <div class="w-full bg-gray-700 rounded mt-2 h-1.5">
+                                    <div class="bg-teal-800 h-1.5 rounded" style="width: 88%;"></div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="text-teal-800 text-xl font-bold">88%</div>
+                    </div>
+    
+                    <!-- Skill Card: Core Banking System Implementation -->
+                    <div class=" rounded-lg p-5 flex items-center justify-between shadow-lg transform transition-transform duration-300 hover:-translate-y-1">
+                        <div class="flex items-center">
+                            <img src="https://cdn-icons-png.flaticon.com/128/2612/2612462.png" alt="Banking System Icon" class="w-12 h-12 mr-4">
+                            <div>
+                                <h3 class="text-black text-xl font-semibold">Core Banking System Implementation</h3>
+                                <div class="w-full bg-gray-700 rounded mt-2 h-1.5">
+                                    <div class="bg-teal-800 h-1.5 rounded" style="width: 85%;"></div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="text-teal-800 text-xl font-bold">85%</div>
+                    </div>
+    
+                    <!-- Skill Card: Oracle ASM -->
+                    <div class=" rounded-lg p-5 flex items-center justify-between shadow-lg transform transition-transform duration-300 hover:-translate-y-1">
+                        <div class="flex items-center">
+                            <img src="https://cdn-icons-png.freepik.com/256/9523/9523340.png?semt=ais_hybrid" alt="ASM Icon" class="w-12 h-12 mr-4">
+                            <div>
+                                <h3 class="text-black text-xl font-semibold">Oracle Automatic Storage Management</h3>
+                                <div class="w-full bg-gray-700 rounded mt-2 h-1.5">
+                                    <div class="bg-teal-800 h-1.5 rounded" style="width: 87%;"></div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="text-teal-800 text-xl font-bold">87%</div>
+                    </div>
+    
+                    <!-- Skill Card: ICT Security Policy Implementation -->
+                    <div class=" rounded-lg p-5 flex items-center justify-between shadow-lg transform transition-transform duration-300 hover:-translate-y-1">
+                        <div class="flex items-center">
+                            <img src="https://cdn-icons-png.flaticon.com/512/3135/3135715.png" alt="ICT Security Icon" class="w-12 h-12 mr-4">
+                            <div>
+                                <h3 class="text-black text-xl font-semibold">ICT Security Policy Implementation</h3>
+                                <div class="w-full bg-gray-700 rounded mt-2 h-1.5">
+                                    <div class="bg-teal-800 h-1.5 rounded" style="width: 89%;"></div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="text-teal-800 text-xl font-bold">89%</div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </body>
+    
+    
+<!--skill set done-->
+
+
+       <!-- FAQ Section -->
+<!-- <section class="py-10 bg-gray-50 sm:py-16 lg:py-24">
+    <div class="px-4 mx-auto sm:px-6 lg:px-8 max-w-7xl">
+        <div class="max-w-2xl mx-auto text-center">
+            <h2 class="text-3xl font-bold leading-tight text-black sm:text-4xl lg:text-5xl">Frequently Asked Questions</h2>
+            <p class="max-w-xl mx-auto mt-4 text-base leading-relaxed text-gray-600">Amet minim mollit non deserunt ullamco est sit aliqua dolor do.</p>
+        </div>
+
+        <div class="max-w-3xl mx-auto mt-8 space-y-4 md:mt-16">
+            <div class="faq-item transition-all duration-200 bg-black border border-gray-200 shadow-lg cursor-pointer hover:bg-gray-50">
+                <button type="button" class="faq-question flex items-center justify-between w-full px-4 py-5 sm:p-6">
+                    <span class="text-lg font-semibold text-black">How to create an account?</span>
+                    <svg class="faq-icon w-6 h-6 text-gray-400 transform rotate-180" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7" />
+                    </svg>
+                </button>
+                <div class="faq-answer px-4 pb-5 sm:px-6 sm:pb-6 hidden">
+                    <p>Amet minim mollit non deserunt ullamco est sit <a href="#" title="" class="text-blue-600 transition-all duration-200 hover:underline">aliqua dolor</a> do amet sint. Velit officia consequat duis enim velit mollit.</p>
+                </div>
+            </div>
+
+            <div class="faq-item transition-all duration-200 bg-black border border-gray-200 shadow-lg cursor-pointer hover:bg-gray-50">
+                <button type="button" class="faq-question flex items-center justify-between w-full px-4 py-5 sm:p-6">
+                    <span class="text-lg font-semibold text-black">How can I make payment using Paypal?</span>
+                    <svg class="faq-icon w-6 h-6 text-gray-400" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7" />
+                    </svg>
+                </button>
+                <div class="faq-answer px-4 pb-5 sm:px-6 sm:pb-6 hidden">
+                    <p>Amet minim mollit non deserunt ullamco est sit <a href="#" title="" class="text-blue-600 transition-all duration-200 hover:underline">aliqua dolor</a> do amet sint. Velit officia consequat duis enim velit mollit.</p>
+                </div>
+            </div>
+
+            <div class="faq-item transition-all duration-200 bg-white border border-gray-200 shadow-lg cursor-pointer hover:bg-gray-50">
+                <button type="button" class="faq-question flex items-center justify-between w-full px-4 py-5 sm:p-6">
+                    <span class="text-lg font-semibold text-black">Can I cancel my plan?</span>
+                    <svg class="faq-icon w-6 h-6 text-gray-400" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7" />
+                    </svg>
+                </button>
+                <div class="faq-answer px-4 pb-5 sm:px-6 sm:pb-6 hidden">
+                    <p>Amet minim mollit non deserunt ullamco est sit <a href="#" title="" class="text-blue-600 transition-all duration-200 hover:underline">aliqua dolor</a> do amet sint. Velit officia consequat duis enim velit mollit.</p>
+                </div>
+            </div>
+
+            <div class="faq-item transition-all duration-200 bg-white border border-gray-200 shadow-lg cursor-pointer hover:bg-gray-50">
+                <button type="button" class="faq-question flex items-center justify-between w-full px-4 py-5 sm:p-6">
+                    <span class="text-lg font-semibold text-black">How can I reach support?</span>
+                    <svg class="faq-icon w-6 h-6 text-gray-400" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7" />
+                    </svg>
+                </button>
+                <div class="faq-answer px-4 pb-5 sm:px-6 sm:pb-6 hidden">
+                    <p>Amet minim mollit non deserunt ullamco est sit <a href="#" title="" class="text-blue-600 transition-all duration-200 hover:underline">aliqua dolor</a> do amet sint. Velit officia consequat duis enim velit mollit.</p>
+                </div>
+            </div>
+        </div>
+
+        <p class="text-center text-gray-600 textbase mt-9">Didn’t find the answer you are looking for? <a href="#" title="" class="font-medium text-blue-600 transition-all duration-200 hover:text-blue-700 focus:text-blue-700 hover:underline">Contact our support</a></p>
+    </div>
+</section> -->
+
+<!-- JavaScript to handle FAQ toggle functionality -->
+<script>
+    // Select all FAQ items
+    const faqItems = document.querySelectorAll('.faq-item');
+
+    // Add event listener to each FAQ button
+    faqItems.forEach(item => {
+        const button = item.querySelector('.faq-question');
+        const answer = item.querySelector('.faq-answer');
+        const icon = item.querySelector('.faq-icon');
+
+        // Toggle FAQ on click
+        button.addEventListener('click', () => {
+            const isOpen = answer.classList.contains('hidden');
+            
+            // Close all open FAQs first
+            faqItems.forEach(i => {
+                i.querySelector('.faq-answer').classList.add('hidden');
+                i.querySelector('.faq-icon').classList.remove('rotate-180');
+            });
+            
+            // Toggle the clicked FAQ
+            if (isOpen) {
+                answer.classList.remove('hidden');
+                icon.classList.add('rotate-180');
+            }
+        });
+    });
+</script>
+
+  
+
+        <!-- CTA SECTION -->
+        <section id="cta-section" class="bg-brightRed">
+            <!-- FLEX CONTAINER -->
+            <div class="container flex flex-col items-center justify-between px-6 py-24 mx-auto space-y-12 md:py-12 md:flex-row md:space-y-0">
+                <!-- HEADING -->
+                <h2 class="text-5xl font-bold leading-tight text-center text-veryLightGray md:text-4xl md:max-width-xl md:w-1/3 md:text-left">
+                    Simplify how your team works today.
+                </h2>
+                <!-- CTA BUTTON -->
+                <div class="button">
+                    <a href="#" class="p-3 px-6 pt-2 text-brightRed bg-veryLightGray rounded-full baseline hover:text-brightRedLight">
+                        Get Started
+                    </a>
+                </div>
+            </div>
+        </section>
+
+
+
+
+        <!-- FOOTER -->
+        <footer id="footer" class="bg-veryDarkBlue h-auto xl:h-275">
+            <!-- FLEX CONTAINER -->
+            <div class="container flex flex-col-reverse justify-between px-6 py-1 h-full mx-auto space-y-8 lg:flex-row lg:space-y-0">
+                <!-- LOGO AND SOCIAL MEDIA LINKS CONTAINER -->
+                <div class="flex flex-col-reverse items-center justify-between space-y-12 lg:flex-col lg:space-y-0 lg:items-start">
+                    
+                    <!-- LOGO -->
+                    <div class="py-10 mt-5">
+                        <img src="src/img/logo-white.svg" class="h-8" height="32px" width="194.67px" alt="A series of four dots with varying shades of red and the word manage placed next to it in white">
+                    </div>
+                    
+                    <!-- SOCIAL MEDIA LINKS -->
+                    <div class="flex flex-row items-center justify-between w-full pt-5 space-x-4 lg:pb-8 sm:py-0">
+                        <ul class="flex flex-row justify-between list-none w-full py-1">
+                            <li><a href="#" aria-label="Visit our Facebook page"><svg class="http://www.w3.org/2000/svg social-icons-footer text-veryLightGray fill-current transition ease-in h-8 w-8 hover:fill-brightRed scale-150 md:h-6 md:scale-110"><path d="M18.896 0H1.104C.494 0 0 .494 0 1.104v17.793C0 19.506.494 20 1.104 20h9.58v-7.745H8.076V9.237h2.606V7.01c0-2.583 1.578-3.99 3.883-3.99 1.104 0 2.052.082 2.329.119v2.7h-1.598c-1.254 0-1.496.597-1.496 1.47v1.928h2.989l-.39 3.018h-2.6V20h5.098c.608 0 1.102-.494 1.102-1.104V1.104C20 .494 19.506 0 18.896 0z"/></svg></a></li>
+                            <li><a href="#" aria-label="Visit our YouTube page"><svg class="http://www.w3.org/2000/svg social-icons-footer text-veryLightGray fill-current transition ease-in h-8 w-8 hover:fill-brightRed scale-150 md:h-6 md:scale-110"><path d="M10.333 0c-5.522 0-10 4.478-10 10 0 5.523 4.478 10 10 10 5.523 0 10-4.477 10-10 0-5.522-4.477-10-10-10zm3.701 14.077c-1.752.12-5.653.12-7.402 0C4.735 13.947 4.514 13.018 4.5 10c.014-3.024.237-3.947 2.132-4.077 1.749-.12 5.651-.12 7.402 0 1.898.13 2.118 1.059 2.133 4.077-.015 3.024-.238 3.947-2.133 4.077zM8.667 8.048l4.097 1.949-4.097 1.955V8.048z"/></svg></a></li>
+                            <li><a href="#" aria-label="Visit our Twitter page"><svg class="http://www.w3.org/2000/svg social-icons-footer text-veryLightGray fill-current transition ease-in h-8 w-8 hover:fill-brightRed scale-150 md:h-6 md:scale-110"><path d="M20.667 2.797a8.192 8.192 0 01-2.357.646 4.11 4.11 0 001.804-2.27 8.22 8.22 0 01-2.606.996A4.096 4.096 0 0014.513.873c-2.649 0-4.595 2.472-3.997 5.038a11.648 11.648 0 01-8.457-4.287 4.109 4.109 0 001.27 5.478A4.086 4.086 0 011.47 6.59c-.045 1.901 1.317 3.68 3.29 4.075a4.113 4.113 0 01-1.853.07 4.106 4.106 0 003.834 2.85 8.25 8.25 0 01-6.075 1.7 11.616 11.616 0 006.29 1.843c7.618 0 11.922-6.434 11.662-12.205a8.354 8.354 0 002.048-2.124z"/></svg></a></li>
+                            <li><a href="#" aria-label="Visit our Pinterest page"><svg class="http://www.w3.org/2000/svg social-icons-footer text-veryLightGray fill-current transition ease-in h-8 w-8 hover:fill-brightRed scale-150 md:h-6 md:scale-110"><path d="M10 0C4.478 0 0 4.477 0 10c0 4.237 2.636 7.855 6.356 9.312-.088-.791-.167-2.005.035-2.868.182-.78 1.172-4.97 1.172-4.97s-.299-.6-.299-1.486c0-1.39.806-2.428 1.81-2.428.852 0 1.264.64 1.264 1.408 0 .858-.545 2.14-.828 3.33-.236.995.5 1.807 1.48 1.807 1.778 0 3.144-1.874 3.144-4.58 0-2.393-1.72-4.068-4.177-4.068-2.845 0-4.515 2.135-4.515 4.34 0 .859.331 1.781.745 2.281a.3.3 0 01.069.288l-.278 1.133c-.044.183-.145.223-.335.134-1.249-.581-2.03-2.407-2.03-3.874 0-3.154 2.292-6.052 6.608-6.052 3.469 0 6.165 2.473 6.165 5.776 0 3.447-2.173 6.22-5.19 6.22-1.013 0-1.965-.525-2.291-1.148l-.623 2.378c-.226.869-.835 1.958-1.244 2.621.937.29 1.931.446 2.962.446 5.522 0 10-4.477 10-10S15.522 0 10 0z"/></svg></a></li>
+                            <li><a href="#" aria-label="Visit our Instagram page"><svg class="http://www.w3.org/2000/svg social-icons-footer text-veryLightGray fill-current transition ease-in h-8 w-8 hover:fill-brightRed scale-150 md:h-6 md:scale-110"><path d="M10.333 1.802c2.67 0 2.987.01 4.042.059 2.71.123 3.976 1.409 4.1 4.099.048 1.054.057 1.37.057 4.04 0 2.672-.01 2.988-.058 4.042-.124 2.687-1.386 3.975-4.099 4.099-1.055.048-1.37.058-4.042.058-2.67 0-2.986-.01-4.04-.058-2.717-.124-3.976-1.416-4.1-4.1-.048-1.054-.058-1.37-.058-4.041 0-2.67.01-2.986.058-4.04.124-2.69 1.387-3.977 4.1-4.1 1.054-.048 1.37-.058 4.04-.058zm0-1.802C7.618 0 7.278.012 6.211.06 2.579.227.56 2.242.394 5.877.345 6.944.334 7.284.334 10s.011 3.057.06 4.123c.166 3.632 2.181 5.65 5.816 5.817 1.068.048 1.408.06 4.123.06 2.716 0 3.057-.012 4.124-.06 3.628-.167 5.651-2.182 5.816-5.817.049-1.066.06-1.407.06-4.123s-.011-3.056-.06-4.122C20.11 2.249 18.093.228 14.458.06 13.39.01 13.049 0 10.333 0zm0 4.865a5.135 5.135 0 100 10.27 5.135 5.135 0 000-10.27zm0 8.468a3.333 3.333 0 110-6.666 3.333 3.333 0 010 6.666zm5.339-9.87a1.2 1.2 0 10-.001 2.4 1.2 1.2 0 000-2.4z"/></svg></a></li>
+                        </ul>
+                    </div>
+                </div>
+
+                <!--FOOTER NAVIGATION LINK MENUS -->
+                <div class="flex justify-around space-x-32 mx-auto lg:pt-14">
+                    <!-- MENU 1 -->
+                    <div class="flex flex-col space-y-4 text-veryLightGray">
+                        <a href="#" aria-label="Visit our Home page" class="transition ease-in hover:text-brightRed">Home</a>
+                        <a href="#" aria-label="Visit our Pricing page" class="transition ease-in hover:text-brightRed">Pricing</a>
+                        <a href="#" aria-label="Visit our Products page" class="transition ease-in hover:text-brightRed">Products</a>
+                        <a href="#" aria-label="Visit our About Us page" class="transition ease-in hover:text-brightRed">About Us</a>
+                    </div>
+                    <!-- MENU 2 -->
+                    <div class="flex flex-col space-y-3 text-veryLightGray sm:flex-start">
+                        <a href="#" aria-label="Visit our Careers page" class="transition ease-in hover:text-brightRed">Careers</a>
+                        <a href="#" aria-label="Visit our Community page" class="transition ease-in hover:text-brightRed">Community</a>
+                        <a href="#" aria-label="Visit our Privacy page" class="transition ease-in hover:text-brightRed">Privacy Policy</a>
+                    </div>
+                </div>
+
+                <!-- NEWSLETTER SIGN UP -->
+                <div class="flex flex-col justify-between sm:py-5 items-center lg:items-end lg:pt-10">
+                    <div class="flex">
+                        <div class="flex space-x-3 px-1.5">
+                            <div class="flex flex-col space-y-2">
+                                <input id="email-address-input" class="p-3 px-6 pt-2 text-brightRed bg-veryLightGray rounded-full outline-none" placeholder="Updates in your inbox..." type="text">
+                                <p id="response-message" class="italic text-brightRed pl-6"><p>
+                            </div>
+                        </div>
+                        <div>
+                            <button id="submit-email-address" class="p-3 px-6 pt-2 font-bold text-veryLightGray bg-brightRed rounded-full baseline transition ease-in hover:bg-brightRedLight">Go</button>
+                        </div>
+                    </div>
+                    <!-- DESKTOP COPYRIGHT BANNER -->
+                    <div class="hidden flex-col text-center lg:flex-row lg:justify-end lg:pb-4 lg:flex">
+                        <p class="text-darkGrayishBlue">Copyright 2020. All Rights Reserved</p>
+                    </div>
+                </div>
+            </div>
+            <!-- MOBILE COPYRIGHT BANNER -->
+            <div class="flex flex-col text-center py-4 lg:hidden">
+                <p class="text-darkGrayishBlue">Copyright 2020. All Rights Reserved</p>
+            </div>
+            <!-- ATTRIBUTIONS BANNER -->
+            <div class="flex flex-col attribution bg-veryDarkBlue py-4 items-center sm:py-2">
+                <p class="text-darkGrayishBlue text-center sm:px-5">Challenge by <a class="hover:text-brightRedLight transition ease-in" href="https://www.frontendmentor.io?ref=challenge" target="_blank">Frontend Mentor</a>. Coded by <a class="hover:text-brightRedLight transition ease-in" href="https://github.com/asbhogal/Tailwind-CSS-Website">Aman Singh Bhogal</a>.</p>
+            </div>
+        </footer>
+        
+
+
+
+        
+    </body>
+</html>

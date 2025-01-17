@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Frontend Mentor | Manage landing page</title>
+    <meta name="description" content="Bring everyone together to build better products.">
+    <meta name="author" content="Aman Singh Bhogal & Frontend Mentor">
+    <link rel="shortcut icon" href="src/img/favicon-32x32.png" type="image/x-icon" sizes="32x32">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@8/swiper-bundle.min.css"/>
+    <script src="https://cdn.jsdelivr.net/npm/swiper/swiper-bundle.min.js" defer></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Be+Vietnam+Pro:wght@500&display=swap" rel="stylesheet">
+</head>
+<body class="font-BeVietnamPro">
+
+<!-- Video Tutorial Section -->
+<section class="py-10  sm:py-16 lg:py-24">
+    <div class="max-w-6xl px-4 mx-auto sm:px-6 lg:px-8">
+        <div id="video-tutorials" class="grid grid-cols-1 md:grid-cols-3 gap-y-8 gap-x-12 xl:gap-x-20">
+            <!-- Dynamic content will be injected here -->
+        </div>
+    </div>
+</section>
+
+<!-- Modal Structure -->
+<div id="videoModal" class="fixed inset-0 flex items-center justify-center hidden bg-gray-900 bg-opacity-50">
+    <div class="bg-white w-full max-w-2xl rounded-lg overflow-hidden shadow-lg p-6 relative" style="max-height: 400px;">
+        <span id="closeModal" class="absolute top-4 right-4 text-2xl cursor-pointer">&times;</span>
+        <div class="flex">
+            <!-- Left side: Image linking to YouTube -->
+            <div class="w-1/3">
+                <a id="modalVideoLink" href="" target="_blank">
+                    <img id="modalImage" src="" alt="Video Image" class="rounded-lg cursor-pointer">
+                </a>
+            </div>
+            <!-- Right side: Information -->
+            <div class="w-2/3 pl-6 overflow-auto">
+                <h2 id="modalTitle" class="text-xl font-bold text-black mb-4"></h2>
+                <p id="modalKnowledge" class="text-gray-700"></p>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- JavaScript to generate dynamic video tutorial cards and manage modal -->
+<script>
+    // Array of video data with knowledge
+    const videos = [
+        {
+            imgSrc: "https://i.ytimg.com/vi/XLa2YYi_nr8/hq720.jpg?sqp=-oaymwEhCK4FEIIDSFryq4qpAxMIARUAAAAAGAElAADIQj0AgKJD&rs=AOn4CLBUFAs4AWzftTbR7UWQu3sMivZSfw",
+            videoUrl: "https://www.youtube.com/watch?v=aNj2HQLDsPA",
+            title: "Oracle OCA training | For Advanced",
+            name: "Jenny Wilson",
+            position: "Co-founder, Appson",
+            knowledge: "This advanced training helps learners prepare for Oracle certification exams by covering important topics like database management, SQL, and PL/SQL programming."
+        },
+        {
+            imgSrc: "https://i.ytimg.com/vi/XLa2YYi_nr8/hq720.jpg?sqp=-oaymwEhCK4FEIIDSFryq4qpAxMIARUAAAAAGAElAADIQj0AgKJD&rs=AOn4CLBUFAs4AWzftTbR7UWQu3sMivZSfw",
+            videoUrl: "https://www.youtube.com/watch?v=aNj2HQLDsPA",
+            title: "Oracle demo training | For Beginner",
+            name: "Jenny Wilson",
+            position: "Co-founder, Appson",
+            knowledge: "This beginner tutorial covers the basics of Oracle, providing an introduction to its interface, basic queries, and beginner-level database management."
+        },
+        {
+            imgSrc: "https://i.ytimg.com/vi/XLa2YYi_nr8/hq720.jpg?sqp=-oaymwEhCK4FEIIDSFryq4qpAxMIARUAAAAAGAElAADIQj0AgKJD&rs=AOn4CLBUFAs4AWzftTbR7UWQu3sMivZSfw",
+            videoUrl: "https://www.youtube.com/watch?v=aNj2HQLDsPA",
+            title: "Oracle OCP training | For Advanced",
+            name: "Jenny Wilson",
+            position: "Co-founder, Appson",
+            knowledge: "The OCP training focuses on deeper aspects of Oracle performance tuning, network architecture, and high-level database troubleshooting."
+        }
+    ];
+
+    // Function to dynamically generate video tutorial cards
+    const videoContainer = document.getElementById('video-tutorials');
+    const videoModal = document.getElementById('videoModal');
+    const modalImage = document.getElementById('modalImage');
+    const modalTitle = document.getElementById('modalTitle');
+    const modalKnowledge = document.getElementById('modalKnowledge');
+    const closeModal = document.getElementById('closeModal');
+    const modalVideoLink = document.getElementById('modalVideoLink');
+
+    videos.forEach((video, index) => {
+        const videoCard = `
+            <div class="relative border border-gray-300 rounded-lg p-2 shadow-md bg-white cursor-pointer" data-index="${index}">
+                <div class="aspect-w-4 aspect-h-3 relative">
+                    <img class="object-cover w-full h-full rounded-lg border-teal-400" src="${video.imgSrc}" alt="${video.title}" />
+                </div>
+                <div class="mt-6">
+                    <p class="text-sm md:text-[16px] leading-relaxed text-black text-bold">${video.title}</p>
+                    <p class="text-sm md:text-[14px] font-semibold text-black">${video.name}</p>
+                    <p class="mt-2 text-base text-gray-600">${video.position}</p>
+                </div>
+            </div>
+        `;
+        videoContainer.innerHTML += videoCard;
+    });
+
+    // Function to open modal
+    function openModal(index) {
+        const video = videos[index];
+        modalImage.src = video.imgSrc;
+        modalTitle.innerText = video.title;
+        modalKnowledge.innerText = video.knowledge;
+        modalVideoLink.href = video.videoUrl;
+        videoModal.classList.remove('hidden');
+    }
+
+    // Add click event listener to each card
+    document.querySelectorAll('[data-index]').forEach(card => {
+        card.addEventListener('click', function () {
+            const index = this.getAttribute('data-index');
+            openModal(index);
+        });
+    });
+
+    // Close modal
+    closeModal.addEventListener('click', () => {
+        videoModal.classList.add('hidden');
+    });
+
+    // Close modal when clicking outside
+    window.addEventListener('click', (e) => {
+        if (e.target === videoModal) {
+            videoModal.classList.add('hidden');
+        }
+    });
+</script>
+
+</body>
+</html>
